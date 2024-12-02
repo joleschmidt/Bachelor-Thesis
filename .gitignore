@@ -1,0 +1,22 @@
+# Jetbrains
+.idea
+
+# Generated tex files
+
+*.aux
+*.bbl
+*.blg
+*.idx
+*.lof
+*.log
+*.lol
+*.lot
+*.nlo
+*.out
+*.synctex.gz
+*.toc
+*.fdb_latexmk
+*.fls
+*.ind
+*.ilg
+*.nls
