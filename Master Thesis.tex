@@ -22,6 +22,7 @@
 %\usepackage[latin1]{inputenc}
 %\usepackage[ansinew]{inputenc}
 \usepackage[utf8]{inputenc}
+\usepackage{xurl}
 %\usepackage{ucs}
 %\usepackage[utf8x]{inputenc}
 
@@ -37,10 +38,10 @@
 \input{preambel/settings}
 \input{preambel/preambel}
 
-\author{Max Musterman}
+\author{Jan Ole Schmidt}
 \thesis{Bachelor Thesis}
 %\thesis{Master Thesis}
-\title{Titel der Abschlussarbeit}
+\title{Die Zukunft der Software-Entwicklung unter dem Einfluss künstlicher Intelligenz: Chancen, Herausforderungen und praxisorientierte Anwendungen}
 \academicTitle{Bachelor of Science}
 %\academicTitle{Master of Science}
 \firstReferee{Prof. Dr. Tim Mustermann}
@@ -64,7 +65,7 @@
 %\listoftodos
 
 % Abstract - Kurzfassung der Arbeit ohne Wertung
-\input{content/00_Abstract}
+% \input{content/00_Abstract}
 \cleardoublepage
 \frontmatter
 \cleardoublepage
@@ -76,13 +77,15 @@
 % Hauptteil
 \mainmatter
 \input{content/01_Einfuehrung}
-\input{content/02_Hintergrund}
-\input{content/03_Konzept}
-\input{content/04_Realisierung}
-\input{content/05_Abschluss}
+\input{content/02_Grundlagen}
+\input{content/03_Chancen}
+\input{content/04_Herausforderungen}
+\input{content/05_Fazit_Ausblick}
 
 % Anhang (Bibliographie darf im deutschen nicht in den Anhang!)
-\bibliography{bib/BibtexDatabase}
+\cleardoublepage
+\nocite{*} % Include all entries from the BibTeX database
+\bibliography{bib/BibtexDatabase} % Reference your BibTeX database
 \clearpage
 % Symbolverzeichnis (Begriffserklärung)
 % Damit die Begriffe hinzugefügt werden muss in Texmaker unter Optionen - Konfiguren 
@@ -105,4 +108,3 @@
 
 %% Dokument ENDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
