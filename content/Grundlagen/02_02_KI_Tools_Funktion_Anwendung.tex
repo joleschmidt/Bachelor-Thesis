@@ -1,4 +1,73 @@
+\label{sec:generative-ki-tools}
+
+\subsection{Grundfunktion generativer KI-Tools}
+
+Generative KI-Tools wie GitHub Copilot, Cursor und v0 basieren auf
+leistungsfähigen Large Language Models (LLMs), die natürliche Sprache verstehen
+und daraus konkrete Vorschläge für Code, Tests oder Dokumentation generieren.
+Typisch ist ein \textit{Prompt-Output-Paradigma}: Der oder die Entwickler*in
+gibt einen Prompt ein (z.\,B. eine Aufgabenbeschreibung oder einen
+Funktionsnamen), worauf das KI-Tool passenden Code vorschlägt. Besonders in
+modernen Entwicklungsumgebungen (IDEs) erscheinen diese Vorschläge direkt
+während des Tippens (Code Completion) oder als vollständige Funktionsblöcke
+\cite{kerr_github_nodate,weisz_design_2024}.
+
+\subsection{Schnittstellen und Integration in Entwicklungsumgebungen}
+
+Die Integration generativer KI erfolgt überwiegend über IDE-Plugins (z.\,B.
+Visual Studio Code, JetBrains) oder über APIs. GitHub Copilot lässt sich als
+Erweiterung in gängigen Editoren installieren und unterstützt Entwickler*innen
+direkt im Arbeitsfluss. Zusätzlich existieren Chat-basierte Interaktionen, um
+komplexere Aufgaben wie Refactoring, Debugging oder Testautomatisierung zu
+erleichtern. Die nahtlose Einbindung in bestehende Entwicklungsumgebungen macht
+die Nutzung besonders praxisnah und niedrigschwellig
+\cite{kerr_github_nodate,shi_ai-assisted_2023,weisz_design_2024}.
+
+\subsection{Beispielhafte Workflows (Pair Programming mit Copilot)}
+
+Im Pair Programming mit GitHub Copilot formulieren Entwickler*innen Aufgaben
+als Prompt (z.\,B. ``Implementiere eine Authentifizierung in React''). Copilot
+generiert dazu passenden Beispielcode, der übernommen oder angepasst werden
+kann. Die Entwickler*innen prüfen die Vorschläge und geben Feedback, indem sie
+unerwünschte Vorschläge ablehnen oder anpassen. Copilot kann während des
+gesamten Entwicklungsprozesses eingesetzt werden – etwa für
+Testautomatisierung, Refactoring oder Dokumentation. Studien zeigen, dass
+insbesondere Routinetätigkeiten dadurch erheblich beschleunigt werden
+\cite{kerr_github_nodate,weisz_design_2024,shi_ai-assisted_2023}.
+
+\subsection{Vorteile und Optimierungspotenziale}
+
+Zu den Vorteilen generativer KI-Tools zählen insbesondere:
 \begin{itemize}
-    \item Beispiele für generative KI-Tools in der Praxis
-    \item Einsatzmöglichkeiten und Optimierungspotenziale
+    \item \textbf{Zeitersparnis:} Routineaufgaben werden automatisiert, Entwicklungszeiten deutlich reduziert.
+    \item \textbf{Verbesserte Codequalität:} Tools wie Copilot erkennen häufige Fehlerquellen und schlagen Best Practices vor.
+    \item \textbf{Niedrigere Einstiegshürden:} Auch weniger erfahrene Entwickler*innen profitieren von kontextabhängigen Vorschlägen und Beispielen.
+\end{itemize}
+Weitere Optimierungspotenziale ergeben sich durch die kontinuierliche Verbesserung der zugrundeliegenden KI-Modelle sowie die anpassbare Integration in unterschiedliche Projekte \cite{kerr_github_nodate,weisz_design_2024}.
+
+\subsection{Grenzen und typische Fehlerquellen}
+
+Generative KI-Tools sind nicht fehlerfrei. Häufige Grenzen und Fehlerquellen
+sind:
+\begin{itemize}
+    \item \textbf{Halluzinationen:} Die KI kann fehlerhaften oder unsicheren Code vorschlagen, insbesondere bei unpräzisen Prompts \cite{shi_ai-assisted_2023}.
+    \item \textbf{Bias und Kontextdefizite:} Die KI reproduziert möglicherweise Vorurteile oder ignoriert spezifische Projektregeln.
+    \item \textbf{Sicherheitsrisiken:} Studien zeigen, dass Copilot mitunter unsicheren Code (z.\,B. SQL-Injection, Hardcoded Credentials) vorschlägt, sofern nicht explizit nach sicheren Lösungen gefragt wird. Moderne Versionen reagieren allerdings auf gezielte Prompts und schlagen dann sichere Muster vor \cite{shi_ai-assisted_2023}.
+    \item \textbf{Übermäßiges Vertrauen:} Entwickler*innen übernehmen KI-Vorschläge manchmal ungeprüft. Daher sind Mechanismen zur kritischen Prüfung essenziell \cite{weisz_design_2024}.
+\end{itemize}
+
+\subsection{Designprinzipien für den produktiven und sicheren Einsatz}
+
+Für den erfolgreichen und sicheren Einsatz generativer KI-Tools gelten nach
+Weisz et al. (2024) folgende Designprinzipien:
+\begin{itemize}
+    \item \textbf{Design for Mental Models:} Tools sollten so gestaltet sein, dass Nutzer*innen die Funktionsweise nachvollziehen können.
+    \item \textbf{Design for Appropriate Trust \& Reliance:} Mechanismen zur Förderung von Vertrauen und kritischer Prüfung sollten eingebaut werden (z.\,B. Hinweise auf Unsicherheiten, Feedbackmechanismen).
+    \item \textbf{Design for Imperfection:} Nutzer*innen müssen aktiv auf mögliche Fehler hingewiesen und zur Korrektur befähigt werden \cite{weisz_design_2024}.
+\end{itemize}
+
+\textbf{Quellen:}
+
+\begin{itemize}
+    \item\cite{geyer_case_2025},\cite{kerr_github_nodate},\cite{weisz_design_2024},\cite{martinovic_impact_2024},\cite{shi_ai-assisted_2023}
 \end{itemize}
