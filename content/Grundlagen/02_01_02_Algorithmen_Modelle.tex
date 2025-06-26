@@ -1,0 +1,68 @@
+Die Integration generativer Künstlicher Intelligenz (KI) in der
+Softwareentwicklung basiert maßgeblich auf fortschrittlichen Modellen und
+Algorithmen. Im Zentrum stehen insbesondere Large Language Models (LLMs) und
+Transformer-Architekturen, die als Grundlage moderner Coding-Tools wie GitHub
+Copilot, Cursor oder v0 dienen. Im Folgenden werden die wichtigsten Modelle,
+deren Funktionsweise und deren Bedeutung für typische
+Softwareentwicklungsaufgaben erläutert.
+
+\paragraph{Grundprinzipien und Funktionsweise moderner KI-Modelle}
+
+Large Language Models (LLMs), wie beispielsweise GPT-4 oder Code Llama, sind
+tiefenlernende neuronale Netze, die auf sehr großen Mengen von Quellcode und
+natürlicher Sprache trainiert wurden. Sie nutzen Transformer-Architekturen, die
+durch sogenannte Self-Attention-Mechanismen Kontextinformationen über lange
+Sequenzen hinweg erfassen können. Dies ermöglicht es ihnen, sowohl syntaktisch
+als auch semantisch komplexe Strukturen – wie etwa Code-Logik oder Designmuster
+– zu erkennen und zu generieren~\cite{nguyen-duc_generative_2023,
+    esposito_generative_2025}.
+
+Diffusionsmodelle spielen hingegen vor allem in der Bild- und Grafikgenerierung
+eine Rolle und sind für den textbasierten Softwareentwicklungsprozess bislang
+von untergeordneter Bedeutung. Für Aufgaben wie Codegenerierung und
+Architektur-Design sind LLMs und Transformer-Modelle
+maßgeblich~\cite{weisz_design_2024}.
+
+\paragraph{Beispiele für KI-Modelle in Coding-Tools}
+
+Moderne Coding-Assistenzsysteme wie \textit{GitHub Copilot}, \textit{Cursor}
+und \textit{v0} basieren auf Varianten großer Sprachmodelle, meist speziell auf
+Programmcode vortrainiert (z.\,B. OpenAI Codex, Code Llama, StarCoder). Diese
+Modelle können anhand des jeweiligen Kontexts (z.\,B. bestehender Code,
+Kommentare, Projekthistorie) automatisiert neue Code-Abschnitte generieren,
+Vorschläge zur Fehlerbehebung machen oder Testfälle
+entwerfen~\cite{coutinho_role_2024, esposito_generative_2025}.
+
+Typische Anwendungsbereiche sind:
+\begin{itemize}
+    \item \textbf{Code-Generierung}: Erstellung neuer Funktionen, Methoden oder ganzer Module auf Basis von Kurzbeschreibungen oder natürlicher Sprache.
+    \item \textbf{Testing und Qualitätssicherung}: Automatisierte Generierung von Unit-Tests und Testdaten, Unterstützung beim Review durch Erkennung von Anomalien oder Schwachstellen.
+    \item \textbf{Architekturvorschläge}: Unterstützung bei der Auswahl geeigneter Softwarearchitekturen oder Design Patterns, teilweise mit Bezug auf bestehende Anforderungen oder Projektdaten~\cite{esposito_generative_2025}.
+\end{itemize}
+
+\paragraph{Rolle dieser Modelle für spezifische Aufgaben}
+
+\begin{itemize}
+    \item \textbf{Codegenerierung:} LLMs können auf Grundlage von Prompts oder bestehenden Code-Fragmente eigenständig funktionsfähigen Quellcode erzeugen. Dies umfasst Routineaufgaben (z.\,B. Boilerplate-Code) ebenso wie komplexere Algorithmen.
+    \item \textbf{Testing:} Modelle wie GPT-4 sind in der Lage, automatisiert Tests zu erzeugen, Testdaten zu variieren und gängige Fehlerbilder zu erkennen.
+    \item \textbf{Architekturvorschläge:} Moderne LLMs unterstützen zunehmend beim Entwurf und bei der Dokumentation von Softwarearchitekturen, indem sie z.\,B. Requirements in Design-Vorschläge oder Diagramme übersetzen~\cite{esposito_generative_2025, nguyen-duc_generative_2023}.
+\end{itemize}
+
+\paragraph{Herausforderungen und Grenzen}
+
+Trotz des enormen Potenzials bestehen aktuelle Herausforderungen:
+\begin{itemize}
+    \item \textbf{Halluzinationen und Fehleranfälligkeit}: Generative Modelle können syntaktisch korrekten, aber fachlich unpassenden oder sogar gefährlichen Code erzeugen.
+    \item \textbf{Erklärbarkeit und Transparenz}: Die Nachvollziehbarkeit, wie ein Modell zu bestimmten Ergebnissen kommt, ist oft eingeschränkt~\cite{esposito_generative_2025, nguyen-duc_generative_2023}.
+    \item \textbf{Domänenspezifisches Wissen}: Ohne Anpassung (Fine-Tuning) auf projektspezifische Daten sind die Modelle oft auf allgemeines Wissen beschränkt und berücksichtigen spezifische Anforderungen nur begrenzt.
+\end{itemize}
+
+\paragraph{Bezug zu den im Praxisteil genutzten Tools}
+
+Die im Praxisteil eingesetzten Tools (\textit{GitHub Copilot, Cursor, v0})
+nutzen genau diese Algorithmen, um Entwickler:innen bei alltäglichen
+Entwicklungsaufgaben zu unterstützen. Sie liefern damit nicht nur klassische
+Code-Vervollständigungen, sondern wirken zunehmend als kollaborative Partner im
+gesamten Entwicklungsprozess – von Architektur über Implementierung bis zum
+Test~\cite{esposito_generative_2025, nguyen-duc_generative_2023}.
+

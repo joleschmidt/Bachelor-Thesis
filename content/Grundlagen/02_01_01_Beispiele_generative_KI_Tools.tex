@@ -1,0 +1,95 @@
+Generative KI-Tools sind heute in der Softwareentwicklung weit verbreitet und
+decken ein breites Spektrum an Aufgaben ab -- von der Code-Vervollständigung
+über automatische Testgenerierung bis hin zur Unterstützung ganzer
+Entwicklungsprojekte. Im Folgenden werden vier prominente Tools vorgestellt,
+die in der Praxis besonders relevant sind: \textbf{GitHub Copilot},
+\textbf{TabNine}, \textbf{Cursor AI} und \textbf{Devin AI}.
+
+\paragraph{GitHub Copilot}
+GitHub Copilot ist ein KI-basierter Codeassistent, der Entwicklern direkt im
+IDE-Kontext Vorschläge für Code-Snippets, ganze Funktionen und sogar Tests
+macht. Die Integration erfolgt beispielsweise in Visual Studio Code, IntelliJ
+oder Eclipse. Copilot basiert auf dem OpenAI Codex-Modell und kann mit
+Kommentaren oder natürlicher Sprache gesteuert werden. Typische Einsatzfelder
+sind das schnelle Prototyping, die Generierung von Boilerplate-Code, aber auch
+die Hilfestellung für Einsteiger und Onboarding-Prozesse.
+
+\begin{quote}
+    \enquote{GitHub Copilot can assist in quick prototyping of code by generating foundational code structure based on natural language description of the feature. It can assist in boilerplate code generation by providing the class and interface definition generation, API and Database Schema creation. Both of these features combined improve the developer efficiency and enhanced code quality.}
+    \cite[S.~8]{donvir_role_2024}
+\end{quote}
+
+Praxiserfahrung zeigt, dass GitHub Copilot die Entwicklung etwa einer
+React-Anwendung deutlich beschleunigen kann, indem es Codevorschläge für
+Authentifizierung, Routing und Formularvalidierung generiert und Fehlerbehebung
+unterstützt. Entwickler betonen, dass der Review und die Überprüfung der
+generierten Vorschläge dennoch unerlässlich bleiben \cite{kerr_github_nodate}.
+
+\paragraph{TabNine}
+TabNine ist ein weiteres KI-gestütztes Tool zur Code-Vervollständigung, das
+ursprünglich auf GPT-2 basierte und heute ein eigenes Modell nutzt. Es kann
+Codevorschläge in Echtzeit für verschiedene Sprachen machen und passt sich über
+die Zeit an den Coding-Stil des jeweiligen Entwicklers an. TabNine unterstützt
+alle gängigen IDEs und bietet eine Chat-Funktion, um gezielt Code-Fragen zu
+stellen. Besonders geschätzt wird die Flexibilität durch lokale und
+cloudbasierte Modelle sowie die Anpassung an unterschiedliche
+Datenschutzanforderungen \cite[S.~9]{donvir_role_2024}.
+
+\paragraph{Cursor AI}
+Cursor AI repräsentiert die nächste Generation von KI-Entwicklungstools. Es ist
+in der Lage, auf Basis natürlicher Sprache ganze Applikationen zu generieren,
+nutzt Techniken wie Retrieval-Augmented Generation (RAG) und Agentic AI und
+kann selbstständig Code verfeinern und Projekte strukturieren. Der Fokus liegt
+auf End-to-End-Entwicklung und vollständiger Projektgenerierung, was
+insbesondere für Prototyping oder den schnellen Aufbau komplexer
+Softwarelösungen geeignet ist.
+
+\begin{quote}
+    \enquote{Cursor AI can generate the entire codebase of the application from the feature description of the project provided in natural language. It uses advanced AI concepts such as Retrieval Augmented Generation (RAG), Agentic AI, and prompt chaining to achieve its objectives and provides a high degree of automation in software development.}
+    \cite[S.~10]{donvir_role_2024}
+\end{quote}
+
+\paragraph{Devin AI}
+Devin AI geht noch einen Schritt weiter und bezeichnet sich selbst als
+\enquote{AI Software Engineer}. Devin kann komplette Softwareprojekte auf Basis
+von Anforderungen in natürlicher Sprache umsetzen, das Projekt in einzelne
+Aufgaben herunterbrechen, automatisiert testen und sogar Deployment-Skripte
+erstellen. Ein wesentliches Merkmal ist die Fähigkeit zur langfristigen Planung
+und zur kontinuierlichen Anpassung an neue Anforderungen
+\cite[S.~11]{donvir_role_2024}.
+
+\vspace{1em}
+\noindent
+\textbf{Typische Einsatzszenarien}
+
+Die beschriebenen Tools werden in der Praxis in unterschiedlichen Bereichen
+eingesetzt:
+\begin{itemize}
+    \item \textbf{Code-Generierung und Vervollständigung:} Automatisiertes Schreiben von Code, Vorschläge für Funktionen, Klassen, API-Integration etc.
+    \item \textbf{Test- und Debugging-Unterstützung:} Generierung von Unit- und Integrationstests, Identifikation von Fehlern und Vorschläge für Bugfixes.
+    \item \textbf{Projekt-Scaffolding und Boilerplate:} Automatisches Erstellen von Grundstrukturen für neue Projekte.
+    \item \textbf{End-to-End-Entwicklung:} Vollständige Umsetzung von Projektanforderungen inklusive Deployment-Skripten und CI/CD-Konfiguration \cite[S.~11]{donvir_role_2024}.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\textbf{Vorteile und Grenzen in der Praxis}
+
+Die Integration generativer KI-Tools führt zu Zeitersparnis, konsistenterem
+Code und einer schnelleren Einarbeitung neuer Entwickler. Gleichzeitig sind
+Review-Prozesse und ein kritischer Umgang mit den generierten Vorschlägen
+unerlässlich, um Qualitäts- und Sicherheitsrisiken zu minimieren.
+Fortgeschrittene Tools wie Cursor AI oder Devin AI bieten ein hohes Maß an
+Automatisierung, sind aber oft kostenintensiv und noch nicht für alle
+Anwendungsfälle ausgereift \cite[S.~13]{donvir_role_2024}.
+
+\vspace{1em}
+\noindent
+\textbf{Quellen:}
+\begin{itemize}
+    \item Donvir, A. et al. (2024): \textit{The Role of Generative AI Tools in
+              Application Development: A Comprehensive Review of Current Technologies and
+              Practices} \cite{donvir_role_2024}
+    \item Kerr, K. (2025): \textit{GitHub for Beginners: Building a React App with GitHub
+              Copilot - The GitHub Blog} \cite{kerr_github_nodate}
+\end{itemize}
