@@ -1,18 +1,43 @@
-\subsection{Motivation für ein praktisches Beispiel}
-In diesem Kapitel wird die praktische Anwendung von KI-Tools in der Softwareentwicklung anhand der Implementierung eines Map-Screens bzw. einer interaktiven Kartenansicht für die App \glqq Locals\grqq demonstriert. Die Wahl fiel auf dieses Beispiel, da es...
+Die Zielsetzung dieses Kapitels besteht darin, den Einsatz generativer KI-Tools
+in der Softwareentwicklung nicht nur theoretisch zu betrachten, sondern anhand
+eines konkreten, praxisnahen Beispiels zu evaluieren. Im Zentrum steht die
+Implementierung eines interaktiven Map-Screens für die mobile App „Locals“. Das
+Vorgehen umfasst die iterative Umsetzung dieses Features mithilfe mehrerer
+moderner KI-gestützter Entwicklungstools, um deren Stärken, Schwächen und das
+Entwicklererlebnis unter realen Bedingungen vergleichend zu analysieren.
 
-\subsection{Eingesetzte KI-Tools}
-Die Implementierung erfolgt unter Verwendung verschiedener KI-gestützter Entwicklungstools:
+\subsubsection{Motivation für das praktische Beispiel}
+
+Die Entscheidung, als praktisches Beispiel die Entwicklung einer interaktiven
+Kartenansicht zu wählen, beruht auf mehreren Überlegungen:
 \begin{itemize}
-    \item Cursor, GitHub Copilot, v0, ...
+      \item Die Map-View ist ein zentrales und anspruchsvolles Feature moderner Event- und
+            Social-Apps und erfordert die Integration unterschiedlicher Technologien (u. a.
+            Geolocation, Datenmanagement, UI/UX-Design, Filter- und Suchfunktionen).
+      \item Die Aufgabe vereint sowohl klassische Herausforderungen der
+            Frontend-Entwicklung (State-Management, UI-Logik) als auch typische
+            Stolpersteine in der Zusammenarbeit mit externen Libraries (z. B.
+            \texttt{react-native-maps}, Google Maps API).
+      \item Durch die Komplexität und Vielschichtigkeit eignet sich das Beispiel besonders
+            gut, um die Leistungsfähigkeit generativer KI-Tools im realen
+            Entwicklungsprozess kritisch zu beleuchten.
+      \item Das Feature ist in modernen Event-Apps allgegenwärtig und der Nutzen für
+            Nutzer:innen unmittelbar erlebbar.
+\end{itemize}
+Die Auswahl des Map-Screens als Demonstrationsobjekt ermöglicht somit einen fundierten und praxisnahen Einblick in die Potenziale und Grenzen generativer KI im täglichen Entwickleralltag.
 
+\subsubsection{Eingesetzte KI-Tools}
+
+Für die Implementierung des Map-Screens wurden folgende KI-gestützte
+Entwicklungstools eingesetzt:
+
+\begin{itemize}
+      \item \textbf{GitHub Copilot:} KI-basierter Code-Assistent zur automatischen Codegenerierung und Vervollständigung in Visual Studio Code.
+      \item \textbf{Cursor:} KI-gestützte Entwicklungsumgebung mit besonderem Fokus auf Kontextintegration (Screenshots, Code, Fehlermeldungen) und dialogorientiertem Prompt Chaining.
+      \item \textbf{Bolt.new:} Cloudbasierte Entwicklungsplattform mit direkter Anbindung an GitHub, automatisierter Fehlerbehebung und Multi-Plattform-Unterstützung (Mobile und Web).
 \end{itemize}
 
-\subsection{Technischer Aufbau}
-Der technische Stack basiert auf:
-\begin{itemize}
-    \item React Native für die mobile Entwicklung
-    \item Firebase als Backend-as-a-Service
-    \item Expo für die Entwicklung von React Native-Anwendungen
-    \item ...
-\end{itemize} 
+Die Auswahl der Tools ermöglicht eine umfassende Betrachtung verschiedener
+Ansätze generativer KI in der Softwareentwicklung – vom klassischen Pair
+Programming bis zur cloudbasierten Komplettlösung.
+

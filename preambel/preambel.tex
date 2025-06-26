@@ -52,8 +52,14 @@
 %%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/required/babel/babel.pdf
 % Languagesetting
 
-\usepackage[ngerman]{babel}
-% \usepackage[english]{babel}
+\ifthenelse{\equal{\lang}{ngerman}}
+{
+   \usepackage[ngerman]{babel}
+}
+{
+   \usepackage[english]{babel}
+}
+
 %%% Doc: ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
 % Farben
 % Incompatible: Do not load when using pstricks !
@@ -754,12 +760,7 @@
    xleftmargin=17pt}
 \usepackage{courier}
 \lstloadlanguages{% Check Dokumentation for further languages ...
-   %         [Visual]Basic
-   %         %Pascal
-   %         %C
-   %         %C++
-   %         %XML
-   HTML, PHP, XML, SQL }
+   HTML, PHP, XML, SQL}
 
 \usepackage{caption}
 \DeclareCaptionFont{white}{\color{white}}
