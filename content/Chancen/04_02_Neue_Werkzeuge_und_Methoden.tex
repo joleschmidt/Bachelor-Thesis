@@ -1,47 +1,48 @@
-Der Siegeszug generativer KI hat in den letzten Jahren eine Vielzahl
-innovativer Werkzeuge und Methoden in die Softwareentwicklung eingeführt.
-Insbesondere die Entstehung von KI-gestützten Entwicklungsumgebungen und
-Coding-Assistenten wie GitHub Copilot, Cursor oder Bolt.new hat dazu geführt,
-dass Entwickler:innen in ihrem Workflow neue Arbeitsweisen adaptieren
-müssen~\cite{10741797,Weisz_2024,fraunhofer2024}.
+Der verstärkte Einsatz generativer KI hat in den letzten Jahren eine Vielzahl
+neuer Werkzeuge und Methoden in der Softwareentwicklung etabliert. Besonders
+die Integration von Large Language Models (LLMs) in Entwicklungsumgebungen hat
+die Art, wie Entwickler*innen arbeiten, maßgeblich verändert.
 
-Im praktischen Teil dieser Arbeit (vgl. Kapitel~3) zeigte sich deutlich, wie
-unterschiedlich diese Tools in der Entwicklungspraxis agieren und welche neuen
-Möglichkeiten sie eröffnen. Während Copilot insbesondere für die schnelle
-Generierung von Standard-Code, Boilerplate und UI-Elementen eingesetzt werden
-konnte, überzeugte Cursor durch seine Fähigkeit, Kontextinformationen wie
-Screenshots oder Fehlermeldungen direkt in die Codegenerierung und
-Problemlösung zu integrieren. Bolt.new wiederum ermöglichte eine weitgehend
-automatisierte Initialisierung und das cloudbasierte Setup von Projekten,
-inklusive direkter Web-Deployments.
+Zu den wichtigsten Werkzeugen zählen unter anderem \textbf{GitHub Copilot},
+\textbf{Cursor AI}, \textbf{Amazon CodeWhisperer} und \textbf{Devin AI}. Diese
+Tools werden in der Literatur umfassend dargestellt und spielen laut Esposito
+et al.~\cite{esposito_generative_2025} sowie Nguyen-Duc et
+al.~\cite{duc_generative_2023} eine zentrale Rolle in der aktuellen
+Entwicklungspraxis.
 
-Diese neuen Werkzeuge führen zu einer Verschiebung der klassischen
-Rollenverteilung und eröffnen neue Methoden im Entwicklungsprozess. Die
-Literatur beschreibt, dass insbesondere die Integration von Large Language
-Models (LLMs) und Retrieval-Augmented Generation (RAG) zu einer höheren
-Anpassungsfähigkeit und Kontextsensitivität
-führt~\cite{esposito2025,donvir2024}. Methoden wie Prompt Chaining, dialogische
-Interaktion mit der KI oder die Nutzung von Kontextdaten in Echtzeit gehören
-zunehmend zum Alltag in modernen Entwicklerteams~\cite{weisz2024}.
+GitHub Copilot wird besonders häufig eingesetzt und unterstützt
+Entwickler*innen bei der automatischen Codegenerierung und Vervollständigung
+direkt in der IDE. Esposito et al.~\cite[S.~2]{esposito_generative_2025}
+beschreiben, dass solche Werkzeuge zunehmend in frühen Phasen des
+Entwicklungsprozesses verwendet werden, etwa beim Übergang von Anforderungen zu
+Architektur oder bei der Erstellung von Code aus natürlichsprachigen
+Beschreibungen.
 
-\begin{quote}
-    \enquote{Tools like Copilot and Cursor AI have introduced dialog-driven, context-aware development workflows, in which code suggestions, debugging, and refactoring are conducted interactively, often utilizing screenshots or project artifacts as additional context.}
-    \cite[S.~10]{donvir2024}
-\end{quote}
+Cursor AI und ähnliche Tools ermöglichen einen dialogorientierten Workflow, bei
+dem nicht nur einzelne Codezeilen, sondern ganze Features, Module oder sogar
+Projekte automatisch erstellt und verfeinert werden können. Dabei kommen
+Methoden wie Prompt Engineering, Retrieval-Augmented Generation (RAG) und
+agentenbasierte Ansätze zum Einsatz (vgl. Esposito et
+al.,~\cite[S.~3--4]{esposito_generative_2025}).
 
-Ein weiteres zentrales Ergebnis der praktischen Demonstration ist die
-Erkenntnis, dass die Qualität der Ergebnisse maßgeblich von der Fähigkeit zur
-Integration und Steuerung der KI im Entwicklungsprozess abhängt. Besonders
-Cursor konnte durch die Nutzung von Prompt Chaining und der aktiven Einbindung
-von User-Feedback die Entwicklungsgeschwindigkeit und Problemlösungskompetenz
-deutlich steigern (vgl. Kapitel~3). Die Erfahrung zeigt zudem, dass die Wahl
-des passenden Tools und der dazugehörigen Methode stark vom Projekttyp, den
-Teamstrukturen und den angestrebten Zielen abhängt.
+Im praktischen Teil dieser Arbeit (vgl. Kapitel~3) zeigte sich, dass die
+Kombination dieser Werkzeuge erhebliche Produktivitätsgewinne ermöglicht, vor
+allem beim schnellen Prototyping, bei Standardaufgaben (Boilerplate) und bei
+der automatischen Generierung von Tests. Cursor AI konnte darüber hinaus durch
+die Möglichkeit, Kontext wie Screenshots oder Fehlermeldungen einzubinden, bei
+der Fehlersuche und dem Debugging zusätzliche Mehrwerte bieten.
 
-Insgesamt lässt sich festhalten, dass generative KI nicht nur neue Werkzeuge,
-sondern auch grundlegend neue Methoden und Arbeitsweisen in die
-Softwareentwicklung gebracht hat, die zukünftig weiter an Bedeutung gewinnen
-werden.
+Neben den Werkzeugen haben sich auch neue Methoden etabliert:
+\begin{itemize}
+    \item \textbf{Prompt Engineering:} Entwickler*innen formulieren Anforderungen in natürlicher Sprache, die direkt von der KI interpretiert werden (vgl. Esposito et al.,~\cite[S.~2--3]{esposito_generative_2025}).
+    \item \textbf{Retrieval-Augmented Generation (RAG):} KI-Tools kombinieren projektspezifische Kontextdaten (z.\,B. Dokumentation, vorhandener Code) mit aktuellen Benutzeranfragen, um passgenaue Lösungen zu generieren (vgl. Esposito et al.,~\cite[S.~4]{esposito_generative_2025}).
+    \item \textbf{Human-in-the-Loop und Pair Programming:} Laut Nguyen-Duc et al.~\cite[S.~8]{nguyen-duc_generative_2023} und Fraunhofer IESE~\cite{siebert_generative_2024} wird die Zusammenarbeit von Mensch und KI (z.\,B. durch Feedback-Loops) immer wichtiger, um Qualität und Anpassungsfähigkeit der Entwicklung zu sichern.
+\end{itemize}
+
+Im Blog von Fraunhofer IESE~\cite{siebert_generative_2024} wird betont, dass
+diese neuen Tools nicht nur als Autovervollständigung dienen, sondern immer
+mehr Aufgaben im gesamten Entwicklungsprozess übernehmen – bis hin zur
+automatischen Erstellung von Tests und zum Refactoring.
 
 % \begin{itemize}
 %     \item Innovative Ansätze für die Softwareentwicklung
