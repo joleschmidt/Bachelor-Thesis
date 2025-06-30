@@ -3,22 +3,20 @@
    DIV=11,% (Size of Text Body, higher values = greater textbody)
    % DIV=calc % (also areaset/classic/current/default/last) 
    % -> after setting of spacing necessary!   
-   BCOR=5mm% (Bindekorrektur)
-}%
+   BCOR=5mm}% (Bindekorrektur)%
 %%% === Headings ==============================================================
 \KOMAoptions{%
    %%%% headings
-	% headings=small,  % Small Font Size, thin spacing above and below
+   % headings=small,  % Small Font Size, thin spacing above and below
    % headings=normal, % Medium Font Size, medium spacing above and below
    headings=big, % Big Font Size, large spacing above and below
    %
-   headings=noappendixprefix, % chapter in appendix as in body text
-	headings=nochapterprefix,  % no prefix at chapters
+   headings=noappendixprefix, headings=nochapterprefix, % chapter in appendix as in body text% no prefix at chapters
    % headings=appendixprefix,   % inverse of 'noappendixprefix'
    % headings=chapterprefix,    % inverse of 'nochapterprefix'
-   % headings=openany,   % Chapters start at any side
+   headings=openany, % Chapters start at any side
    % headings=openleft,  % Chapters start at left side
-   headings=openright, % Chapters start at right side      
+   % headings=openright, % Chapters start at right side      
    %%% Add/Dont/Auto Dot behind section numbers 
    %%% (see DUDEN as reference)
    % numbers=autoenddot
@@ -35,21 +33,15 @@
    %
    twocolumn=false, % (true)
    %
-   headinclude=false,%
-   footinclude=false,%
-   mpinclude=false,%      
+   headinclude=false,footinclude=false,mpinclude=false,%%%      
    %
    headlines=2.1,%
-	% headheight=2em,%
-   headsepline=true,%
-   footsepline=false,%
-   cleardoublepage=empty %plain, headings
-}%
+   % headheight=2em,%
+   headsepline=true,footsepline=false,cleardoublepage=empty }%%%plain, headings%
 %%% === Paragraph Separation ==================================================
 \KOMAoptions{%
-	% parskip=relative, % change indentation according to fontsize (recommanded)
-   parskip=absolute, % do not change indentation according to fontsize
-   parskip=false    % indentation of 1em
+   % parskip=relative, % change indentation according to fontsize (recommanded)
+   parskip=absolute, parskip=false % do not change indentation according to fontsize% indentation of 1em
    % parskip=true   % parksip of 1 line - with free space in last line of 1em
    % parskip=full-  % parksip of 1 line - no adjustment
    % parskip=full+  % parksip of 1 line - with free space in last line of 1/4
@@ -70,7 +62,7 @@
    % toc=nobib,
    % toc=bibnumbered,
    %
-	% toc=index,%
+   % toc=index,%
    toc=noindex,
    %
    % toc=listof,
@@ -82,15 +74,14 @@
 \KOMAoptions{%
    %%% Setting of 'Style' and 'Content' of Lists 
    %%% (figures, tables etc)
-	% --- General List Style ---
-   listof=left, % tabular styles
-   listof=indented, % hierarchical style
+   % --- General List Style ---
+   listof=left, listof=indented, % tabular styles% hierarchical style
    % --- chapter highlighting ---
    % listof=chapterentry, % ??? Chapter starts are marked in figure/table
    % listof=chaptergapline, % New chapter starts are marked by a gap 
-      		  			   	 % of a single line
-	listof=chaptergapsmall, % New chapter starts are marked by a gap 
-   	    					   % of a smallsingle line
+   % of a single line
+   listof=chaptergapsmall, % New chapter starts are marked by a gap 
+   % of a smallsingle line
    % listof=nochaptergap, % No Gap between chapters
    %
    % listof=leveldown, % lists are moved one level down ???
@@ -102,17 +93,16 @@
 %%% === Bibliography ==========================================================
 %% Setting of 'Style' and 'Content' of Bibliography
 \KOMAoptions{%
-	% bibliography=oldstyle,%
+   % bibliography=oldstyle,%
    bibliography=openstyle,%
    % bibliography=nottotoc, % Bibliography is not part of the TOC
    % bibliography=totocnumbered, % add Bibliography to TOC with number
-   bibliography=totoc % add Bibliography to TOC without number
-}%
+   bibliography=totoc }% add Bibliography to TOC without number%
 %%% === Index =================================================================
 %% Setting of 'Style' and 'Content' of Index in TOC
 \KOMAoptions{%
    index=nottotoc % index is not part of the TOC
-	% index=totoc, % add index to TOC without number
+   % index=totoc, % add index to TOC without number
 }%
 %%% === Titlepage =============================================================
 \KOMAoptions{%
