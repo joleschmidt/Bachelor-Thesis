@@ -1,4 +1,4 @@
-\subsection{Integration der KI-Tools}
+% \subsection{Integration der KI-Tools}
 
 \subsection{Demonstration mit GitHub Copilot}
 
@@ -9,6 +9,13 @@ ausschließlich die Copilot-Funktionen zum Einsatz, keine weiteren KI-Plugins.
 Ziel war die Umsetzung eines Map-Screens mit Event-Markern, Filterfunktion
 sowie Detailansicht – sämtliche Eventdaten stammen dabei aus dem zentralen
 EventsProvider.
+
+\begin{figure}[htbp]
+      \centering
+      \includegraphics[width=0.95\textwidth]{images/copilot_screenshots/Screenshots Ist-Zustand-copilot.png}
+      \caption{Ausgangszustand der Anwendung vor dem Einsatz von Copilot. \textit{Copilot-Demo}}
+      \label{fig:copilot-istzustand}
+\end{figure}
 
 Vor Beginn der Implementierung wurde Copilot aktiviert und die
 Entwicklungsumgebung vorbereitet (z.~B.\ Installation von
@@ -28,6 +35,32 @@ Oder als umfangreicher Prompt:
 // - Show markers, enable filtering, display event details in modal/callout
 // - Clean, modular, and maintainable code, with modern UI/UX
 \end{lstlisting}
+
+% \begin{figure}[htbp]
+%       \centering
+%       \includegraphics[width=0.55\textwidth]{images/copilot_screenshots/rückmeldung nach 1. prompt eingabe-copilot.png}
+%       \caption{Reaktion von GitHub Copilot auf den ersten Prompt zur Implementierung des MapScreens. \textit{Copilot-Demo}}
+%       \label{fig:copilot-erster-prompt}
+% \end{figure}
+
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/copilot_screenshots/implementation-rückmeldung-copilot-1.png}
+            \caption{Rückmeldung von Copilot – Teil 1.}
+            \label{fig:copilot-impl1}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/copilot_screenshots/implementation-rückmeldung-copilot-2.png}
+            \caption{Rückmeldung von Copilot – Teil 2.}
+            \label{fig:copilot-impl2}
+      \end{minipage}
+      \caption{Schrittweise Rückmeldung und Hinweise von Copilot während der Implementierung. \textit{Eigene Screenshots}}
+      \label{fig:copilot-impl-pair}
+\end{figure}
 
 \subsubsection{Schrittweise Umsetzung und Reflexion}
 
@@ -61,6 +94,22 @@ Die technische Umsetzung umfasste:
       \item Responsives Layout und modernes UI-Design nach Vorgabe.
       \item Fehler- und Ladezustände wurden entsprechend behandelt.
 \end{itemize}
+
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/copilot_screenshots/6. 1. Version das MapScreens - Screenshot-copilot.png}
+            \caption{Erste lauffähige Version des MapScreens nach KI-gestützter Entwicklung.}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{images/copilot_screenshots/Callouts+modal-copilot.png}
+            \caption{Event-Details und Callouts auf dem MapScreen.}
+            \label{fig:copilot-callouts}
+      \end{minipage}
+\end{figure}
 
 Die Code-Generierung erfolgte modular und meist nachvollziehbar. Beispiel:
 Copilot erstellte automatisch das Grundgerüst einer Map-Komponente, ergänzte
