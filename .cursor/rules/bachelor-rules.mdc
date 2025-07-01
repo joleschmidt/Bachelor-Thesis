@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+When cite always use [BibtexDatabase.bib](mdc:bib/BibtexDatabase.bib). Don't suggest own ones.
