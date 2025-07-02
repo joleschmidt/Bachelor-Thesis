@@ -12,7 +12,7 @@ EventsProvider.
 
 \begin{figure}[htbp]
       \centering
-      \includegraphics[width=0.95\textwidth]{images/copilot_screenshots/Screenshots Ist-Zustand-copilot.png}
+      \includegraphics[width=1\textwidth]{images/copilot_screenshots/Screenshots Ist-Zustand-copilot.png}
       \caption{Ausgangszustand der Anwendung vor dem Einsatz von Copilot. \textit{Copilot-Demo}}
       \label{fig:copilot-istzustand}
 \end{figure}
@@ -48,17 +48,13 @@ Oder als umfangreicher Prompt:
       \begin{minipage}{0.48\textwidth}
             \centering
             \includegraphics[width=0.98\textwidth]{images/copilot_screenshots/implementation-rückmeldung-copilot-1.png}
-            \caption{Rückmeldung von Copilot – Teil 1.}
-            \label{fig:copilot-impl1}
       \end{minipage}
       \hfill
       \begin{minipage}{0.48\textwidth}
             \centering
             \includegraphics[width=0.98\textwidth]{images/copilot_screenshots/implementation-rückmeldung-copilot-2.png}
-            \caption{Rückmeldung von Copilot – Teil 2.}
-            \label{fig:copilot-impl2}
       \end{minipage}
-      \caption{Schrittweise Rückmeldung und Hinweise von Copilot während der Implementierung. \textit{Eigene Screenshots}}
+      \caption{Rückmeldung und Hinweise von Copilot während der Implementierung. \textit{Copilot-Demo}}
       \label{fig:copilot-impl-pair}
 \end{figure}
 
@@ -100,13 +96,13 @@ Die technische Umsetzung umfasste:
       \begin{minipage}{0.48\textwidth}
             \centering
             \includegraphics[width=\textwidth]{images/copilot_screenshots/6. 1. Version das MapScreens - Screenshot-copilot.png}
-            \caption{Erste lauffähige Version des MapScreens nach KI-gestützter Entwicklung.}
+            \caption{Erste lauffähige Version des MapScreens nach KI-gestützter Entwicklung. \textit{Copilot-Demo}}
       \end{minipage}
       \hfill
       \begin{minipage}{0.48\textwidth}
             \centering
             \includegraphics[width=\textwidth]{images/copilot_screenshots/Callouts+modal-copilot.png}
-            \caption{Event-Details und Callouts auf dem MapScreen.}
+            \caption{Event-Details und Callouts auf dem MapScreen. \textit{Copilot-Demo}}
             \label{fig:copilot-callouts}
       \end{minipage}
 \end{figure}
@@ -174,6 +170,13 @@ Sprachmodell: Claude 3.7 Sonnet, Agent mode). Cursor ermöglicht Prompt
 Chaining, die Verarbeitung von Screenshots als Referenz und einen
 dialogbasierten Entwicklungsprozess.
 
+\begin{figure}[htbp]
+      \centering
+      \includegraphics[width=1\textwidth]{images/cursor_screenshots/Screenshots Ist-Zustand-cursor.png}
+      \caption{Ausgangszustand der Anwendung vor Einsatz von Cursor. \textit{Cursor Demo}}
+      \label{fig:cursor-istzustand}
+\end{figure}
+
 Zu Beginn wurden Screenshots des aktuellen App-Zustands sowie relevanter
 Komponenten (u.\,a. \texttt{\_layout.tsx}, Event Provider) als Kontext
 bereitgestellt. Der Hauptprompt für den Einstieg lautete:
@@ -195,9 +198,34 @@ Der Entwicklungsprozess war durch mehrere Besonderheiten gekennzeichnet:
       \item \textbf{Prompt Chaining und Screenshot-Kontext:} Zu jedem Entwicklungsschritt wurden gezielt neue Prompts mit aktualisierten Anforderungen und Referenz-Screenshots gestellt.
       \item \textbf{Terminal-Steuerung:} Cursor führte notwendige Terminalbefehle (z.\,B. Paketinstallationen) eigenständig aus und dokumentierte Fehlermeldungen sowie Lösungsvorschläge direkt im Chat.
       \item \textbf{Debugging und Package-Kompatibilität:} Cursor identifizierte eigenständig Kompatibilitätsprobleme, z.\,B. bei der \texttt{react-native-maps}-Version (\^1.24.3 statt \^1.18.0), und schlug proaktiv eine Anpassung auf die funktionierende Version vor.
+\end{enumerate}
+
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/cursor_screenshots/(NOBRIDGE) ERROR-cursor.png}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/cursor_screenshots/Cursor führt terminal befehle eigenständig aus.png}
+      \end{minipage}
+      \caption{Typische Fehlermeldung und autonomes Ausführen von Terminalbefehlen durch Cursor beim Einrichten des MapScreens. \textit{Cursor-Demo}}
+      \label{fig:cursor-error-terminal}
+\end{figure}
+
+\begin{enumerate}[resume]
       \item \textbf{Iterative Korrekturen und UX-Verbesserungen:} Bei UI-Problemen (z.\,B. überlagernde Filter/Buttons) wurden nach Rückmeldung gezielt Layout-Vorschläge unterbreitet.
       \item \textbf{Feature-Integration:} Funktionen wie Filter, Refresh-Button und Navigation zu Event-Standorten wurden auf Nachfrage oder eigenständig ergänzt.
 \end{enumerate}
+
+\begin{figure}[htbp]
+      \centering
+      \includegraphics[width=0.48\textwidth]{images/cursor_screenshots/erster durchgang-cursor.png}
+      \caption{Erste Umsetzungsschritte nach Bereitstellung des Kontexts und initialem Prompt. \textit{Cursor-Demo}}
+      \label{fig:cursor-erster-durchgang}
+\end{figure}
 
 \textbf{Besonders positiv fiel auf:}
 \begin{itemize}
@@ -210,6 +238,21 @@ Der Entwicklungsprozess war durch mehrere Besonderheiten gekennzeichnet:
       \item Cursor dokumentierte seine Debugging-Schritte transparent und schlug auch
             Lösungen für übersehene Fehlerquellen vor.
 \end{itemize}
+
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/cursor_screenshots/final-mapscreen-cursor-3.png}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/cursor_screenshots/final-mapscreen-cursor-2.png}
+      \end{minipage}
+      \caption{MapScreen in der finalen Implementierung mit Cursor – zwei verschiedene Zustände/Ansichten. \textit{Cursor-Demo}}
+      \label{fig:cursor-finalpair}
+\end{figure}
 
 \subsubsection{Herausforderungen und Learnings}
 \begin{itemize}
@@ -232,7 +275,7 @@ Der Entwicklungsprozess war durch mehrere Besonderheiten gekennzeichnet:
 \end{itemize}
 
 \textbf{Fazit:}
-Cursor bewährt sich vor allem durch die Fähigkeit, Kontext (Screenshots, Code, Fehlermeldungen) aktiv in die Entwicklung einzubinden. Im Vergleich zu Copilot
+Cursor bewährt sich vor allem durch die Fähigkeit, Kontext (Screenshots, Code, Fehlermeldungen) aktiv in die Entwicklung einzubinden. Im Vergleich zu Copilot zeigte Cursor bei Debugging, Package-Fehlern und iterativen Verbesserungen eine hohe Präzision und Transparenz.
 
 \subsection{Demonstration mit Bolt}
 
@@ -244,28 +287,58 @@ Umgebung für Prompt Chaining und Live-Code-Editing. Ein dedizierter Branch
 (\texttt{bolt}) wurde verwendet. Das zugrundeliegende Sprachmodell war Claude
 3.7 Sonnet (nicht direkt auswählbar).
 
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/bolt_screenshots/startseite-what-do-you-wanna-build-mit-github-branch.png}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/bolt_screenshots/ der server funktioniert und bolt installiert die restlichen dependencies. scheinbar wird react-native-web benötigt um die laufende app zu sehen.png}
+      \end{minipage}
+      \caption{Links: Start mit Bolt.new und Auswahl des Locals-Repos. Rechts: Bolt erkennt fehlende Dependencies und installiert diese selbstständig. \textit{bolt-Demo}}
+      \label{fig:bolt-setup}
+\end{figure}
+
 Zunächst wurden Screenshots des aktuellen App-Zustands sowie zentrale
 Komponenten (u.\,a. \texttt{\_layout.tsx}, Event Provider) als Kontext
 bereitgestellt. Die Aufgabenstellung für Bolt wurde als umfangreicher Prompt
 formuliert:
 
 \begin{lstlisting}[language=HTML]
-    // Create a Map Screen with Event Markers and Filter in React Native.
-    // Create a React Native component called MapScreen that displays event markers on a map using event data from the EventsProvider context.
-    // Requirements:
-    //
-    // - Use the list of events from the EventsProvider context
-    // - Display all events as markers on a map
-    // - Add filter options above the map (by category, date, distance)
-    // - When a marker is tapped, show a callout or modal with event details
-    // - Modern mobile UI, modular and maintainable code
-    // - Use provided screenshots as visual reference
+// Create a Map Screen with Event Markers and Filter in React Native.
+// Create a React Native component called MapScreen that displays event markers on a map using event data from the EventsProvider context.
+// Requirements:
+//
+// - Use the list of events from the EventsProvider context
+// - Display all events as markers on a map
+// - Add filter options above the map (by category, date, distance)
+// - When a marker is tapped, show a callout or modal with event details
+// - Modern mobile UI, modular and maintainable code
+// - Use provided screenshots as visual reference
 \end{lstlisting}
 
 \subsubsection{Schrittweise Umsetzung und Reflexion}
 Die Besonderheit bei Bolt lag im engen Zusammenspiel mit GitHub, den
 automatisch ausführbaren Terminalbefehlen sowie der Möglichkeit, nativ Pakete
 zu installieren und Fehler im laufenden Betrieb zu beheben.
+
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/bolt_screenshots/eingabe des prompts-rueckmeldung von bolt-1.png}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/bolt_screenshots/eingabe des prompts-rueckmeldung von bolt-2.png.png}
+      \end{minipage}
+      \caption{Bolt reagiert interaktiv auf Prompts, führt Terminalbefehle aus und gibt strukturiertes Feedback im Interface. \textit{bolt-Demo}}
+      \label{fig:bolt-prompts}
+\end{figure}
 
 \textbf{Ablauf:}
 \begin{enumerate}
@@ -276,6 +349,21 @@ zu installieren und Fehler im laufenden Betrieb zu beheben.
       \item \textbf{Multi-Plattform-Support:} Bei Problemen mit \texttt{react-native-maps} auf Web wurde automatisch auf \texttt{react-google-maps} gewechselt und eine alternative Map-Implementierung für Web ergänzt.
       \item \textbf{Fehler-Handling und Limits:} Bei aufwendigen Operationen wurde das Tageslimit des kostenlosen Bolt-Plans schnell erreicht, was ein Upgrade auf Pro erforderte.
 \end{enumerate}
+
+\begin{figure}[htbp]
+      \centering
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/bolt_screenshots/funktionierender map screen.png}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{0.48\textwidth}
+            \centering
+            \includegraphics[width=0.98\textwidth]{images/bolt_screenshots/funktionierender map screen + callout & filter angewendet.png}
+      \end{minipage}
+      \caption{Finale Web-Umsetzung: Interaktiver MapScreen mit Event-Details, Filteroptionen und Callouts. \textit{bolt-Demo}}
+      \label{fig:bolt-final}
+\end{figure}
 
 \textbf{Herausforderungen und Learnings:}
 \begin{itemize}
