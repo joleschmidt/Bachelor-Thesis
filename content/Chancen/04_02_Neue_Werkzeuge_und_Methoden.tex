@@ -1,76 +1,68 @@
 Der verstärkte Einsatz generativer KI hat in den letzten Jahren eine Vielzahl
-neuer Werkzeuge und Methoden in der Softwareentwicklung etabliert. Besonders
-die Integration von Large Language Models (LLMs) in Entwicklungsumgebungen hat
-die Art, wie Entwickler*innen arbeiten, maßgeblich verändert.
+neuer Werkzeuge und Methoden in der Softwareentwicklung hervorgebracht.
+Insbesondere die Integration von Large Language Models (LLMs) in moderne
+Entwicklungsumgebungen verändert die Arbeitsweise von Entwickler:innen
+grundlegend~\cite{esposito_generative_2025,nguyen-duc_generative_2023}.
 
-Zu den wichtigsten Werkzeugen zählen unter anderem \textbf{GitHub Copilot},
-\textbf{Cursor AI}, \textbf{Amazon CodeWhisperer} und \textbf{Devin AI}. Diese
-Tools werden in der Literatur umfassend dargestellt und spielen laut Esposito
-et al.~\cite{esposito_generative_2025} sowie Nguyen-Duc et
-al.~\cite{duc_generative_2023} eine zentrale Rolle in der aktuellen
-Entwicklungspraxis.
+Zu den wichtigsten Werkzeugen zählen \textbf{GitHub Copilot}, \textbf{Cursor
+    AI}, \textbf{Amazon CodeWhisperer} und \textbf{Devin AI}. Diese Tools werden in
+der Literatur umfassend dargestellt und spielen laut Esposito et
+al.~\cite{esposito_generative_2025} sowie Nguyen-Duc et
+al.~\cite{nguyen-duc_generative_2023} eine zentrale Rolle in der aktuellen
+Entwicklungspraxis. Besonders GitHub Copilot wird häufig eingesetzt, um
+Entwickler:innen bei der automatischen Codegenerierung und Vervollständigung in
+der IDE zu unterstützen~\cite{esposito_generative_2025}. Solche Werkzeuge
+finden zunehmend in frühen Phasen des Entwicklungsprozesses Anwendung, etwa
+beim Übergang von Anforderungen zu Architektur oder bei der Erstellung von Code
+aus natürlichsprachigen Beschreibungen.
 
-GitHub Copilot wird besonders häufig eingesetzt und unterstützt
-Entwickler*innen bei der automatischen Codegenerierung und Vervollständigung
-direkt in der IDE. Esposito et al.~\cite[S.~2]{esposito_generative_2025}
-beschreiben, dass solche Werkzeuge zunehmend in frühen Phasen des
-Entwicklungsprozesses verwendet werden, etwa beim Übergang von Anforderungen zu
-Architektur oder bei der Erstellung von Code aus natürlichsprachigen
-Beschreibungen.
+Cursor AI und ähnliche Tools ermöglichen darüber hinaus einen
+dialogorientierten Workflow, bei dem nicht nur einzelne Codezeilen, sondern
+ganze Features oder sogar komplette Projekte automatisch erstellt und iterativ
+verfeinert werden können. Hierbei kommen Methoden wie Prompt Engineering,
+Retrieval-Augmented Generation (RAG) und agentenbasierte Ansätze zum
+Einsatz~\cite{esposito_generative_2025}. Die aktuelle Literatur weist jedoch
+auch auf Herausforderungen hin: Karhu et al.~\cite{karhu_expectations_2025}
+verweisen auf Diskrepanzen zwischen hohen Erwartungen an KI-gestützte
+Testautomatisierung und den realen Schwierigkeiten in der Praxis, während Islam
+und Sandborn~\cite{islam_multimodal_2025} zeigen, dass multimodale generative
+KI zunehmend auch für Aufgaben wie die automatische Aufwandsschätzung (z.\,B.
+Story Points) genutzt wird.
 
-Cursor AI und ähnliche Tools ermöglichen einen dialogorientierten Workflow, bei
-dem nicht nur einzelne Codezeilen, sondern ganze Features, Module oder sogar
-Projekte automatisch erstellt und verfeinert werden können. Dabei kommen
-Methoden wie Prompt Engineering, Retrieval-Augmented Generation (RAG) und
-agentenbasierte Ansätze zum Einsatz (vgl. Esposito et
-al.,~\cite[S.~3--4]{esposito_generative_2025}). Karhu
-et~al.~\cite{karhu_expectations_2025} verweisen in ihrer Übersicht auf die
-Diskrepanz zwischen den hohen Erwartungen an KI-gestützte Testautomatisierung
-und den realen Herausforderungen bei deren Einführung in der industriellen
-Praxis. Aktuelle Ansätze wie von Islam und
-Sandborn~\cite{islam_multimodal_2025} demonstrieren, dass multimodale
-generative KI zunehmend auch in der agilen Aufwandsschätzung, beispielsweise
-bei der automatischen Ermittlung von Story Points, eingesetzt wird.
+Die Einführung dieser neuen Werkzeuge wird in zahlreichen aktuellen
+Veröffentlichungen beschrieben. So erläutert Kerr~\cite{kerr_github_nodate} an
+Praxisbeispielen die Integration von Copilot in Entwicklungsprozesse.
+Nguyen-Duc et al.~\cite{nguyen-duc_generative_2023} betonen die wachsende
+Bedeutung von Prompt Engineering und dialogbasierten Workflows. Weisz et
+al.~\cite{weisz_design_2024} formulieren Designprinzipien für den produktiven
+Einsatz generativer KI-Tools, während Geyer et al.~\cite{geyer_case_2025} den
+Einfluss auf agile Qualitätssicherung untersuchen. Gill~\cite{gill_agile_2025}
+hebt die Notwendigkeit speziell angepasster, agiler Entwicklungsprozesse für
+KI-basierte Projekte hervor. Erfahrungen aus der Praxis, wie sie von
+Rogachev~\cite{rogachev_my_nodate} beschrieben werden, bestätigen zudem, dass
+die Kombination dieser Ansätze sowohl Produktivität als auch Codequalität
+nachhaltig verbessern kann.
 
-Die Entwicklung neuer Werkzeuge und Methoden wird in der aktuellen Literatur
-ausführlich beschrieben. So erläutert Kerr~\cite{kerr_github_nodate} anhand von
-Praxisbeispielen die Integration von Copilot in moderne Entwicklungsprozesse.
-Nguyen-Duc et~al.~\cite{nguyen-duc_generative_2023} betonen die wachsende
-Bedeutung von Prompt Engineering und dialogbasierten Workflows. Weisz
-et~al.~\cite{weisz_design_2024} formulieren Designprinzipien für die
-erfolgreiche Nutzung generativer KI-Tools, während Geyer
-et~al.~\cite{geyer_case_2025} den Einfluss auf die agile Qualitätssicherung
-untersuchen. Gill~\cite{gill_agile_2025} unterstreicht die Bedeutung von
-speziell angepassten, agilen Entwicklungsprozessen für KI-basierte Projekte.
-Die Erfahrungen aus der Praxis - wie sie etwa von
-Rogachev~\cite{rogachev_my_nodate} beschrieben werden - bestätigen, dass sich
-durch die Kombination dieser Ansätze sowohl Produktivität als auch Codequalität
-nachhaltig verbessern lassen.
+Generative KI-Systeme werden heute nicht mehr nur als reine
+Automatisierungstools betrachtet, sondern zunehmend als kreative Partner
+verstanden, die neue Formen der kollaborativen Ideenfindung und Gestaltung
+ermöglichen~\cite{khan_beyond_2025}.
 
-KI-Systeme werden dabei nicht mehr nur als Automatisierungstools verstanden,
-sondern zunehmend als kreative Partner, die neue Formen der kollaborativen
-Ideenfindung und Gestaltung ermöglichen \cite{khan_beyond_2025}.
+Im Praxisteil dieser Arbeit (vgl. Kapitel~3) zeigte sich, dass insbesondere die
+Kombination dieser Werkzeuge deutliche Produktivitätsgewinne ermöglicht – etwa
+beim schnellen Prototyping, bei Standardaufgaben (Boilerplate) und der
+automatischen Testgenerierung. Cursor AI ermöglichte durch Kontextintegration
+wie Screenshots oder Fehlermeldungen einen zusätzlichen Mehrwert bei der
+Fehlersuche und beim Debugging.
 
-Im praktischen Teil dieser Arbeit (vgl. Kapitel~3) zeigte sich, dass die
-Kombination dieser Werkzeuge erhebliche Produktivitätsgewinne ermöglicht, vor
-allem beim schnellen Prototyping, bei Standardaufgaben (Boilerplate) und bei
-der automatischen Generierung von Tests. Cursor AI konnte darüber hinaus durch
-die Möglichkeit, Kontext wie Screenshots oder Fehlermeldungen einzubinden, bei
-der Fehlersuche und dem Debugging zusätzliche Mehrwerte bieten.
-
-Neben den Werkzeugen haben sich auch neue Methoden etabliert:
+Neben den Werkzeugen haben sich in der Praxis auch neue Methoden etabliert:
 \begin{itemize}
-    \item \textbf{Prompt Engineering:} Entwickler*innen formulieren Anforderungen in natürlicher Sprache, die direkt von der KI interpretiert werden (vgl. Esposito et al.,~\cite[S.~2--3]{esposito_generative_2025}).
-    \item \textbf{Retrieval-Augmented Generation (RAG):} KI-Tools kombinieren projektspezifische Kontextdaten (z.\,B. Dokumentation, vorhandener Code) mit aktuellen Benutzeranfragen, um passgenaue Lösungen zu generieren (vgl. Esposito et al.,~\cite[S.~4]{esposito_generative_2025}).
-    \item \textbf{Human-in-the-Loop und Pair Programming:} Laut Nguyen-Duc et al.~\cite[S.~8]{nguyen-duc_generative_2023} und Fraunhofer IESE~\cite{siebert_generative_2024} wird die Zusammenarbeit von Mensch und KI (z.\,B. durch Feedback-Loops) immer wichtiger, um Qualität und Anpassungsfähigkeit der Entwicklung zu sichern. J et al. \cite{j_integration_2023} zeigen, dass insbesondere bei der Automatisierung von Routineaufgaben KI-Tools signifikante Vorteile bieten und zunehmend als Standardwerkzeuge in agilen Teams akzeptiert werden.
+    \item \textbf{Prompt Engineering:} Anforderungen werden in natürlicher Sprache formuliert und direkt von der KI interpretiert~\cite{esposito_generative_2025}.
+    \item \textbf{Retrieval-Augmented Generation (RAG):} KI-Tools kombinieren projektspezifische Kontextdaten mit aktuellen Benutzeranfragen, um passgenaue Lösungen zu generieren~\cite{esposito_generative_2025}.
+    \item \textbf{Human-in-the-Loop und Pair Programming:} Die Zusammenarbeit von Mensch und KI (z.\,B. über Feedback-Loops) wird immer wichtiger, um Qualität und Anpassungsfähigkeit der Entwicklung zu sichern~\cite{nguyen-duc_generative_2023,siebert_generative_2024}. J et al.~\cite{j_integration_2023} zeigen, dass insbesondere bei der Automatisierung von Routineaufgaben KI-Tools signifikante Vorteile bieten und zunehmend als Standardwerkzeuge in agilen Teams akzeptiert werden.
 \end{itemize}
 
-Im Blog von Fraunhofer IESE~\cite{siebert_generative_2024} wird betont, dass
-diese neuen Tools nicht nur als Autovervollständigung dienen, sondern immer
-mehr Aufgaben im gesamten Entwicklungsprozess übernehmen – bis hin zur
-automatischen Erstellung von Tests und zum Refactoring.
-
-% \begin{itemize}
-%     \item Innovative Ansätze für die Softwareentwicklung
-% \end{itemize}
-% ... Hier kommt der Text für die Subsektion Optimierung der Kollaboration durch KI ... 
+Der Blog des Fraunhofer IESE~\cite{siebert_generative_2024} betont, dass diese
+neuen Tools längst über die reine Autovervollständigung hinausgehen und immer
+mehr Aufgaben im gesamten Entwicklungsprozess übernehmen – von der
+automatischen Erstellung von Tests bis zum Refactoring.
