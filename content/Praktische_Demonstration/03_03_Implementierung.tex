@@ -6,61 +6,60 @@ Implementierung des Map-Screens in allen drei Tools (\textit{GitHub Copilot},
 \textit{Cursor}, \textit{Bolt.new}) derselbe, detaillierte Prompt verwendet,
 der die funktionalen und technischen Anforderungen klar definierte:
 
-% Im Fließtext dann:
-\begin{promptbox}
-      \begin{verbatim}
-Create a Map Screen with Event Markers and Filter in React Native
+\begin{lstlisting}[]
+    Create a Map Screen with Event Markers and Filter in React Native
+    
+    Create a React Native component called `MapScreen` that displays event markers on a map using event data from the `EventsProvider` context.
+    
+    ## Requirements
+    
+    ### Functionality
+    - Use the list of events from the `EventsProvider` context.  
+      (Access: `const { events, loading, error, refreshEvents } = useEvents();`)
+    - Each event contains:
+      - `docId: string`
+      - `title: string`
+      - `category: string`
+      - `date: string`
+      - `geoPoint: { latitude: number; longitude: number }`
+    - Example Context Usage: const { events, loading, error, refreshEvents } = useEvents();
+    - Display all events as markers on a map (`react-native-maps` or Expo MapView).
+    - When a marker is tapped, show a callout or modal with event details (`title`, `time`, `category`, optional image/avatar).
+    - Add filter options above the map (e.g. by category, date, distance).  
+      Only display events that match active filters.
+    - Handle loading and error states appropriately.
+    
+    ### UI/UX
+    - Modern mobile UI with a clean filter bar on top, responsive marker popups, and a loading spinner.
+    - Use functional components and React hooks (TypeScript).
+    - Styling should be clean and minimal (simple css with StyleSheet prefered).
+    - Map should fit all visible markers and allow user zoom/pan.
+    - Compatible with Expo.
+    
+    ### File Structure
+    - Main screen in `map.tsx`.
+    - Optional: Reusable `EventMarker` component.
+    
+    ### Additional
+    - Keep code modular, clean, and well-commented.
+    - Focus on maintainability and clarity.
+    - Use the attached layout (filter bar on top, map below, details as bottom sheet/callout) as a visual reference.
+    
+    ### Example Event Type (TypeScript)
+    interface Event {
+      docId: string;
+      title: string;
+      category: string;
+      date: string;
+      geoPoint: { latitude: number; longitude: number };
+      // ...more fields possible
+    }
 
-Create a React Native component called `MapScreen` that displays event markers on a map using event data from the `EventsProvider` context.
+    ## Goal
+    A fully functional, modern React Native map screen with event markers, filter bar, marker popups, and proper handling of loading/error states -- ready to integrate into an Expo app.
 
-## Requirements
-
-### Functionality
-- Use the list of events from the `EventsProvider` context.  
-  (Access: `const { events, loading, error, refreshEvents } = useEvents();`)
-- Each event contains:
-  - `docId: string`
-  - `title: string`
-  - `category: string`
-  - `date: string`
-  - `geoPoint: { latitude: number; longitude: number }`
-- Example Context Usage: const { events, loading, error, refreshEvents } = useEvents();
-- Display all events as markers on a map (`react-native-maps` or Expo MapView).
-- When a marker is tapped, show a callout or modal with event details (`title`, `time`, `category`, optional image/avatar).
-- Add filter options above the map (e.g. by category, date, distance).  
-  Only display events that match active filters.
-- Handle loading and error states appropriately.
-
-### UI/UX
-- Modern mobile UI with a clean filter bar on top, responsive marker popups, and a loading spinner.
-- Use functional components and React hooks (TypeScript).
-- Styling should be clean and minimal (simple css with StyleSheet prefered).
-- Map should fit all visible markers and allow user zoom/pan.
-- Compatible with Expo.
-
-### File Structure
-- Main screen in `map.tsx`.
-- Optional: Reusable `EventMarker` component.
-
-### Additional
-- Keep code modular, clean, and well-commented.
-- Focus on maintainability and clarity.
-- Use the attached layout (filter bar on top, map below, details as bottom sheet/callout) as a visual reference.
-
-### Example Event Type (TypeScript)
-interface Event {
-  docId: string;
-  title: string;
-  category: string;
-  date: string;
-  geoPoint: { latitude: number; longitude: number };
-  // ...more fields possible
-}
-
-## Goal
-A fully functional, modern React Native map screen with event markers, filter bar, marker popups, and proper handling of loading/error states—ready to integrate into an Expo app.
-\end{verbatim}
-\end{promptbox}
+    
+    \end{lstlisting}
 
 \noindent
 \textbf{Hinweis:} Diese Aufgabenstellung wurde in allen Demonstrationen identisch genutzt, um die Unterschiede in Lösungsstrategie und Codequalität der Tools direkt vergleichbar zu machen.
