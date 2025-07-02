@@ -1,76 +1,58 @@
-Künstliche Intelligenz (KI) hat sich in den letzten Jahren zu einer
-Schlüsseltechnologie in der Softwareentwicklung entwickelt. Eine anerkannte und
-aktuelle Definition liefert die Europäische Union. Demnach bezeichnet
 
-\begin{quote}
-    „Künstliche Intelligenz (KI) [...] ein maschinengestütztes System, das mit unterschiedlichem Grad an Autonomie für ausdrücklich oder implizit gesetzte Ziele Vorhersagen, Empfehlungen oder Entscheidungen generiert, die physische oder virtuelle Umgebungen beeinflussen können.“
-\end{quote}
-\cite{noauthor_verordnung_nodate}
+Künstliche Intelligenz (KI) leitet einen grundlegenden Wandel in der
+Softwareentwicklung ein und verändert die Art und Weise, wie Software
+entwickelt, getestet und betrieben wird \cite{esposito_generative_2025}. Eine
+aktuelle, rechtlich verbindliche Definition der Europäischen Union beschreibt
+KI als maschinengestützte Systeme, die mit unterschiedlichem Grad an Autonomie
+Vorhersagen, Empfehlungen oder Entscheidungen generieren, welche physische oder
+virtuelle Umgebungen beeinflussen können \cite{noauthor_verordnung_nodate}.
+Diese Definition etabliert sich zunehmend als Referenzrahmen in Forschung und
+Praxis.
 
-Diese Definition orientiert sich an der aktuellen europäischen Gesetzgebung und
-wird in der wissenschaftlichen Diskussion zunehmend als Standardbegriff
-verwendet.
+Die Entwicklung moderner KI-Systeme unterscheidet sich deutlich von
+traditionellen softwarebasierten Ansätzen. Während frühe KI-Tools vor allem
+grundlegende Aufgaben wie Syntaxprüfung oder Codeformatierung unterstützten,
+übernehmen generative KI-Systeme (GenAI) heute komplexe Aufgaben im Design, der
+Entwicklung und Wartung von Software. Dazu gehören etwa die automatische
+Generierung von Code-Snippets, Funktionen oder Modulen, die Unterstützung bei
+Unit-Tests sowie die Automatisierung von Deployment-Prozessen
+\cite{donvir_role_2024}.
 
-Die Entwicklung von KI-Systemen unterscheidet sich deutlich von klassischen
-softwarebasierten Ansätzen. Während erste KI-gestützte Werkzeuge lediglich
-grundlegende Aufgaben wie Syntaxprüfung oder Code-Formatierung unterstützten,
-übernehmen moderne Generative-AI-Tools Aufgaben, die maßgeblichen Einfluss auf
-das Design, die Entwicklung und Wartung von Software haben. Dazu zählen die
-Generierung von Code-Snippets, ganzen Funktionen oder Modulen, die
-Unterstützung bei der Erstellung von Unit-Tests sowie die Automatisierung von
-Deployment-Prozessen \cite{donvir_role_2024}.
+Grundlage dieser Anwendungen sind verschiedene fortschrittliche
+Modellarchitekturen, darunter Transformer-Modelle (insbesondere Large Language
+Models wie GPT), Generative Adversarial Networks (GANs), Variational
+Autoencoders (VAEs) und Diffusion Models. Während LLMs primär für Text- und
+Codegenerierung eingesetzt werden, kommen GANs und Diffusion Models vor allem
+in der Bild- und Medienerzeugung zum Einsatz. VAEs spielen insbesondere bei der
+Generierung und Verarbeitung komplexer Datensätze eine Rolle
+\cite{donvir_role_2024}.
 
-In modernen generativen KI-Systemen kommen unterschiedliche Modellarchitekturen
-zum Einsatz, die als Grundlage für viele aktuelle Anwendungen dienen. Donvir et
-al. \cite{donvir_role_2024} nennen in ihrer Übersicht insbesondere
-Transformer-Modelle (wie Large Language Models, z.B. GPT), Generative
-Adversarial Networks (GANs), Variational Autoencoders (VAEs) und Diffusion
-Models als zentrale Modelltypen:
+Diese Vielfalt an Modelltypen ermöglicht den breiten Einsatz generativer
+KI-Systeme und fördert kontinuierlich die Entwicklung innovativer
+Softwarewerkzeuge. Zahlreiche aktuelle Tools wie ChatGPT, GitHub Copilot oder
+Stable Diffusion basieren auf diesen Architekturen und bieten vielfältige
+Funktionen von der Text- bis zur Mediengenerierung. Damit bilden sie zugleich
+die Grundlage für eine stete Weiterentwicklung und Innovation in der
+Softwareentwicklung \cite{donvir_role_2024}.
 
-\begin{quote}
-    „They also present a taxonomy of generative AI models, such as Generative Adversarial Networks (GANs), variational autoencoders (VAEs), and transformers, which are foundational to many modern GenAI applications.“
-\end{quote}
-\cite[S.~2]{donvir_role_2024}
+Neben den technischen Fortschritten betonen Studien die grundlegenden
+Veränderungen, die generative KI für Methoden und Arbeitsweisen in der
+Entwicklung mit sich bringt. Besonders der Einsatz von Large Language Models
+prägt sämtliche Phasen des Softwareentwicklungszyklus, angefangen bei der
+Anforderungsanalyse bis hin zur Umsetzung von Softwarearchitektur und
+Quellcode. Entscheidungsunterstützung und die Rekonstruktion von
+Softwarearchitekturen zählen dabei zu den wichtigsten Anwendungsfeldern;
+Methoden wie Few-Shot-Prompting und Retrieval-Augmented Generation (RAG) sind
+heute fest etabliert \cite{esposito_generative_2025}.
 
-Transformer-Modelle, insbesondere Large Language Models wie GPT, bilden die
-Grundlage für viele KI-gestützte Text- und Codegenerierungswerkzeuge (z.B.
-ChatGPT, GitHub Copilot oder Bard). GANs werden häufig für die Generierung von
-Bildern, Videos oder anderen Medieninhalten verwendet und stellen einen
-wichtigen Baustein generativer Anwendungen dar. Variational Autoencoders (VAEs)
-sind vor allem in der Datengenerierung und bei der effizienten Verarbeitung
-komplexer Eingabedaten relevant. Diffusion Models wiederum kommen insbesondere
-in der Bildgenerierung zum Einsatz und sind Grundlage moderner Tools wie Stable
-Diffusion. Donvir et al. \cite{donvir_role_2024} heben hervor, dass diese
-Modelle die Vielfalt und Leistungsfähigkeit generativer KI-Systeme wesentlich
-bestimmen und die Entwicklung neuer Softwarewerkzeuge und -anwendungen
-maßgeblich vorantreiben:
-
-\begin{quote}
-    „...the paper Advancements in Generative AI: A Comprehensive Review of GANs, GPT, Autoencoders, Diffusion Model, and Transformers [5] explores state-of-the-art GenAI models that power tools like ChatGPT, Bard, and Stable Diffusion. This review highlights the wide range of capabilities these models enable, from text generation to image creation, and emphasizes their applications in software development.“
-\end{quote}
-\cite[S.~2]{donvir_role_2024}
-
-Die kontinuierliche Weiterentwicklung dieser Modellarchitekturen bedingt auch
-die rasante Entwicklung neuer Werkzeuge und Methoden, die aktuelle Trends im
-Bereich der KI-gestützten Softwareentwicklung bestimmen. Insbesondere
-Generative KI (GenAI) prägt laut Esposito et al.
-\cite{esposito_generative_2025} „die Art und Weise, wie Entwickler Code
-entwerfen, schreiben und warten, grundlegend“. Besonders hervorzuheben ist der
-breite Einsatz von Large Language Models (LLMs) wie den OpenAI GPT-Modellen,
-die vorrangig in frühen Phasen des Softwareentwicklungszyklus, etwa im Übergang
-von Requirements zu Architektur und von Architektur zu Code, Anwendung finden.
-
-Entscheidungsunterstützung und die Rekonstruktion von Softwarearchitekturen
-gehören zu den dominanten Anwendungsfeldern, wobei Methoden wie
-Few-Shot-Prompting und Retrieval-Augmented Generation (RAG) etabliert sind. Ein
-zentrales Merkmal aktueller Ansätze ist der weiterhin hohe Grad an menschlicher
-Interaktion und Validierung, wodurch vollständig autonome KI-gestützte
-Architekturentscheidungen bislang selten sind
-\cite[S.~2,~10]{esposito_generative_2025}. Zu den Herausforderungen gehören
-insbesondere die Sicherstellung von Präzision und Verlässlichkeit der Modelle,
-der Umgang mit Halluzinationen und ethischen Fragestellungen sowie der Mangel
-an domänenspezifischen Benchmarks und Evaluationsstandards
-\cite[S.~2,~16]{esposito_generative_2025}.
+Trotz fortschreitender Automatisierung bleibt der Mensch ein zentraler Faktor
+für den Erfolg generativer KI-Systeme. Eine sorgfältige Validierung der von KI
+generierten Ergebnisse durch Entwicklerinnen und Entwickler ist weiterhin
+notwendig, um die Qualität und Sicherheit der Lösungen sicherzustellen. Die
+wichtigsten Herausforderungen betreffen insbesondere die Präzision und
+Verlässlichkeit der Modelle, den Umgang mit sogenannten „Halluzinationen“,
+ethische Aspekte sowie das Fehlen domänenspezifischer Benchmarks und Standards
+zur Evaluation \cite{esposito_generative_2025}.
 
 % \vspace{1em}
 % \noindent

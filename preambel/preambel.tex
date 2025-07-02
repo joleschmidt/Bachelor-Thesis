@@ -766,6 +766,17 @@
 \lstloadlanguages{% Check Dokumentation for further languages ...
    HTML, PHP, XML, SQL}
 
+% TypeScript language definition for listings package
+\lstdefinelanguage{TypeScript}{
+   keywords={abstract, as, async, await, boolean, break, case, catch, class, const, continue, debugger, default, delete, do, else, enum, export, extends, false, finally, for, from, function, get, if, implements, import, in, instanceof, interface, let, new, null, number, of, package, private, protected, public, readonly, return, set, static, string, super, switch, this, throw, true, try, type, typeof, var, void, while, with, yield},
+   sensitive=true,
+   comment=[l]{//},
+   morecomment=[s]{/*}{*/},
+   morestring=[b]',
+   morestring=[b]",
+   morestring=[b]`
+}
+
 \usepackage{caption}
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
@@ -1591,5 +1602,19 @@
 
 \listfiles
 %------------------------------------------------------------------------
+
+% Promptbox für Prompts in der praktischen Demonstration
+\usepackage[many]{tcolorbox}
+
+\newtcolorbox{promptbox}{
+   colback=gray!5!white,
+   colframe=gray!60!black,
+   fonttitle=\bfseries,
+   title={Verwendeter Prompt (vollständig)},
+   sharp corners,
+   before upper={\vspace{2mm}},
+   boxrule=0.7pt,
+   arc=3pt,
+}
 
 \setlength{\parindent}{0em} \setlength{\parskip}{1em}

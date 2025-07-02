@@ -1,4 +1,69 @@
-% \subsection{Integration der KI-Tools}
+\subsection{Prompt-Setup: Einheitliche Aufgabenstellung für alle Tools}
+\label{sec:prompt-setup}
+
+Um eine objektive und vergleichbare Bewertung zu ermöglichen, wurde für die
+Implementierung des Map-Screens in allen drei Tools (\textit{GitHub Copilot},
+\textit{Cursor}, \textit{Bolt.new}) derselbe, detaillierte Prompt verwendet,
+der die funktionalen und technischen Anforderungen klar definierte:
+
+% Im Fließtext dann:
+\begin{promptbox}
+      \begin{verbatim}
+Create a Map Screen with Event Markers and Filter in React Native
+
+Create a React Native component called `MapScreen` that displays event markers on a map using event data from the `EventsProvider` context.
+
+## Requirements
+
+### Functionality
+- Use the list of events from the `EventsProvider` context.  
+  (Access: `const { events, loading, error, refreshEvents } = useEvents();`)
+- Each event contains:
+  - `docId: string`
+  - `title: string`
+  - `category: string`
+  - `date: string`
+  - `geoPoint: { latitude: number; longitude: number }`
+- Example Context Usage: const { events, loading, error, refreshEvents } = useEvents();
+- Display all events as markers on a map (`react-native-maps` or Expo MapView).
+- When a marker is tapped, show a callout or modal with event details (`title`, `time`, `category`, optional image/avatar).
+- Add filter options above the map (e.g. by category, date, distance).  
+  Only display events that match active filters.
+- Handle loading and error states appropriately.
+
+### UI/UX
+- Modern mobile UI with a clean filter bar on top, responsive marker popups, and a loading spinner.
+- Use functional components and React hooks (TypeScript).
+- Styling should be clean and minimal (simple css with StyleSheet prefered).
+- Map should fit all visible markers and allow user zoom/pan.
+- Compatible with Expo.
+
+### File Structure
+- Main screen in `map.tsx`.
+- Optional: Reusable `EventMarker` component.
+
+### Additional
+- Keep code modular, clean, and well-commented.
+- Focus on maintainability and clarity.
+- Use the attached layout (filter bar on top, map below, details as bottom sheet/callout) as a visual reference.
+
+### Example Event Type (TypeScript)
+interface Event {
+  docId: string;
+  title: string;
+  category: string;
+  date: string;
+  geoPoint: { latitude: number; longitude: number };
+  // ...more fields possible
+}
+
+## Goal
+A fully functional, modern React Native map screen with event markers, filter bar, marker popups, and proper handling of loading/error states—ready to integrate into an Expo app.
+\end{verbatim}
+\end{promptbox}
+
+\noindent
+\textbf{Hinweis:} Diese Aufgabenstellung wurde in allen Demonstrationen identisch genutzt, um die Unterschiede in Lösungsstrategie und Codequalität der Tools direkt vergleichbar zu machen.
 
 \subsection{Demonstration mit GitHub Copilot}
 
@@ -6,9 +71,6 @@
 Die Entwicklung des Map-Screens wurde exemplarisch mit \textbf{GitHub Copilot}
 in Visual Studio Code durchgeführt. Für größtmögliche Vergleichbarkeit kamen
 ausschließlich die Copilot-Funktionen zum Einsatz, keine weiteren KI-Plugins.
-Ziel war die Umsetzung eines Map-Screens mit Event-Markern, Filterfunktion
-sowie Detailansicht – sämtliche Eventdaten stammen dabei aus dem zentralen
-EventsProvider.
 
 \begin{figure}[htbp]
       \centering
@@ -17,31 +79,19 @@ EventsProvider.
       \label{fig:copilot-istzustand}
 \end{figure}
 
-Vor Beginn der Implementierung wurde Copilot aktiviert und die
-Entwicklungsumgebung vorbereitet (z.~B.\ Installation von
+Zu Beginn wurde die Entwicklungsumgebung vorbereitet (z.~B.\ Installation von
 \texttt{react-native-maps} und \texttt{expo-location}). Die Aufgabenstellung
-für Copilot wurde jeweils als präziser Kommentar oder Docstring formuliert.
-Beispielsweise:
+wurde als Kommentar oder Docstring auf Englisch eingefügt (\emph{siehe
+      Abschnitt~\ref{sec:prompt-setup}}).
 
-\begin{lstlisting}[language=HTML]
-// Create a React Native component for a map with event markers and filter functionality
-\end{lstlisting}
-
-Oder als umfangreicher Prompt:
-\begin{lstlisting}[language=HTML]
-// Create a Map Screen with Event Markers and Filter in React Native. Requirements:
-//
-// - Use event data from the EventsProvider context
-// - Show markers, enable filtering, display event details in modal/callout
-// - Clean, modular, and maintainable code, with modern UI/UX
-\end{lstlisting}
-
-% \begin{figure}[htbp]
-%       \centering
-%       \includegraphics[width=0.55\textwidth]{images/copilot_screenshots/rückmeldung nach 1. prompt eingabe-copilot.png}
-%       \caption{Reaktion von GitHub Copilot auf den ersten Prompt zur Implementierung des MapScreens. \textit{Copilot-Demo}}
-%       \label{fig:copilot-erster-prompt}
-% \end{figure}
+\subsubsection{Schrittweise Umsetzung und Reflexion}
+Die Entwicklung erfolgte nach folgendem Muster:
+\begin{enumerate}
+      \item \textbf{Prompt definieren:} Pro Feature (z.\,B. Marker, Filter, Event-Details) wurde ein spezifischer Kommentar als Arbeitsanweisung eingefügt.
+      \item \textbf{Vorschläge von Copilot akzeptieren oder anpassen:} Vorschläge wurden übernommen, angepasst oder verworfen.
+      \item \textbf{Test und Dokumentation:} Nach jeder Änderung wurde der Code getestet und die Funktionsweise reflektiert.
+      \item \textbf{Fehlersuche und Nacharbeit:} Fehlerhafte Vorschläge oder Bugs wurden durch Rücksprache mit Copilot, Recherche oder manuelle Nacharbeit behoben.
+\end{enumerate}
 
 \begin{figure}[htbp]
       \centering
@@ -58,37 +108,12 @@ Oder als umfangreicher Prompt:
       \label{fig:copilot-impl-pair}
 \end{figure}
 
-\subsubsection{Schrittweise Umsetzung und Reflexion}
-
-Die Entwicklung erfolgte nach folgendem Muster:
-\begin{enumerate}
-      \item \textbf{Prompt definieren:} Pro Feature (z.\,B. Marker, Filter, Event-Details) wurde ein spezifischer Kommentar als Arbeitsanweisung eingefügt.
-      \item \textbf{Vorschläge von Copilot akzeptieren oder anpassen:} Vorschläge wurden Schritt für Schritt übernommen, angepasst oder verworfen.
-      \item \textbf{Test und Dokumentation:} Nach jeder Änderung wurde der Code getestet und die Funktionsweise reflektiert.
-      \item \textbf{Fehlersuche und Nacharbeit:} Fehlerhafte Vorschläge oder Bugs wurden nach Rücksprache mit Copilot, durch Google-Suche oder manuelle Nacharbeit behoben.
-\end{enumerate}
-
-\textbf{Beispiel:}
-Zur Erstellung des MapScreens wurde folgender Prompt verwendet (gekürzt):
-
-\begin{lstlisting}[language=HTML]
-// Create a React Native component called `MapScreen` that displays event markers on a map using event data from the `EventsProvider` context. Requirements:
-//
-// - Show all events as markers on a map
-// - When a marker is tapped, show details
-// - Add filter options above the map
-// - Handle loading/error states appropriately
-\end{lstlisting}
-
-Die technische Umsetzung umfasste:
+\noindent Die technische Umsetzung umfasste:
 \begin{itemize}
-      \item Anzeige aller Events als Marker (mit Kategorie und Titel) auf der Karte
-            (\texttt{react-native-maps}).
-      \item Umsetzung einer Filterleiste zur Auswahl nach Kategorie und Datum.
-      \item Darstellung von Event-Details beim Tippen auf einen Marker (Callout oder
-            Modal).
-      \item Responsives Layout und modernes UI-Design nach Vorgabe.
-      \item Fehler- und Ladezustände wurden entsprechend behandelt.
+      \item Anzeige aller Events als Marker (mit Kategorie und Titel) auf der Karte.
+      \item Filterleiste zur Auswahl nach Kategorie und Datum.
+      \item Darstellung von Event-Details beim Tippen auf einen Marker.
+      \item Responsives Layout, modernes UI-Design, Fehler- und Ladezustände.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -107,68 +132,44 @@ Die technische Umsetzung umfasste:
       \end{minipage}
 \end{figure}
 
-Die Code-Generierung erfolgte modular und meist nachvollziehbar. Beispiel:
-Copilot erstellte automatisch das Grundgerüst einer Map-Komponente, ergänzte
-dann Schritt für Schritt die Logik für Marker, Filter und Event-Details.
-
-Die in dieser Arbeit beobachteten Stärken und Schwächen von GitHub Copilot
-decken sich mit den Ergebnissen anderer Studien. So berichtet
-Kerr~\cite{kerr_github_nodate}, dass Copilot die Entwicklung von
-React-Anwendungen deutlich beschleunigen kann, jedoch eine kritische
-Überprüfung der Vorschläge unerlässlich bleibt. Weisz
-et~al.~\cite{weisz_design_2024} betonen zudem, dass die Gestaltung der
-Interaktion und Feedbackmechanismen einen maßgeblichen Einfluss auf die
-Akzeptanz der KI-gestützten Codegenerierung hat.
-
-\subsubsection{Herausforderungen und Beobachtungen}
-Im Verlauf der Entwicklung zeigte Copilot verschiedene Stärken und Schwächen:
+Die Code-Generierung erfolgte modular und meist nachvollziehbar. Copilot
+erstellte automatisch das Grundgerüst der Map-Komponente und ergänzte Schritt
+für Schritt die Logik für Marker, Filter und Event-Details.
 
 \textbf{Stärken:}
 \begin{itemize}
-      \item Effiziente Generierung von Boilerplate-Code und wiederkehrenden Patterns
-            (z.\,B. Hook-Nutzung, State-Management).
-      \item Schnelle Vorschläge für UI-Komponenten und einfache Interaktionslogik.
-      \item Erkennung von einfachen Fehlern und automatische Typanpassung nach Änderungen
-            (z.\,B. bei Änderung der Datenstruktur für Kategorien).
+      \item Effiziente Generierung von Boilerplate-Code und wiederkehrenden Patterns.
+      \item Schnelle Vorschläge für UI-Komponenten und Interaktionslogik.
+      \item Erkennung von einfachen Fehlern und automatische Typanpassung.
 \end{itemize}
 
 \textbf{Schwächen und typische Fehlerquellen:}
 \begin{itemize}
-      \item Teilweise fehlerhafte oder veraltete Import-Pfade (z.\,B. bei Kategorien).
-      \item Missverständnisse bei nicht exakt spezifizierten Datenstrukturen (z.\,B.
-            Umwandlung von Kategorien-Array von String zu Objekt wurde erst nach manuellem
-            Eingriff korrekt erkannt).
-      \item Filter-Logik für den ``All''-Filter funktionierte zunächst nicht wie erwartet;
-            Copilot schlug Anpassungen vor, die jedoch neue Fehler erzeugten (zwei
-            ``All''-Filter, Duplicate-Key-Warning).
-      \item In mehreren Iterationen blieb die Korrektur von Spezialfällen (wie
-            Filter-Probleme oder Typkonflikte) hinter den Erwartungen zurück, sodass
-            letztlich manuelle Nachbesserung notwendig wurde.
+      \item Teilweise fehlerhafte oder veraltete Import-Pfade.
+      \item Missverständnisse bei nicht exakt spezifizierten Datenstrukturen.
+      \item Filter-Logik für den ``All''-Filter funktionierte zunächst nicht wie erwartet.
+      \item Bei komplexeren Anforderungen blieb Nacharbeit notwendig.
 \end{itemize}
 
 \textbf{Reflexion:}
 \begin{itemize}
-      \item Die Vorschläge waren bei Standardaufgaben meist brauchbar (\textit{Subjektive
-                  Zufriedenheit: 4/5}), bei komplexeren State- oder Typ-Logiken aber oft
-            unvollständig.
-      \item Die Interaktion mit Copilot war intuitiv, erfordert jedoch genaue Prompts und
-            ein grundsätzliches Verständnis für die Implementierung, um Fehlerquellen zu
-            erkennen und zu korrigieren.
-      \item Bei UI-Details oder individuelleren Anforderungen blieb Nacharbeit
-            unerlässlich.
+      \item Die Vorschläge waren bei Standardaufgaben meist brauchbar (subjektive
+            Zufriedenheit: 4/5), bei komplexeren State- oder Typ-Logiken oft unvollständig.
+      \item Die Interaktion mit Copilot war intuitiv, erfordert aber genaue Prompts und ein
+            grundsätzliches Verständnis für Implementierungsdetails.
+      \item Bei UI-Details oder individuellen Anforderungen blieb Nacharbeit unerlässlich.
 \end{itemize}
 
 \textbf{Fazit:}
-Copilot ist ein sehr leistungsfähiges Assistenz-Tool, das Routinearbeiten und Standardaufgaben erheblich beschleunigt. Bei komplexeren oder individuelleren Anforderungen stößt es jedoch an Grenzen, sodass eine kritische Prüfung und manuelle Nacharbeit weiterhin unverzichtbar bleibt. Die Demonstration belegt, dass Copilot einen relevanten Effizienzgewinn für erfahrene Entwickler:innen bieten kann, den Anspruch auf vollständige Automatisierung jedoch (noch) nicht erfüllt.
+Copilot ist ein leistungsfähiges Assistenz-Tool, das Routinearbeiten erheblich beschleunigt. Bei komplexeren Anforderungen stößt es jedoch an Grenzen, sodass eine kritische Prüfung und manuelle Nacharbeit unverzichtbar bleiben. Die Demonstration belegt, dass Copilot einen relevanten Effizienzgewinn für erfahrene Entwickler:innen bieten kann, den Anspruch auf vollständige Automatisierung jedoch noch nicht erfüllt.
 
 \subsection{Demonstration mit Cursor}
 
 \subsubsection{Setup und Vorgehen}
 Für die Entwicklung des Map-Screens wurde \textbf{Cursor} als spezialisierte
 KI-basierte Entwicklungsumgebung genutzt (Branch: \texttt{cursor},
-Sprachmodell: Claude 3.7 Sonnet, Agent mode). Cursor ermöglicht Prompt
-Chaining, die Verarbeitung von Screenshots als Referenz und einen
-dialogbasierten Entwicklungsprozess.
+Sprachmodell: Claude 3.7 Sonnet, Agent mode). Auch hier wurde die identische
+Aufgabenstellung genutzt (\emph{siehe Abschnitt~\ref{sec:prompt-setup}}).
 
 \begin{figure}[htbp]
       \centering
@@ -179,16 +180,7 @@ dialogbasierten Entwicklungsprozess.
 
 Zu Beginn wurden Screenshots des aktuellen App-Zustands sowie relevanter
 Komponenten (u.\,a. \texttt{\_layout.tsx}, Event Provider) als Kontext
-bereitgestellt. Der Hauptprompt für den Einstieg lautete:
-
-\begin{lstlisting}[language=HTML]
-// Create a Map Screen with Event Markers and Filter in React Native. Requirements:
-//
-// - Use event data from the EventsProvider context
-// - Show markers, enable filtering, display event details in modal/callout
-// - Clean, modular, and maintainable code, with modern UI/UX 
-// - Use provided screenshots/layouts as visual reference
-\end{lstlisting}
+bereitgestellt.
 
 \subsubsection{Schrittweise Umsetzung und Reflexion}
 
@@ -197,7 +189,7 @@ Der Entwicklungsprozess war durch mehrere Besonderheiten gekennzeichnet:
 \begin{enumerate}
       \item \textbf{Prompt Chaining und Screenshot-Kontext:} Zu jedem Entwicklungsschritt wurden gezielt neue Prompts mit aktualisierten Anforderungen und Referenz-Screenshots gestellt.
       \item \textbf{Terminal-Steuerung:} Cursor führte notwendige Terminalbefehle (z.\,B. Paketinstallationen) eigenständig aus und dokumentierte Fehlermeldungen sowie Lösungsvorschläge direkt im Chat.
-      \item \textbf{Debugging und Package-Kompatibilität:} Cursor identifizierte eigenständig Kompatibilitätsprobleme, z.\,B. bei der \texttt{react-native-maps}-Version (\^1.24.3 statt \^1.18.0), und schlug proaktiv eine Anpassung auf die funktionierende Version vor.
+      \item \textbf{Debugging und Package-Kompatibilität:} Cursor identifizierte eigenständig Kompatibilitätsprobleme, z.\,B. bei der \texttt{react-native-maps}-Version, und schlug proaktiv eine Anpassung auf die funktionierende Version vor.
 \end{enumerate}
 
 \begin{figure}[htbp]
@@ -230,8 +222,7 @@ Der Entwicklungsprozess war durch mehrere Besonderheiten gekennzeichnet:
 \textbf{Besonders positiv fiel auf:}
 \begin{itemize}
       \item Cursor war bei der Behebung von Package-Fehlern und bei der automatischen
-            Adaption von Code an neue Datenstrukturen (z.\,B. Kategorien als Objekte statt
-            Strings) sehr präzise.
+            Adaption von Code an neue Datenstrukturen sehr präzise.
       \item Im Vergleich zu Copilot wurde die grundlegende Kartenfunktion schneller
             funktionsfähig, auch wenn die erste Map-Anzeige erst nach mehreren Prompts
             erschien.
@@ -254,24 +245,27 @@ Der Entwicklungsprozess war durch mehrere Besonderheiten gekennzeichnet:
       \label{fig:cursor-finalpair}
 \end{figure}
 
-\subsubsection{Herausforderungen und Learnings}
+\textbf{Herausforderungen und Learnings:}
 \begin{itemize}
-      \item \textbf{Versionierung und Abhängigkeiten:} Kompatibilitätsprobleme zwischen \texttt{react-native-maps} und Expo führten zu Fehlern, die erst nach mehreren Iterationen und Prompts gelöst wurden.
-      \item \textbf{Automatische Code-Generierung:} Cursor wechselte in einem Schritt das Map-Framework (von \texttt{react-native-maps} auf \texttt{react-native-webview}), was unerwünscht war und manuell rückgängig gemacht wurde.
-      \item \textbf{Filterfunktion:} Die Behandlung von Kategorie-Filtern (\texttt{All} vs. \texttt{all}) führte zu denselben Herausforderungen wie bei Copilot. Allerdings erkannte Cursor den Fehler nach gezieltem Prompt korrekt und schlug eine funktionierende Lösung vor.
-      \item \textbf{Erkennung von Typfehlern:} Cursor reagierte auf TypeErrors (Objekte statt Strings in den Kategorien) konsistent und ergänzte die notwendigen Anpassungen selbstständig.
+      \item Kompatibilitätsprobleme zwischen \texttt{react-native-maps} und Expo führten zu
+            Fehlern, die erst nach mehreren Iterationen und Prompts gelöst wurden.
+      \item Cursor wechselte in einem Schritt das Map-Framework, was manuell rückgängig
+            gemacht wurde.
+      \item Die Behandlung von Kategorie-Filtern führte zu denselben Herausforderungen wie
+            bei Copilot, wurde aber durch gezielte Korrekturen gelöst.
+      \item Cursor reagierte auf TypeErrors konsistent und ergänzte die notwendigen
+            Anpassungen selbstständig.
 \end{itemize}
 
 \textbf{Reflexion:}
 \begin{itemize}
       \item Die Entwicklung mit Cursor verlief insgesamt sehr zügig, da
-            Kontextinformationen (Screenshots, Codeausschnitte) effektiv genutzt wurden.
-      \item Die Vorschläge für komplexe UI- und Layout-Probleme waren oft präziser und
-            anpassungsfähiger als bei Copilot.
-      \item Der dialogische Ablauf mit Feedback-Loops und Prompt Chaining war besonders für
-            iteratives Refactoring und das Lösen komplexerer Zusammenhänge hilfreich.
-      \item Bei seltenen „KI-Fehlinterpretationen“ (z.B. Austausch ganzer Packages) war
-            weiterhin manuelle Kontrolle nötig.
+            Kontextinformationen effektiv genutzt wurden.
+      \item Die Vorschläge für komplexe UI- und Layout-Probleme waren oft präziser als bei
+            Copilot.
+      \item Der dialogische Ablauf mit Feedback-Loops war für iteratives Refactoring
+            besonders hilfreich.
+      \item Bei seltenen KI-Fehlinterpretationen war weiterhin manuelle Kontrolle nötig.
 \end{itemize}
 
 \textbf{Fazit:}
@@ -283,9 +277,9 @@ Cursor bewährt sich vor allem durch die Fähigkeit, Kontext (Screenshots, Code,
 Für die Entwicklung des Map-Screens wurde das KI-Assistenztool
 \textbf{Bolt.new} eingesetzt. Bolt ermöglichte dabei den direkten Zugriff auf
 das bestehende \texttt{Locals}-GitHub-Repository und bot eine integrierte
-Umgebung für Prompt Chaining und Live-Code-Editing. Ein dedizierter Branch
-(\texttt{bolt}) wurde verwendet. Das zugrundeliegende Sprachmodell war Claude
-3.7 Sonnet (nicht direkt auswählbar).
+Umgebung für Prompt Chaining und Live-Code-Editing. Die identische
+Aufgabenstellung wurde zu Beginn eingebracht (\emph{siehe
+      Abschnitt~\ref{sec:prompt-setup}}).
 
 \begin{figure}[htbp]
       \centering
@@ -302,23 +296,8 @@ Umgebung für Prompt Chaining und Live-Code-Editing. Ein dedizierter Branch
       \label{fig:bolt-setup}
 \end{figure}
 
-Zunächst wurden Screenshots des aktuellen App-Zustands sowie zentrale
-Komponenten (u.\,a. \texttt{\_layout.tsx}, Event Provider) als Kontext
-bereitgestellt. Die Aufgabenstellung für Bolt wurde als umfangreicher Prompt
-formuliert:
-
-\begin{lstlisting}[language=HTML]
-// Create a Map Screen with Event Markers and Filter in React Native.
-// Create a React Native component called MapScreen that displays event markers on a map using event data from the EventsProvider context.
-// Requirements:
-//
-// - Use the list of events from the EventsProvider context
-// - Display all events as markers on a map
-// - Add filter options above the map (by category, date, distance)
-// - When a marker is tapped, show a callout or modal with event details
-// - Modern mobile UI, modular and maintainable code
-// - Use provided screenshots as visual reference
-\end{lstlisting}
+Zu Beginn wurden Screenshots des aktuellen App-Zustands sowie zentrale
+Komponenten als Kontext bereitgestellt.
 
 \subsubsection{Schrittweise Umsetzung und Reflexion}
 Die Besonderheit bei Bolt lag im engen Zusammenspiel mit GitHub, den
@@ -399,29 +378,29 @@ zu installieren und Fehler im laufenden Betrieb zu beheben.
 \textbf{Fazit:}
 Bolt kann den Entwicklungsprozess – besonders in neuen Projekten – signifikant beschleunigen und standardisieren. Bei komplexeren Setups oder plattformübergreifenden Anforderungen treten jedoch noch Limitierungen auf, die nicht ohne weiteres automatisch gelöst werden können.
 
+% ----------- Vergleich und Bewertung
 \subsection{Vergleich und Bewertung der eingesetzten KI-Tools}
 
-Nach der Durchführung der Demonstrationen mit Copilot, Cursor und Bolt lassen
-sich deutliche Unterschiede und Gemeinsamkeiten in Bezug auf Funktionalität,
-Effizienz, Entwicklererlebnis und Ergebnisqualität feststellen.
+Nach der Durchführung der Demonstrationen mit Copilot, Cursor und Bolt werden
+Unterschiede und Gemeinsamkeiten hinsichtlich Funktionalität, Effizienz,
+Entwicklererlebnis und Ergebnisqualität sichtbar.
 
 \subsubsection{Direkter Vergleich}
 
 \begin{itemize}
-      \item \textbf{Copilot} überzeugte besonders bei Standardaufgaben und bewährten Patterns in der Codegenerierung. Die Effizienzsteigerung bei Routinearbeiten ist erheblich, bei komplexeren Aufgaben oder individuellen Anforderungen blieb jedoch manuelle Nacharbeit nötig.
-      \item \textbf{Cursor} ermöglichte durch den Kontextbezug (Screenshots, Code, Fehlermeldungen) und das dialogische Prompt Chaining eine besonders zielgerichtete und schnelle Entwicklung. Die Fehlerdiagnose und Lösungsvorschläge waren präziser als bei Copilot, allerdings erforderte auch Cursor für Spezialfälle aktive Begleitung durch die Entwickler:in.
-      \item \textbf{Bolt} überzeugte mit seiner umfassenden Plattformintegration (z.B. GitHub, Web, App Store) und der Möglichkeit, Projekte direkt aus der Cloud-IDE zu initialisieren und zu deployen. Besonders im Web-Kontext zeigte Bolt große Stärken, stieß jedoch bei der mobilen Entwicklung und beim refactoring bestehender, größerer Projekte an Grenzen.
+      \item \textbf{Copilot} überzeugt besonders bei Standardaufgaben und bewährten Patterns in der Codegenerierung. Die Effizienzsteigerung bei Routinearbeiten ist erheblich, bei komplexeren Anforderungen bleibt jedoch manuelle Nacharbeit nötig.
+      \item \textbf{Cursor} ermöglicht durch aktiven Kontextbezug (Screenshots, Code, Fehlermeldungen) und dialogisches Prompt Chaining eine zielgerichtete und schnelle Entwicklung. Die Fehlerdiagnose und Lösungsvorschläge sind präziser als bei Copilot, bei Spezialfällen ist aber weiterhin aktive Begleitung nötig.
+      \item \textbf{Bolt} punktet mit umfassender Plattformintegration (GitHub, Web, App Store) und der Möglichkeit, Projekte direkt aus der Cloud-IDE zu initialisieren und zu deployen. Besonders im Web-Kontext zeigt Bolt große Stärken, stößt jedoch bei der mobilen Entwicklung und beim Refactoring bestehender Projekte an Grenzen.
 \end{itemize}
 
-Die im Praxisteil gewonnenen Erkenntnisse stehen im Einklang mit aktuellen
-Studien, die Effizienzgewinne und Qualitätsverbesserungen durch generative
-KI-Tools nachweisen. Coutinho et~al.~\cite{coutinho_role_2024} berichten in
-einer Pilotstudie von einer deutlichen Zeitersparnis bei Standardaufgaben,
-während Braun~\cite{braun_ki_2024} und Sulabh~\cite{s_future_2024} auf die
-weiterhin bestehende Notwendigkeit manueller Kontrolle und Überprüfung
-hinweisen. Schmitt et~al.~\cite{schmitt_generative_2024} machen zudem darauf
-aufmerksam, dass die Nutzung generativer KI-Tools auch soziale und
-identitätsbezogene Veränderungen im Entwickleralltag nach sich zieht.
+Die Ergebnisse dieser Demonstration stehen im Einklang mit aktuellen Studien,
+die Effizienzgewinne und Qualitätsverbesserungen durch generative KI-Tools
+nachweisen. Coutinho et~al.~\cite{coutinho_role_2024} berichten von deutlicher
+Zeitersparnis bei Standardaufgaben, während Braun~\cite{braun_ki_2024} und
+Sulabh~\cite{s_future_2024} auf die weiterhin bestehende Notwendigkeit
+manueller Kontrolle und Überprüfung hinweisen. Schmitt
+et~al.~\cite{schmitt_generative_2024} betonen zudem, dass KI-Tools auch soziale
+und identitätsbezogene Veränderungen im Entwickleralltag nach sich ziehen.
 
 \subsubsection{Lessons Learned und Best Practices}
 
@@ -431,106 +410,35 @@ Effizienzgewinnen, höherer Codequalität und einer Steigerung des
 Entwicklererlebnisses. Wesentliche Empfehlungen lassen sich ableiten:
 
 \begin{itemize}
-      \item \textbf{Präzise Prompts sind essenziell:} Je konkreter und kontextreicher die Anweisungen, desto hochwertiger und passgenauer ist das Ergebnis. Unscharfe Prompts führen häufiger zu Fehlinterpretationen oder unbrauchbaren Vorschlägen.
-      \item \textbf{Manuelle Kontrolle bleibt notwendig:} Auch bei hoher Automatisierung ist die Überprüfung aller KI-generierten Änderungen unerlässlich – insbesondere bei komplexen State- oder Typ-Logiken und individuellen Anforderungen.
-      \item \textbf{Kontextnutzung und Feedback-Loops:} Tools wie Cursor, die Kontextinformationen (z. B. Screenshots, Fehlermeldungen) aktiv verarbeiten, bieten klare Vorteile bei komplexeren Aufgaben. Iteratives Prompt Chaining und direkte Rückmeldung sind Best Practice.
-      \item \textbf{Tool-Auswahl nach Projekttyp:} Für „grüne Wiese“-Projekte, schnelle Prototypen und Web-Deployments sind Tools wie Bolt ideal. Für laufende oder größere Projekte empfiehlt sich der gezielte Einsatz von Copilot (bei Routineaufgaben) oder Cursor (bei komplexeren, dialogischen Arbeitsweisen).
-      \item \textbf{Plattformkompatibilität beachten:} Unterschiedliche Plattformen (Web, Mobile) erfordern ggf. verschiedene Libraries oder Anpassungen – dies wird von den Tools unterschiedlich gut unterstützt.
+      \item \textbf{Präzise Prompts sind essenziell:} Je konkreter und kontextreicher die Anweisungen, desto passgenauer das Ergebnis.
+      \item \textbf{Manuelle Kontrolle bleibt notwendig:} Trotz hoher Automatisierung ist die Überprüfung aller KI-generierten Änderungen unerlässlich.
+      \item \textbf{Kontextnutzung und Feedback-Loops:} Tools wie Cursor, die Kontextinformationen aktiv verarbeiten, bieten klare Vorteile bei komplexeren Aufgaben.
+      \item \textbf{Tool-Auswahl nach Projekttyp:} Für neue Projekte oder Prototypen eignen sich Tools wie Bolt, für laufende Projekte Copilot (Routine) oder Cursor (komplexere, dialogische Abläufe).
+      \item \textbf{Plattformkompatibilität beachten:} Verschiedene Plattformen erfordern oft eigene Anpassungen – dies wird von den Tools unterschiedlich gut unterstützt.
 \end{itemize}
 
 \subsubsection{Qualitative Bewertung: Zeiteffizienz, Codequalität und Wartbarkeit}
 
-Die qualitative Analyse der Entwicklung mit den drei generativen KI-Tools zeigt
-differenzierte Ergebnisse hinsichtlich Effizienz, Codequalität und Wartbarkeit:
-
+Die Analyse zeigt differenzierte Ergebnisse:
 \begin{itemize}
-      \item \textbf{Copilot} ermöglichte insbesondere bei Standardaufgaben eine spürbare Zeitersparnis. Routinemäßige Komponenten und einfache Logik wurden effizient und weitgehend fehlerfrei generiert. Die Codequalität war bei wiederkehrenden Patterns solide, bei komplexeren Strukturen und individueller Logik jedoch schwankend – hier war zusätzliche Nacharbeit erforderlich, um Wartbarkeit und Konsistenz zu gewährleisten.
-      \item \textbf{Cursor} überzeugte durch schnelles Debugging und zielgerichtete Entwicklung, insbesondere bei der Integration von Kontextinformationen (Screenshots, Fehlermeldungen). Die Zeiteffizienz war bei komplexeren Aufgaben und bei Fehlerbehebung deutlich höher als bei Copilot. Die generierte Codequalität profitierte von der iterativen, dialogischen Zusammenarbeit, wodurch auch die Wartbarkeit des Endprodukts verbessert werden konnte.
-      \item \textbf{Bolt} zeigte große Stärken in der Initialisierung neuer Projekte und bei Multi-Plattform-Support (Web, Mobile). Die Zeitersparnis war insbesondere im Setup und bei Standardfunktionalitäten signifikant. Im laufenden Betrieb und bei bestehenden Projekten traten jedoch häufiger Kompatibilitätsprobleme auf, die die Wartbarkeit und langfristige Codequalität beeinträchtigten und zusätzliche manuelle Eingriffe erforderten.
+      \item \textbf{Copilot:} Spürbare Zeitersparnis bei Standardaufgaben, solide Codequalität bei Routinetätigkeiten, Nacharbeit nötig bei individueller Logik.
+      \item \textbf{Cursor:} Schnelles Debugging, zielgerichtete Entwicklung dank Kontextintegration, hohe Zeiteffizienz und verbesserte Wartbarkeit.
+      \item \textbf{Bolt:} Große Stärken bei Projektinitialisierung und Multi-Plattform-Support, Zeiteinsparung besonders im Setup, aber Kompatibilitätsprobleme im laufenden Betrieb.
 \end{itemize}
 
 \subsection{Zwischenfazit}
 
-Die praktische Demonstration hat zentrale Erkenntnisse für die weitere Analyse
-geliefert: Die Arbeit mit generativen KI-Tools ermöglicht eine signifikante
-Effizienzsteigerung bei der Umsetzung wiederkehrender Entwicklungsaufgaben und
-zeigt deutliche Potenziale im Bereich der Codequalität und Wartbarkeit.
-Gleichzeitig wurden spezifische Herausforderungen im Bereich der
-Fehlerbehebung, Tool-Integration und plattformübergreifenden Entwicklung
-sichtbar. Die im praktischen Teil gewonnenen Erfahrungen bilden die Grundlage
-für die weiterführende Bewertung der Chancen und Risiken generativer KI in der
-Softwareentwicklung, wie sie in den folgenden Kapiteln systematisch analysiert
-werden.
+Die praktische Demonstration liefert zentrale Erkenntnisse: Generative KI-Tools
+ermöglichen signifikante Effizienzsteigerungen bei Routineaufgaben und bieten
+Potenziale für höhere Codequalität und Wartbarkeit. Gleichzeitig treten
+Herausforderungen bei Fehlerbehebung, Tool-Integration und
+plattformübergreifender Entwicklung auf. Diese Erfahrungen bilden die Grundlage
+für die systematische Bewertung der Chancen und Risiken generativer KI in der
+Softwareentwicklung in den folgenden Kapiteln.
 
-Die festgestellten Effizienzgewinne und Herausforderungen im Umgang mit
-KI-Tools spiegeln sich auch in der aktuellen empirischen Forschung wider.
-Flores-Saviaga et~al.~\cite{flores-saviaga_impact_2025} betonen, dass
-insbesondere Aspekte wie Barrierefreiheit und Usability von
-Coding-Assistenzsystemen künftig verstärkt zu berücksichtigen sind. Geyer
-et~al.~\cite{geyer_case_2025} zeigen, dass die Integration generativer KI-Tools
-in agile Entwicklungsprozesse auch positive Effekte auf die Zusammenarbeit und
-die Qualitätssicherung haben kann.
-
-% Für die Entwicklung des Map-Screens kamen verschiedene generative KI-Tools zum
-% Einsatz: \textbf{GitHub Copilot}, \textbf{Cursor} sowie \textbf{bold.ai}. Die
-% Integration erfolgte direkt in der jeweiligen Entwicklungsumgebung: Copilot
-% wurde in Visual Studio Code verwendet, Cursor als eigenständige KI-basierte
-% Entwicklungsumgebung, bold.ai als weiteres KI-Assistenzsystem mit eigenem
-% Workflow.
-
-% Vor Beginn der eigentlichen Implementierung wurden die jeweiligen
-% Entwicklungsumgebungen eingerichtet, erforderliche Pakete wie
-% \texttt{react-native-maps} und \texttt{expo-location} installiert sowie das
-% bestehende App-Setup um die Kartenfunktionalität erweitert. Anschließend wurden
-% gezielte Prompts an die KI-Tools formuliert, um die Implementierung effizient
-% zu unterstützen.
-
-% \begin{itemize}
-%     \item Beispiel-Prompt für Copilot:
-%           \begin{quote}
-%               ``Erstelle einen Map-Screen in React Native, der Event-Marker basierend auf Eventdaten aus dem Context anzeigt.''
-%           \end{quote}
-%     \item Beispiel-Prompt für Cursor:
-%           \begin{quote}
-%               ``Integriere eine Suchleiste mit Places Autocomplete über der Kartenansicht und einen Filter-Button, der zusätzliche Filteroptionen öffnet.''
-%           \end{quote}
-%     \item Beispiel-Prompt für bold.ai:
-%           \begin{quote}
-%               ``Erstelle einen übersichtlichen Map-Screen mit Such- und Filterfunktionen in einer bestehenden React-Native-App, nutze dabei die Events aus dem Provider-Kontext.''
-%           \end{quote}
-% \end{itemize}
-
-% Die jeweiligen KI-Tools generierten daraufhin Codevorschläge für Komponenten,
-% Logik zur Datenintegration und Interaktionen mit der Karte. Besonders hilfreich
-% waren die Vorschläge zu komplexeren UI-Elementen (wie das Overlay der
-% Suchleiste oder die Filter-Logik), aber auch zu typischen Herausforderungen wie
-% State-Management und Performance-Optimierung bei vielen Markern.
-
-% \subsection{Entwicklungsprozess mit KI-Unterstützung}
-% Der Entwicklungsprozess wurde für jedes Tool vergleichbar durchgeführt, wobei
-% die generativen KI-Tools als ``Pair Programming Partner'' dienten. Typischer
-% Ablauf:
-
-% \begin{enumerate}
-%     \item \textbf{Initiales Setup:} Basierend auf den Vorschlägen des jeweiligen KI-Tools wurde die Kartenkomponente implementiert und mit den Eventdaten aus dem \texttt{EventsProvider} verbunden.
-%     \item \textbf{Integration zusätzlicher Features:} Durch gezielte Prompts wurden u.\,a. folgende Features ergänzt:
-%           \begin{itemize}
-%               \item Suchleiste mit Places Autocomplete für die Standortsuche
-%               \item Filter-Button zum Einblenden weiterer Filteroptionen
-%               \item Dynamische Anzeige von Event-Markern auf Basis der aktuellen Filter
-%           \end{itemize}
-%     \item \textbf{Refinement und Debugging:} Die KI-Tools unterstützten bei der Analyse von Fehlern, dem Vorschlagen alternativer Lösungsansätze sowie bei der Verbesserung von Codequalität und Lesbarkeit.
-%     \item \textbf{Dokumentation und Code-Reviews:} Automatisch generierte Kommentare und Hilfstexte der KI wurden für die Dokumentation genutzt und anschließend kritisch überprüft.
-% \end{enumerate}
-
-% Die Nutzung der unterschiedlichen KI-Tools ermöglichte eine deutliche
-% Beschleunigung der Implementierung, insbesondere bei Routinetätigkeiten und der
-% Recherche nach Best Practices. Gleichzeitig wurde die Codequalität durch
-% automatisierte Vorschläge und Unterstützung bei der Fehleranalyse verbessert.
-% Herausfordernd war gelegentlich die präzise Formulierung der Prompts, um
-% optimale und kontextsensitive Antworten zu erhalten.
-
-% Die einzelnen Entwicklungsschritte sowie der Vergleich der generierten und
-% manuell überarbeiteten Codeabschnitte werden in den folgenden Abschnitten
-% exemplarisch dargestellt.
-
+Aktuelle Forschungsergebnisse bestätigen diese Beobachtungen: Aspekte wie
+Barrierefreiheit und Usability sollten laut Flores-Saviaga
+et~al.~\cite{flores-saviaga_impact_2025} künftig stärker berücksichtigt werden.
+Geyer et~al.~\cite{geyer_case_2025} zeigen, dass die Integration generativer
+KI-Tools auch positive Effekte auf Teamarbeit und Qualitätssicherung in agilen
+Entwicklungsprojekten haben kann.
