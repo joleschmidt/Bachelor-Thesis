@@ -1,38 +1,25 @@
-\subsubsection{Sicherheitsrisiken durch generative Modelle}
 
-Generative KI-Modelle bringen neben allgemeinen IT-Sicherheitsfragen
-spezifische neue Bedrohungen mit sich. Shi et al.~\cite{shi_ai-assisted_2023}
-beschreiben, dass Angriffe wie \enquote{Prompt Injection}, bei denen gezielt
-manipulierte Eingaben dazu führen, dass die KI unsicheren oder schädlichen Code
-generiert, eine reale Gefahr darstellen. Ebenso können sogenannte
-\enquote{adversarial attacks} dazu führen, dass durch minimale Veränderungen an
-den Eingabedaten unerwartete und potenziell sicherheitskritische
-Verhaltensweisen im generativen Modell ausgelöst werden.
+Generative KI-Modelle bringen spezifische neue Bedrohungen mit sich. Zu den
+wichtigsten Risiken zählen sogenannte \enquote{Prompt Injections}, bei denen
+durch manipulierte Eingaben unsicherer oder schädlicher Code erzeugt werden
+kann, sowie \enquote{adversarial attacks}, bei denen minimale Änderungen an den
+Eingabedaten zu sicherheitskritischen Verhaltensweisen führen können
+\cite{shi_ai-assisted_2023}.
 
-Aktuelle Forschung zeigt, dass der Einsatz generativer KI neue Angriffsflächen
-und Risiken für die IT-Sicherheit schafft. Shi
-et~al.~\cite{shi_ai-assisted_2023} weisen darauf hin, dass insbesondere
-sogenannte Prompt Injections und adversarielle Angriffe gezielt genutzt werden
-können, um unsicheren oder schädlichen Code zu erzeugen. Alwageed und
-Khan~\cite{alwageed_role_nodate} betonen zudem, dass eine Übernahme von
-KI-generierten Vorschlägen ohne sorgfältige Überprüfung zu subtilen
-Sicherheitslücken führen kann. Das Fraunhofer
-IESE~\cite{siebert_generative_2024} hebt hervor, dass externe KI-Modelle
-entlang der Software-Supply-Chain zusätzliche Datenschutzprobleme verursachen
-können.
+Ein weiteres Risiko besteht im sogenannten \enquote{Model Poisoning}, bei dem
+während des Trainings gezielt fehlerhafte oder bösartige Daten eingespeist
+werden, um Schwachstellen in der KI zu platzieren. Besonders große generative
+Modelle wie LLMs sind hierfür anfällig, da sie oft auf umfangreiche und
+öffentlich verfügbare Datenquellen zurückgreifen \cite{alwageed_role_nodate}.
 
-Ein weiteres Risiko besteht im sogenannten \enquote{Model Poisoning}: Hierbei
-werden während des Trainings gezielt fehlerhafte oder bösartige Daten
-eingespeist, um die KI zu manipulieren und Schwachstellen zu platzieren.
-Alwageed und Khan~\cite{alwageed_role_nodate} weisen darauf hin, dass große
-generative Modelle wie LLMs besonders anfällig für solche Angriffe sind, da sie
-auf umfangreiche und oftmals öffentlich verfügbare Datenquellen zurückgreifen.
-In diesem Zusammenhang betonen sie die Bedeutung von regelmäßigen
-Security-Reviews und der Entwicklung von Abwehrmechanismen gegen adversarial
-attacks.
+Auch im Bereich der Software-Supply-Chain entstehen neue Risiken: Unzureichend
+geprüfter oder von Dritten generierter Code kann unbemerkt Schwachstellen in
+den Entwicklungsprozess einschleusen. Entlang der gesamten Kette – von der
+Entwicklung bis zur Bereitstellung – muss daher auf Sicherheit und regelmäßige
+Überprüfung geachtet werden \cite{siebert_generative_2024}.
 
-Der Blog von Fraunhofer IESE~\cite{siebert_generative_2024} hebt hervor, dass
-gerade bei der Nutzung externer KI-Modelle entlang der Software-Supply-Chain
-neue Risiken entstehen können. Unzureichend geprüfter oder von Dritten
-generierter Code kann unbemerkt Schwachstellen in den Entwicklungsprozess
-einschleusen.
+Die Literatur empfiehlt, Sicherheitsmechanismen wie regelmäßige
+Security-Reviews, Human-in-the-Loop-Prozesse und gezielte Trainingsmaßnahmen
+gegen adversarielle Angriffe und Model Poisoning zu etablieren, um die
+Robustheit generativer KI-Systeme zu erhöhen \cite{shi_ai-assisted_2023,
+    alwageed_role_nodate, siebert_generative_2024}.

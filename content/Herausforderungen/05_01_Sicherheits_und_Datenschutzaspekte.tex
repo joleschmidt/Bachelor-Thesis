@@ -1,35 +1,36 @@
+
 Die Integration generativer KI-Tools in die Softwareentwicklung eröffnet nicht
-nur neue Chancen, sondern schafft zugleich neue Risiken im Bereich der
-IT-Sicherheit und des Datenschutzes. Shi et al.~\cite{shi_ai-assisted_2023}
-zeigen, dass KI-gestützte Entwicklung sowohl zur Erkennung und Vermeidung von
-Sicherheitslücken beitragen kann, aber auch neue Angriffsflächen entstehen,
-insbesondere wenn unsichere oder fehlerhafte Codevorschläge ungeprüft
-übernommen werden.
+nur neue Chancen, sondern bringt auch Risiken für IT-Sicherheit und Datenschutz
+mit sich. Aktuelle Studien zeigen, dass generative KI einerseits dazu beitragen
+kann, Sicherheitslücken zu erkennen und Best Practices wie Security-by-Design
+umzusetzen, andererseits aber auch neue Angriffsflächen schafft, wenn
+KI-generierte Vorschläge ungeprüft übernommen werden
+\cite{shi_ai-assisted_2023, alwageed_role_nodate}.
 
-Alwageed und Khan~\cite{alwageed_role_nodate} betonen, dass generative
-KI-Modelle wie LLMs dazu beitragen können, Best Practices im Bereich
-Security-by-Design umzusetzen. Gleichzeitig weisen sie darauf hin, dass
-\enquote{over-reliance on AI-generated code may lead to subtle vulnerabilities
-    and propagate insecure coding patterns if not carefully validated by human
-    experts}~\cite[S.~9]{alwageed_role_nodate}.
+Insbesondere wird darauf hingewiesen, dass der Einsatz generativer KI zu
+spezifischen Risiken wie \enquote{Prompt Injection} und \enquote{adversarial
+    attacks} führen kann. Dabei werden durch gezielte oder manipulierte Eingaben
+der KI unsichere oder schadhafte Codefragmente entlockt
+\cite{shi_ai-assisted_2023}. Ein weiteres Risiko ist das sogenannte
+\enquote{Model Poisoning}, bei dem durch fehlerhafte oder bösartige
+Trainingsdaten gezielt Schwachstellen in das Modell eingeschleust werden
+\cite{alwageed_role_nodate}.
 
-Auch Fragen des Datenschutzes stehen im Fokus: Bei der Nutzung externer
-KI-Modelle (z.\,B. in Cloud-Umgebungen) können sensible Daten unbeabsichtigt an
-Dritte weitergegeben werden. Shi et al.~\cite{shi_ai-assisted_2023} fordern
-deshalb, dass Security-Reviews, Audit-Trails und eine konsequente Einbindung
-menschlicher Expertise (\enquote{Human-in-the-Loop}) zentrale Bestandteile des
-Entwicklungsprozesses bleiben müssen.
+Regelmäßige Security-Reviews, Audit-Trails und eine konsequente Einbindung
+menschlicher Expertise (\enquote{Human-in-the-Loop}) werden in der Literatur
+als zentrale Maßnahmen zur Absicherung empfohlen. Die Gefahr besteht
+insbesondere darin, dass KI-Tools potenziell sicherheitskritische Muster zwar
+erkennen und kennzeichnen können, ihre Vorschläge jedoch stets von
+Entwickler:innen geprüft und angepasst werden müssen
+\cite{shi_ai-assisted_2023, alwageed_role_nodate, siebert_generative_2024}.
 
-Weisz et~al.~\cite{weisz_design_2024} betonen, dass regelmäßige
-Security-Reviews und der Einsatz von Human-in-the-Loop-Mechanismen zentrale
-Bausteine für die sichere Nutzung generativer KI sind. Studien zeigen außerdem,
-dass viele Angriffe darauf abzielen, gezielt das Verhalten generativer Modelle
-zu manipulieren. Aus diesem Grund fordern Shi
-et~al.~\cite{shi_ai-assisted_2023} und Alwageed
-et~al.~\cite{alwageed_role_nodate} verstärkte Kontrollmechanismen und gezielte
-Trainings, um die Robustheit der Systeme zu erhöhen.
+Auch Datenschutzfragen treten verstärkt in den Vordergrund, insbesondere beim
+Einsatz externer KI-Modelle in Cloud-Umgebungen. Hier besteht die Gefahr, dass
+sensible Daten unbeabsichtigt an Dritte weitergegeben werden oder aus den
+generierten Vorschlägen rekonstruiert werden können
+\cite{siebert_generative_2024}.
 
-Im Praxisteil dieser Arbeit zeigte sich, dass KI-Tools wie Copilot und Cursor
-zwar potenziell sicherheitskritische Muster (z.\,B. hardcodierte Passwörter)
-erkennen und warnen können, ihre Vorschläge jedoch stets von Entwickler*innen
-geprüft und angepasst werden sollten.
+Im praktischen Teil dieser Arbeit zeigte sich, dass KI-Tools wie Copilot und
+Cursor zwar potenziell sicherheitskritische Muster (z.\,B. hardcodierte
+Passwörter) erkennen können, ihre Vorschläge aber stets kritisch geprüft und
+gegebenenfalls angepasst werden müssen.
