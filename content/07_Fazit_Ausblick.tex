@@ -1,23 +1,29 @@
 \chapter{Fazit und Ausblick}
+Die Auswertung der theoretischen und praktischen Analysen verdeutlicht, wie
+tiefgreifend generative KI-Tools bereits heute die Softwareentwicklung
+beeinflussen. Das abschließende Kapitel fasst die zentralen Erkenntnisse
+zusammen, bewertet ihre Tragweite für Unternehmen und Gesellschaft und
+formuliert Perspektiven für zukünftige Entwicklungen und offene
+Forschungsfragen.
 
 \section{Zusammenfassung der Kernergebnisse}
-Die vorliegende Arbeit zeigt, dass generative KI-Tools wie GitHub Copilot,
-Cursor oder Devin die Softwareentwicklung nachhaltig verändern. Zentrale
-Erkenntnisse sind signifikante Effizienzsteigerungen, die Automatisierung
-vieler Routineaufgaben und die Einführung neuer Werkzeuge und Methoden im
-Entwicklungsalltag. Die praktische Demonstration verdeutlichte, wie sich durch
-KI-basierte Assistenzsysteme sowohl Entwicklungsdauer als auch Einstiegshürden
-verringern lassen – etwa bei der Initialisierung neuer Komponenten oder beim
-Refactoring von Code.
+Die Analysen und die praktische Demonstration machen deutlich, dass generative
+KI-Tools wie GitHub Copilot, Cursor oder Devin die Softwareentwicklung
+grundlegend verändern. Zu den wichtigsten Befunden zählen signifikante
+Effizienzsteigerungen, die Automatisierung vieler Routineaufgaben sowie die
+Einführung neuer Werkzeuge und Methoden im Entwicklungsalltag. Im Praxisteil
+zeigte sich, wie sich durch KI-basierte Assistenzsysteme sowohl die
+Entwicklungsdauer als auch Einstiegshürden verringern lassen – etwa bei der
+Initialisierung neuer Komponenten oder beim Refactoring von Code.
 
-Gleichzeitig offenbarten sich aber auch klare Grenzen und Herausforderungen:
-Die Qualität von KI-generierten Vorschlägen ist abhängig von präzisen Prompts,
-domänenspezifischem Kontext und der kritischen Überprüfung durch
-Entwickler:innen. Unsicherheiten entstehen insbesondere bei
-sicherheitskritischen Anwendungen, bei denen KI-Modelle fehleranfällige oder
-nicht nachvollziehbare Lösungen produzieren können. Zudem wurde deutlich, dass
-ethische Fragen wie der Umgang mit Bias, Fairness sowie Nachvollziehbarkeit und
-Verantwortung nicht allein durch die Technik gelöst werden können.
+Gleichzeitig wurden auch klare Grenzen und Herausforderungen sichtbar: Die
+Qualität der KI-generierten Vorschläge hängt maßgeblich von der Präzision der
+Prompts, domänenspezifischem Kontext und der kritischen Überprüfung durch
+Entwickler:innen ab. Besonders bei sicherheitskritischen Anwendungen können
+fehleranfällige oder nicht nachvollziehbare Lösungen entstehen. Ethische Fragen
+wie der Umgang mit Bias, Fairness sowie Nachvollziehbarkeit und Verantwortung
+bleiben weiterhin zentrale Herausforderungen, die nicht allein durch technische
+Lösungen adressiert werden können.
 
 Wirtschaftlich eröffnen sich neue Wertschöpfungsmodelle, da Unternehmen mit
 KI-gestützter Softwareentwicklung flexibler und innovativer agieren können.
@@ -29,82 +35,163 @@ Maschine agieren und benötigen Fähigkeiten im Prompt-Engineering, in der
 Systembewertung und in der kritischen Reflexion automatisierter Prozesse.
 
 \section{Beantwortung der Forschungsfragen}
-\textbf{1. Wie verändert generative KI traditionelle Entwicklungspraktiken in der Softwareentwicklung?}\\
-Generative KI-Tools automatisieren viele bislang manuelle und repetitive Tätigkeiten wie Code-Generierung, Testing und Dokumentation. Dadurch verschieben sich die Schwerpunkte der Entwicklungsarbeit hin zu Prompt-Engineering, Qualitätskontrolle und Systembewertung. Entwicklungspraktiken werden iterativer, dialogorientierter und stärker von Mensch-KI-Kollaboration geprägt.
 
-\textbf{2. Welche spezifischen Herausforderungen entstehen durch KI hinsichtlich Sicherheit, Ethik und Code‑Qualität?}\\
-Zu den größten Herausforderungen zählen neue Angriffsflächen (z.\,B. durch fehlerhafte KI-generierte Vorschläge), ethische Risiken wie Bias und Diskriminierung sowie Fragen der Nachvollziehbarkeit, Verantwortung und Wartbarkeit von Code. Regelmäßige Überprüfung, Peer-Reviews und klare Leitlinien sind für den sicheren Einsatz unerlässlich.
+Im Folgenden werden die zu Beginn der Arbeit formulierten Forschungsfragen auf
+Basis der erzielten Ergebnisse systematisch beantwortet.
 
-\textbf{3. Wie unterstützt generative KI Softwareentwickler in agilen Entwicklungsprozessen?}\\
-Generative KI-Tools fördern schnellere Iterationen, erleichtern die Anpassung von Anforderungen und bieten Hilfestellungen beim Testen und Debugging. Sie beschleunigen den Entwicklungszyklus, unterstützen das Prototyping und ermöglichen eine engere Verzahnung von Entwicklung, Test und Deployment -- insbesondere in agilen Teams.
+\subsection*{Wie verändert generative KI traditionelle Entwicklungspraktiken in der Softwareentwicklung?}
+Die Analysen und praktischen Beispiele dieser Arbeit zeigen deutlich, dass
+generative KI-Tools viele ehemals manuelle und repetitive Tätigkeiten – etwa
+die Code-Generierung, das Testing und die Dokumentation – automatisieren.
+Dadurch verschiebt sich der Schwerpunkt der Entwicklungsarbeit hin zu
+anspruchsvolleren Aufgaben wie dem Prompt-Engineering, der Qualitätskontrolle
+und der Bewertung von KI-generierten Vorschlägen. Entwicklungsprozesse werden
+iterativer, dialogorientierter und durch eine intensivere Zusammenarbeit
+zwischen Mensch und KI geprägt. Insgesamt führt dies zu einer höheren
+Flexibilität und Geschwindigkeit in der Softwareentwicklung.
 
-\textbf{4. Wie integrieren bestehende generative KI‑Tools sich praktisch in die React‑Native‑Entwicklung und welchen Einfluss hat dies auf Entwicklungszeit und Codequalität?}\\
-Die praktische Demonstration zeigte, dass Tools wie Copilot, Cursor oder Bolt die Entwicklungszeit für typische Aufgaben (z.\,B. Erstellung von Komponenten, Einbindung von APIs) deutlich reduzieren können. Gleichzeitig hängt die Codequalität stark von der kritischen Bewertung, Anpassung und Überprüfung der KI-Vorschläge durch die Entwickler:innen ab.
+\subsection*{Welche spezifischen Herausforderungen entstehen durch KI hinsichtlich Sicherheit, Ethik und Code-Qualität?}
+Im Rahmen der Untersuchung wurde deutlich, dass durch den Einsatz generativer
+KI neue Risiken im Bereich der IT-Sicherheit entstehen, beispielsweise durch
+potenziell fehlerhafte oder unsichere Codevorschläge. Zudem werfen Fragen wie
+Bias, Diskriminierung sowie die Nachvollziehbarkeit und Verantwortung für
+KI-generierte Ergebnisse weiterhin erhebliche ethische und technische
+Herausforderungen auf. Die Arbeit macht deutlich, dass ein sicherer und
+verantwortungsvoller Einsatz generativer KI nur möglich ist, wenn regelmäßige
+Überprüfungen, Peer-Reviews und klare Leitlinien fester Bestandteil des
+Entwicklungsprozesses sind.
+
+\subsection*{Wie unterstützt generative KI Softwareentwickler:innen in agilen Entwicklungsprozessen?}
+Die Ergebnisse zeigen, dass generative KI-Tools die Arbeit in agilen Teams
+spürbar beschleunigen: Sie ermöglichen schnellere Iterationen, erleichtern das
+Prototyping und verbessern die Integration von Testing und Deployment in den
+Entwicklungszyklus. Besonders wertvoll ist die Unterstützung bei der Anpassung
+von Anforderungen und der automatischen Generierung von Tests oder
+Dokumentation. Dadurch profitieren agile Teams von effizienteren Workflows,
+mehr Flexibilität und einer insgesamt höheren Produktivität.
+
+\subsection*{Wie integrieren bestehende generative KI-Tools sich praktisch in die React-Native-Entwicklung und welchen Einfluss hat dies auf Entwicklungszeit und Codequalität?}
+Die praktische Demonstration belegt, dass Tools wie Copilot, Cursor oder Bolt
+die Entwicklungszeit für typische Aufgaben, etwa beim Erstellen von Komponenten
+oder beim Einbinden von APIs, deutlich reduzieren können. Die Codequalität
+profitiert besonders bei Routinetätigkeiten von automatisierten Vorschlägen,
+während bei komplexeren oder sicherheitskritischen Aufgaben weiterhin eine
+kritische Prüfung und Anpassung durch erfahrene Entwickler:innen notwendig
+bleibt. Generative KI-Tools sind somit ein effektives Hilfsmittel, das die
+Entwicklung beschleunigt, aber eine sorgfältige Kontrolle der Ergebnisse durch
+den Menschen erfordert.
+
+% \section{Beantwortung der Forschungsfragen}
+
+% \begin{enumerate}
+%       \item \textbf{Wie verändert generative KI traditionelle Entwicklungspraktiken in der Softwareentwicklung?} \\
+%             Generative KI-Tools automatisieren zahlreiche bislang manuelle und repetitive Tätigkeiten wie Code-Generierung, Testing und Dokumentation. Dadurch verschieben sich die Schwerpunkte der Entwicklungsarbeit zunehmend hin zu Aufgaben wie Prompt-Engineering, Qualitätskontrolle und Systembewertung. Die Entwicklungspraktiken werden iterativer, dialogorientierter und sind stärker von der Zusammenarbeit zwischen Mensch und KI geprägt. Insgesamt trägt die generative KI dazu bei, dass Entwicklungsprozesse flexibler, schneller und kollaborativer gestaltet werden können.
+
+%       \item \textbf{Welche spezifischen Herausforderungen entstehen durch KI hinsichtlich Sicherheit, Ethik und Code-Qualität?} \\
+%             Die größten Herausforderungen bestehen in neuen Angriffsflächen – etwa durch fehlerhafte oder unsichere KI-generierte Vorschläge –, ethischen Risiken wie Bias und Diskriminierung sowie Fragen der Nachvollziehbarkeit, Verantwortung und Wartbarkeit von Code. Damit generative KI verantwortungsvoll eingesetzt werden kann, sind regelmäßige Überprüfungen, Peer-Reviews, die Etablierung von Leitlinien sowie die gezielte Sensibilisierung der Entwickler:innen unabdingbar.
+
+%       \item \textbf{Wie unterstützt generative KI Softwareentwickler:innen in agilen Entwicklungsprozessen?} \\
+%             Generative KI-Tools fördern schnellere Iterationen, erleichtern die flexible Anpassung von Anforderungen und bieten wertvolle Unterstützung bei Testing, Debugging und Dokumentation. Sie beschleunigen den gesamten Entwicklungszyklus, ermöglichen schnelleres Prototyping und unterstützen eine engere Verzahnung von Entwicklung, Test und Deployment – insbesondere in agilen Teams. Die Zusammenarbeit zwischen Mensch und KI führt dabei zu effizienteren Workflows und zu einer höheren Anpassungsfähigkeit im Projektalltag.
+
+%       \item \textbf{Wie integrieren bestehende generative KI-Tools sich praktisch in die React-Native-Entwicklung und welchen Einfluss hat dies auf Entwicklungszeit und Codequalität?} \\
+%             Die praktische Demonstration in dieser Arbeit belegt, dass Tools wie Copilot, Cursor oder Bolt die Entwicklungszeit für typische Aufgaben – wie das Erstellen von Komponenten, das Einbinden von APIs oder das Prototyping neuer Features – deutlich reduzieren können. Gleichzeitig bleibt die Qualität des Codes in hohem Maße von der kritischen Bewertung, Anpassung und Überprüfung der KI-Vorschläge durch erfahrene Entwickler:innen abhängig. Insgesamt zeigt sich, dass generative KI insbesondere Routineaufgaben und Standardmuster zuverlässig automatisiert, während bei komplexeren oder sicherheitsrelevanten Aufgaben die menschliche Expertise und Verantwortung weiterhin unerlässlich sind.
+% \end{enumerate}
 
 \section{Handlungsempfehlungen für Praxis und Unternehmen}
-Unternehmen sollten die Einführung generativer KI-Tools strategisch planen und
-als kontinuierlichen Veränderungsprozess verstehen. Neben Investitionen in
-technische Infrastruktur ist insbesondere die Aus- und Weiterbildung der
-Beschäftigten ein Schlüsselfaktor für den nachhaltigen Erfolg. Ein gezieltes
-Training in Prompt-Engineering, das Verständnis von KI-Modellen sowie
-regelmäßige Schulungen zu Sicherheits- und Ethikstandards sind essenziell.
 
-Es empfiehlt sich, den Einsatz von KI stets mit klaren Qualitätskontrollen und
-Feedback-Loops zu begleiten: Mensch-KI-Kollaboration sollte durch
+Die Ergebnisse dieser Arbeit zeigen, dass die erfolgreiche Einführung
+generativer KI-Tools in der Softwareentwicklung einen strategischen und
+ganzheitlichen Ansatz erfordert. Unternehmen sollten die Integration solcher
+Technologien als kontinuierlichen Veränderungsprozess verstehen, der sowohl
+technische als auch organisationale und kulturelle Dimensionen umfasst.
+
+Neben Investitionen in moderne Infrastruktur ist insbesondere die Aus- und
+Weiterbildung der Beschäftigten ein Schlüsselfaktor für nachhaltigen Erfolg.
+Regelmäßige Schulungen zu Prompt-Engineering, ein grundlegendes Verständnis für
+die Funktionsweise von KI-Modellen sowie Trainings zu Sicherheits- und
+Ethikstandards sind essenziell, um die Kompetenzen im Umgang mit KI
+kontinuierlich auszubauen.
+
+Die Praxis hat gezeigt, dass der Einsatz generativer KI mit klaren
+Qualitätskontrollen und Feedback-Loops begleitet werden sollte.
 Peer-Review-Prozesse, Human-in-the-Loop-Mechanismen und eine offene
-Fehlerkultur gestärkt werden. Unternehmen profitieren zudem von der Einführung
-transparenter Richtlinien und der Definition von Verantwortlichkeiten für den
-Umgang mit KI-basierten Lösungen.
+Fehlerkultur stärken die Zusammenarbeit zwischen Mensch und KI und fördern die
+Akzeptanz im Team. Die Einführung transparenter Richtlinien sowie die
+Definition klarer Verantwortlichkeiten für den Einsatz von KI-Lösungen sind
+weitere zentrale Erfolgsfaktoren.
 
-Zudem sollte der Dialog zwischen Entwickler:innen, Management und betroffenen
-Stakeholdern aktiv gefördert werden, um Akzeptanzprobleme und Widerstände
-frühzeitig zu adressieren. Die Schaffung einer innovationsfreundlichen
-Unternehmenskultur, die Experimente mit neuen Werkzeugen erlaubt und
-Lernprozesse unterstützt, ist eine zentrale Voraussetzung für die erfolgreiche
-Integration von KI in die Entwicklungsarbeit.
+Darüber hinaus sollte der kontinuierliche Dialog zwischen Entwickler:innen,
+Management und betroffenen Stakeholdern aktiv gefördert werden, um
+Akzeptanzprobleme und Widerstände frühzeitig zu erkennen und anzugehen. Eine
+innovationsfreundliche Unternehmenskultur, die Experimente mit neuen Werkzeugen
+ermöglicht und Lernprozesse unterstützt, ist eine zentrale Voraussetzung für
+die nachhaltige Integration generativer KI in die Entwicklungsarbeit.
 
-\section{Einschränkungen der Arbeit}
-Die vorliegende Untersuchung basiert auf einer literaturgestützten Analyse und
-einer exemplarischen praktischen Demonstration. Sie erhebt keinen Anspruch auf
-empirische Generalisierbarkeit und kann daher keine abschließenden Aussagen zur
-Wirksamkeit aller KI-Tools in jeder Unternehmenskonstellation treffen. Die
-rechtlichen und gesellschaftspolitischen Dimensionen der KI-Nutzung konnten nur
-angeschnitten werden; ebenso wurden regionale Unterschiede und
-branchenspezifische Besonderheiten weitgehend ausgeklammert. Die
-Praxiserfahrung beschränkt sich zudem auf ausgewählte Tools und einen konkreten
-Anwendungskontext (Entwicklung einer Map-Komponente in React Native).
+Die konsequente Umsetzung dieser Empfehlungen kann dazu beitragen, die
+Potenziale generativer KI voll auszuschöpfen und zugleich Risiken im
+Entwicklungsalltag wirksam zu minimieren.
+
+% \section{Einschränkungen der Arbeit}
+% Die vorliegende Untersuchung basiert auf einer literaturgestützten Analyse und
+% einer exemplarischen praktischen Demonstration. Sie erhebt keinen Anspruch auf
+% empirische Generalisierbarkeit und kann daher keine abschließenden Aussagen zur
+% Wirksamkeit aller KI-Tools in jeder Unternehmenskonstellation treffen. Die
+% rechtlichen und gesellschaftspolitischen Dimensionen der KI-Nutzung konnten nur
+% angeschnitten werden; ebenso wurden regionale Unterschiede und
+% branchenspezifische Besonderheiten weitgehend ausgeklammert. Die
+% Praxiserfahrung beschränkt sich zudem auf ausgewählte Tools und einen konkreten
+% Anwendungskontext (Entwicklung einer Map-Komponente in React Native).
 
 \section{Offene Fragen und Forschungsbedarf}
-Viele offene Fragen bleiben für die Zukunft bestehen. Insbesondere der
-langfristige Einfluss generativer KI auf Arbeitsmarkt, Teamstrukturen und die
-Entwicklung komplexer Softwaresysteme ist noch nicht abschließend erforscht.
-Wichtige Forschungsthemen sind:
+
+Trotz der vielfältigen Potenziale generativer KI in der Softwareentwicklung
+bestehen zahlreiche offene Fragen, die Gegenstand zukünftiger Forschung sein
+sollten. Besonders der langfristige Einfluss auf Arbeitsmärkte, Teamstrukturen
+sowie auf die Entwicklung und Wartung komplexer Softwaresysteme ist bislang
+noch nicht abschließend untersucht.
+
+Wichtige Themen für weitere Forschung sind dabei insbesondere:
 \begin{itemize}
-    \item Wie verändert sich die Qualität und Wartbarkeit von Code bei zunehmender
-          KI-Unterstützung?
-    \item Welche ethischen, rechtlichen und sicherheitstechnischen Standards sind für den
-          flächendeckenden Einsatz von KI in der Softwareentwicklung notwendig?
-    \item Wie lässt sich die Zusammenarbeit zwischen Mensch und KI so gestalten, dass
-          Kreativität, Transparenz und Verantwortlichkeit erhalten bleiben?
-    \item In welchem Maße wird KI künftig als Entscheidungsinstanz und nicht nur als
-          Assistenzsystem agieren?
+      \item Wie verändert sich die Qualität, Wartbarkeit und Nachhaltigkeit von Software
+            bei zunehmender KI-Unterstützung im Entwicklungsprozess?
+      \item Welche ethischen, rechtlichen und sicherheitstechnischen Standards müssen
+            entwickelt werden, um den flächendeckenden und verantwortungsvollen Einsatz
+            generativer KI in der Softwareentwicklung zu gewährleisten?
+      \item Wie kann die Zusammenarbeit zwischen Mensch und KI gestaltet werden, sodass
+            Kreativität, Transparenz, Fairness und Verantwortlichkeit in Softwareprojekten
+            erhalten bleiben?
+      \item In welchem Maße wird KI in Zukunft nicht nur als Assistenzsystem, sondern als
+            eigenständige Entscheidungsinstanz in Entwicklungsprozessen agieren – und
+            welche Implikationen hat dies für Kontrolle, Haftung und Governance?
 \end{itemize}
 
-Treude und Storey~\cite{treude_generative_2025} fordern eine Neuausrichtung der
-empirischen Softwaretechnik hin zu einem Paradigma, das die Möglichkeiten und
-Limitationen von KI in den Mittelpunkt methodischer Innovationen rückt.
+Wie Treude und Storey~\cite{treude_generative_2025} betonen, ist eine
+Neuausrichtung der empirischen Softwaretechnik erforderlich, die die Chancen
+und Grenzen generativer KI konsequent in den Mittelpunkt methodischer
+Innovation rückt. Der Diskurs um die nachhaltige und verantwortungsvolle
+Integration von KI in die Softwareentwicklung bleibt damit eine zentrale
+Herausforderung für Wissenschaft und Praxis.
 
 \section{Ausblick}
-Die nächsten Jahre werden von einer weiteren Durchdringung der
-Softwareentwicklung durch generative KI geprägt sein. Unternehmen, die
-frühzeitig auf eine intelligente Verzahnung von Mensch und KI setzen, können
-Innovationspotenziale optimal ausschöpfen und ihre Wettbewerbsfähigkeit
-ausbauen. Gleichzeitig bleibt der gesellschaftliche und ethische Diskurs von
-zentraler Bedeutung: Der nachhaltige und verantwortungsvolle Umgang mit KI
-erfordert klare Leitplanken, kontinuierliche Qualifizierung und die
-Bereitschaft, gewachsene Rollen und Prozesse im Entwicklungsalltag immer wieder
-neu zu hinterfragen.\\ Die Softwareentwicklung steht damit exemplarisch für den
-umfassenden Wandel der Arbeitswelt im KI-Zeitalter.
+
+Die kommenden Jahre werden durch eine noch stärkere Durchdringung der
+Softwareentwicklung mit generativer KI geprägt sein. Unternehmen, die
+frühzeitig auf eine intelligente Verzahnung von Mensch und Maschine setzen,
+haben die Chance, Innovationspotenziale optimal auszuschöpfen und ihre
+Wettbewerbsfähigkeit nachhaltig zu stärken.
+
+Gleichzeitig bleibt der gesellschaftliche und ethische Diskurs von zentraler
+Bedeutung: Ein nachhaltiger und verantwortungsvoller Umgang mit KI erfordert
+klare Leitplanken, kontinuierliche Qualifizierung der Beschäftigten und die
+Bereitschaft, etablierte Rollen und Prozesse im Entwicklungsalltag immer wieder
+zu hinterfragen und weiterzuentwickeln.
+
+Die Softwareentwicklung steht damit exemplarisch für den umfassenden Wandel der
+Arbeitswelt im Zeitalter der Künstlichen Intelligenz. Entscheidend wird sein,
+ob es gelingt, technologische Innovation mit menschlicher Kreativität,
+Verantwortungsbewusstsein und einer offenen Lernkultur zu verbinden.
+
+\textbf{Abschließend bleibt festzuhalten:} Die Zukunft der Softwareentwicklung ist kein rein technisches, sondern ein zutiefst soziales und gestalterisches Projekt – ihr Erfolg hängt maßgeblich vom Zusammenspiel aller beteiligten Akteure ab.
 
 % \section{Erwartete Erkenntnisse}
 % \input{content/Fazit & Ausblick/07_01_Erwartete_Erkenntnisse}
