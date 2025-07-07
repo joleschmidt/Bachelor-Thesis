@@ -1,102 +1,90 @@
 \label{sec:generative-ki-tools}
 
-\subsection{Grundfunktion generativer KI-Tools}
+Generative KI-Tools wie GitHub Copilot, Cursor oder v0 prägen den modernen
+Softwareentwicklungsprozess entscheidend. Ihre Hauptfunktion besteht darin,
+natürliche Sprache (Prompts) in ausführbaren Code, Testfälle oder
+Dokumentationen umzusetzen. Damit verändern sie nicht nur technische Workflows,
+sondern auch die Zusammenarbeit in Entwicklungsteams und die Anforderungen an
+Kompetenzen der Beteiligten \cite{weisz_design_2024}.
 
-Generative KI-Tools wie GitHub Copilot, Cursor und v0 basieren auf
-leistungsfähigen Large Language Models (LLMs), die natürliche Sprache
-interpretieren und daraus konkrete Vorschläge für Code, Tests oder
-Dokumentation generieren. Mit SENAI wurde ein KI-natives Framework vorgestellt,
-das generative KI von Beginn an in den Software-Engineering-Prozess integriert
-und so die Entwicklung hochautomatisierter, KI-zentrierter Anwendungen
-ermöglicht \cite{saad_senai_2025}. Charakteristisch ist das sogenannte
-\textit{Prompt-Output-Paradigma}: Entwickler:innen geben eine
-Aufgabenbeschreibung als Prompt ein, worauf das KI-Tool passenden Code
-vorschlägt. Besonders in modernen Entwicklungsumgebungen erscheinen diese
-Vorschläge direkt beim Tippen (Code Completion) oder als vollständige
-Funktionsblöcke \cite{kerr_github_nodate,weisz_design_2024}.
+\subsubsection{Grundfunktion generativer KI-Tools}
 
-Eine systematische Literaturstudie belegt, dass die Integration von KI in
-Entwicklungsumgebungen das Nutzererlebnis maßgeblich beeinflusst. Aspekte wie
-Transparenz, Usability und Feedbackmechanismen entscheiden laut Sergeyuk et al.
-darüber, ob generative Tools in der Praxis akzeptiert und effektiv genutzt
-werden \cite{sergeyuk_human-ai_2025}.
+Die zugrundeliegenden Large Language Models (LLMs) ermöglichen das sogenannte
+Prompt-basiertes Entwicklungsparadigma: Entwickler:innen beschreiben eine
+Aufgabe in natürlicher Sprache – das Tool generiert dazu passende Vorschläge.
+Diese erscheinen als Code Completion direkt beim Tippen oder als komplette
+Funktionsblöcke \cite{kerr_github_nodate, weisz_design_2024}. Neuere Ansätze
+wie SENAI integrieren generative KI von Anfang an in den
+Software-Engineering-Prozess und erlauben eine hochautomatisierte,
+KI-zentrierte Entwicklung \cite{saad_senai_2025}.
 
-\subsection{Schnittstellen und Integration in Entwicklungsumgebungen}
+Systematische Literaturübersichten zeigen, dass die Integration generativer KI
+in Entwicklungsumgebungen das Nutzererlebnis, die Akzeptanz und den praktischen
+Nutzen maßgeblich beeinflusst. Insbesondere Aspekte wie Transparenz, Usability
+und Feedbackmechanismen entscheiden über den Erfolg im Alltag
+\cite{sergeyuk_human-ai_2025}.
 
-Die praktische Integration generativer KI erfolgt überwiegend über IDE-Plugins
-(z.B. Visual Studio Code, JetBrains) oder APIs. GitHub Copilot etwa lässt sich
-als Erweiterung in gängigen Editoren installieren und unterstützt
-Entwickler:innen unmittelbar im Arbeitsprozess. Zusätzlich stehen Chat-basierte
-Interaktionen zur Verfügung, um Aufgaben wie Refactoring, Debugging oder
-Testautomatisierung effizient zu bearbeiten. Die nahtlose Einbindung in
-bestehende Entwicklungsumgebungen erleichtert den Zugang und fördert die
-Akzeptanz \cite{kerr_github_nodate,shi_ai-assisted_2023,weisz_design_2024}.
+\subsubsection{Schnittstellen und Integration in Entwicklungsumgebungen}
 
-Ein zunehmend wichtiger Aspekt ist die Barrierefreiheit: Studien zeigen, dass
-KI-gestützte Coding-Assistenzsysteme insbesondere für Entwickler:innen mit
-Sehbeeinträchtigung neue Möglichkeiten zur Teilhabe schaffen – vorausgesetzt,
-die Tools sind inklusiv gestaltet \cite{flores-saviaga_impact_2025}.
+Die praktische Nutzung generativer KI erfolgt meist über Plugins (z. B. für
+Visual Studio Code oder JetBrains IDEs) oder via API. Typischerweise
+interagieren Entwickler:innen mit dem KI-Tool im Kontext der gewohnten
+Umgebung, wodurch Aufgaben wie Refactoring, Testing oder Dokumentation direkt
+integriert werden können \cite{kerr_github_nodate, shi_ai-assisted_2023,
+    weisz_design_2024}.
 
-\subsection{Beispielhafte Workflows: Pair Programming mit Copilot}
+Besonderes Augenmerk liegt inzwischen auch auf Barrierefreiheit: KI-gestützte
+Assistenzsysteme eröffnen etwa Entwickelnden mit Sehbeeinträchtigung neue
+Teilhabemöglichkeiten, vorausgesetzt die Tools sind entsprechend gestaltet
+\cite{flores-saviaga_impact_2025}.
 
-Im Pair Programming mit GitHub Copilot werden Aufgaben als Prompts formuliert
-(z.B. „Implementiere eine Authentifizierung in React“). Copilot erzeugt
-daraufhin passenden Beispielcode, der übernommen oder angepasst werden kann.
-Der Entwicklungsprozess bleibt interaktiv: Entwickler:innen prüfen die
-Vorschläge, passen sie an oder verwerfen sie. Copilot kann in allen
-Entwicklungsphasen eingesetzt werden – etwa für Testautomatisierung,
-Refactoring oder Dokumentation. Studien zeigen, dass insbesondere
-Routineaufgaben dadurch erheblich beschleunigt werden
-\cite{kerr_github_nodate,weisz_design_2024,shi_ai-assisted_2023}. Darüber
-hinaus belegt eine Fallstudie, dass generative KI-Tools bereits in agilen
-Entwicklungsprojekten zur Qualitätsbewertung von Epics beitragen und so die
-Teamarbeit unterstützen können \cite{geyer_case_2025}.
+\subsubsection{Beispielhafte Workflows: Pair Programming mit Copilot}
 
-\subsection{Vorteile und Optimierungspotenziale}
+Beim Pair Programming mit Copilot werden Aufgaben in Form von Prompts gestellt,
+Copilot generiert daraufhin Codevorschläge, die geprüft, angepasst oder
+verworfen werden können. So unterstützt Copilot u. a. die Testautomatisierung,
+das Refactoring und die Dokumentation in allen Phasen des
+Entwicklungsprozesses. Studien belegen signifikante Beschleunigungseffekte bei
+Routineaufgaben \cite{kerr_github_nodate, weisz_design_2024,
+    shi_ai-assisted_2023}. In agilen Teams kann generative KI zudem zur
+Qualitätsbewertung und Dokumentation von Anforderungen beitragen
+\cite{geyer_case_2025}.
 
-Die Nutzung generativer KI-Tools bietet zahlreiche Vorteile:
+\subsubsection{Vorteile und Optimierungspotenziale}
+
+Der Einsatz generativer KI bietet zahlreiche Vorteile:
 \begin{itemize}
-    \item \textbf{Zeitersparnis:} Routineaufgaben werden automatisiert, wodurch sich Entwicklungszeiten deutlich verkürzen.
-    \item \textbf{Verbesserte Codequalität:} Tools wie Copilot erkennen häufige Fehlerquellen und schlagen bewährte Lösungen vor.
-    \item \textbf{Niedrigere Einstiegshürden:} Auch weniger erfahrene Entwickler:innen profitieren von kontextabhängigen Vorschlägen und Beispielen.
+    \item \textbf{Zeitersparnis:} Automatisierung von Routineaufgaben, Verkürzung von Entwicklungszyklen.
+    \item \textbf{Verbesserte Codequalität:} Erkennung häufiger Fehler, Empfehlungen für Best Practices.
+    \item \textbf{Niedrigere Einstiegshürden:} Unterstützung auch für weniger erfahrene Entwickler:innen durch kontextbasierte Vorschläge.
 \end{itemize}
-KI-gestützte Code Reviews stärken zudem die Kollaboration zwischen menschlichen Entwickler:innen und automatisierten Tools, da Bewertungen und Verbesserungsvorschläge gezielter kommuniziert werden können \cite{alami_human_2025}. Weiteres Optimierungspotenzial ergibt sich durch die fortlaufende Verbesserung der zugrunde liegenden Modelle und deren flexible Integration in unterschiedlichste Projekte \cite{kerr_github_nodate,weisz_design_2024}.
+KI-gestützte Code Reviews fördern die Kollaboration zwischen Mensch und Maschine und erhöhen die Transparenz im Entwicklungsprozess \cite{alami_human_2025}. Kontinuierliche Modellverbesserung und flexible Integration in unterschiedliche Projekte steigern das Optimierungspotenzial weiter \cite{kerr_github_nodate, weisz_design_2024}.
 
-\subsection{Grenzen und typische Fehlerquellen}
+\subsubsection{Grenzen und typische Fehlerquellen}
 
-Trotz ihres Potenzials sind generative KI-Tools nicht fehlerfrei. Zu den
-häufigsten Herausforderungen zählen:
+Zu den zentralen Herausforderungen zählen:
 \begin{itemize}
-    \item \textbf{Halluzinationen:} KI kann syntaktisch korrekten, aber fachlich falschen oder unsicheren Code vorschlagen, insbesondere bei unpräzisen Prompts \cite{shi_ai-assisted_2023}.
-    \item \textbf{Bias und Kontextdefizite:} Die KI reproduziert möglicherweise Vorurteile oder ignoriert projektspezifische Regeln.
-    \item \textbf{Sicherheitsrisiken:} Copilot schlägt mitunter unsicheren Code (wie SQL-Injection oder Hardcoded Credentials) vor, sofern nicht explizit nach sicheren Lösungen gefragt wird. Moderne Versionen reagieren jedoch sensibler auf entsprechende Prompts \cite{shi_ai-assisted_2023}.
-    \item \textbf{Übermäßiges Vertrauen:} Entwickler:innen übernehmen KI-Vorschläge mitunter ungeprüft, weshalb Mechanismen zur kritischen Prüfung essenziell sind \cite{weisz_design_2024}.
+    \item \textbf{Halluzinationen:} Syntaktisch korrekter, aber inhaltlich fehlerhafter oder unsicherer Code, vor allem bei vagen Prompts \cite{shi_ai-assisted_2023}.
+    \item \textbf{Bias und Kontextdefizite:} Übernahme von Vorurteilen oder Nichtbeachtung spezifischer Projektregeln.
+    \item \textbf{Sicherheitsrisiken:} Vorschläge für unsicheren Code (z. B. Hardcoded Credentials), die explizit überprüft werden müssen \cite{shi_ai-assisted_2023}.
+    \item \textbf{Übermäßiges Vertrauen:} Unkritische Übernahme von KI-Vorschlägen ohne Review durch erfahrene Entwickler:innen \cite{weisz_design_2024}.
 \end{itemize}
 
-\subsection{Designprinzipien für den produktiven und sicheren Einsatz}
+\subsubsection{Designprinzipien für den produktiven und sicheren Einsatz}
 
-Für einen erfolgreichen und sicheren Einsatz generativer KI-Tools empfiehlt die
-Literatur zentrale Designprinzipien \cite{weisz_design_2024}:
+Für die sichere Nutzung generativer KI-Tools werden in der Literatur folgende
+Designprinzipien empfohlen \cite{weisz_design_2024}:
 \begin{itemize}
-    \item \textbf{Design for Mental Models:} Tools sollten so gestaltet sein, dass Nutzende die Funktionsweise nachvollziehen können.
-    \item \textbf{Design for Appropriate Trust \& Reliance:} Es sollten Mechanismen existieren, die sowohl Vertrauen fördern als auch zur kritischen Prüfung anregen (z.B. Hinweise auf Unsicherheiten, Feedbackmechanismen).
-    \item \textbf{Design for Imperfection:} Nutzer:innen müssen aktiv auf potenzielle Fehler hingewiesen und zur Korrektur befähigt werden.
+    \item \textbf{Design for Mental Models:} Nutzer:innen sollen die Funktionsweise und Grenzen nachvollziehen können.
+    \item \textbf{Design for Appropriate Trust \& Reliance:} Feedbackmechanismen müssen sowohl Vertrauen fördern als auch zur kritischen Prüfung anregen.
+    \item \textbf{Design for Imperfection:} Aktive Hinweise auf mögliche Fehler und die Befähigung zur Korrektur sind essenziell.
 \end{itemize}
 
-Die Gestaltung generativer Benutzeroberflächen (GUIs) bringt eigene
-Anforderungen mit sich, die sich von klassischen UI-Methoden unterscheiden und
-neue Prinzipien für Usability und Interaktion verlangen
-\cite{lee_towards_2025}. Ergänzend betonen aktuelle Studien, dass für
-UX-Praktiker:innen die Einbindung generativer UI-Tools neue methodische Ansätze
-und Werkzeugunterstützung erfordert \cite{chen_genui_2025}.
+Die Gestaltung generativer GUIs und Entwicklungsprozesse muss diese Prinzipien
+berücksichtigen, um eine nachhaltige und verantwortungsvolle Integration zu
+ermöglichen \cite{lee_towards_2025, chen_genui_2025, gill_agile_2025}.
+Flexibilität, Feedback und kontinuierliche Anpassung sind Schlüssel zum Erfolg.
 
-Nicht zuletzt sollte der Entwicklungsprozess selbst an die neuen Möglichkeiten
-und Herausforderungen angepasst werden: Für KI-basierte Systeme sind flexible,
-entscheidungsorientierte Entwicklungszyklen empfehlenswert, die eine
-nachhaltige und erfolgreiche KI-Integration ermöglichen \cite{gill_agile_2025}.
+% Optional: Kurzbezug auf Kapitel 3 (Praxisbeispiel), falls erwünscht
+% Wie in Kapitel 3 praktisch demonstriert, lassen sich diese Prinzipien in der Entwicklung von React Native-Anwendungen mit KI-Tools exemplarisch umsetzen.
 
-% \textbf{Quellen:}
-
-% \begin{itemize}
-%     \item\cite{geyer_case_2025},\cite{kerr_github_nodate},\cite{weisz_design_2024},\cite{martinovic_impact_2024},\cite{shi_ai-assisted_2023}
-% \end{itemize}

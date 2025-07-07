@@ -1,58 +1,83 @@
 
 Künstliche Intelligenz (KI) leitet einen grundlegenden Wandel in der
-Softwareentwicklung ein und verändert die Art und Weise, wie Software
-entwickelt, getestet und betrieben wird \cite{esposito_generative_2025}. Eine
-aktuelle, rechtlich verbindliche Definition der Europäischen Union beschreibt
-KI als maschinengestützte Systeme, die mit unterschiedlichem Grad an Autonomie
-Vorhersagen, Empfehlungen oder Entscheidungen generieren, welche physische oder
-virtuelle Umgebungen beeinflussen können \cite{noauthor_verordnung_nodate}.
-Diese Definition etabliert sich zunehmend als Referenzrahmen in Forschung und
-Praxis.
+Softwareentwicklung ein. Die aktuelle, rechtlich verbindliche Definition der
+Europäischen Union beschreibt KI als maschinengestützte Systeme, die mit
+unterschiedlichem Grad an Autonomie Vorhersagen, Empfehlungen oder
+Entscheidungen generieren, welche physische oder virtuelle Umgebungen
+beeinflussen können \cite{noauthor_verordnung_nodate}. Diese Definition
+etabliert sich zunehmend als Referenzrahmen in Forschung und Praxis.
 
-Die Entwicklung moderner KI-Systeme unterscheidet sich deutlich von
-traditionellen softwarebasierten Ansätzen. Während frühe KI-Tools vor allem
-grundlegende Aufgaben wie Syntaxprüfung oder Codeformatierung unterstützten,
-übernehmen generative KI-Systeme (GenAI) heute komplexe Aufgaben im Design, der
-Entwicklung und Wartung von Software. Dazu gehören etwa die automatische
-Generierung von Code-Snippets, Funktionen oder Modulen, die Unterstützung bei
-Unit-Tests sowie die Automatisierung von Deployment-Prozessen
+Moderne KI-Systeme unterscheiden sich deutlich von traditionellen
+softwarebasierten Ansätzen. Während frühe KI-Tools vor allem Aufgaben wie
+Syntaxprüfung unterstützten, übernehmen generative KI-Systeme (GenAI) heute
+komplexe Aufgaben im Design, der Entwicklung und Wartung von Software – etwa
+durch die automatische Generierung von Code-Snippets, Unterstützung bei
+Unit-Tests oder die Automatisierung von Deployment-Prozessen
 \cite{donvir_role_2024}.
 
-Grundlage dieser Anwendungen sind verschiedene fortschrittliche
-Modellarchitekturen, darunter Transformer-Modelle (insbesondere Large Language
-Models wie GPT), Generative Adversarial Networks (GANs), Variational
+Zu den wichtigsten Architekturen zählen Transformer-Modelle (insbesondere Large
+Language Models wie GPT), Generative Adversarial Networks (GANs), Variational
 Autoencoders (VAEs) und Diffusion Models. Während LLMs primär für Text- und
 Codegenerierung eingesetzt werden, kommen GANs und Diffusion Models vor allem
-in der Bild- und Medienerzeugung zum Einsatz. VAEs spielen insbesondere bei der
-Generierung und Verarbeitung komplexer Datensätze eine Rolle
-\cite{donvir_role_2024}.
+in der Bild- und Medienerzeugung zum Einsatz \cite{donvir_role_2024}. Viele
+aktuelle Tools wie ChatGPT, GitHub Copilot oder Stable Diffusion basieren auf
+diesen Architekturen und treiben Innovationen in der Softwareentwicklung
+maßgeblich voran.
 
-Diese Vielfalt an Modelltypen ermöglicht den breiten Einsatz generativer
-KI-Systeme und fördert kontinuierlich die Entwicklung innovativer
-Softwarewerkzeuge. Zahlreiche aktuelle Tools wie ChatGPT, GitHub Copilot oder
-Stable Diffusion basieren auf diesen Architekturen und bieten vielfältige
-Funktionen von der Text- bis zur Mediengenerierung. Damit bilden sie zugleich
-die Grundlage für eine stete Weiterentwicklung und Innovation in der
-Softwareentwicklung \cite{donvir_role_2024}.
+Der Einsatz generativer KI verändert Methoden und Arbeitsweisen grundlegend.
+Besonders Large Language Models prägen sämtliche Phasen des
+Softwareentwicklungszyklus – von der Anforderungsanalyse bis zur Umsetzung und
+Wartung. Entscheidungsunterstützung, die Rekonstruktion von
+Softwarearchitekturen sowie Methoden wie Few-Shot-Prompting und
+Retrieval-Augmented Generation (RAG) sind dabei zentrale Elemente
+\cite{esposito_generative_2025}.
 
-Neben den technischen Fortschritten betonen Studien die grundlegenden
-Veränderungen, die generative KI für Methoden und Arbeitsweisen in der
-Entwicklung mit sich bringt. Besonders der Einsatz von Large Language Models
-prägt sämtliche Phasen des Softwareentwicklungszyklus, angefangen bei der
-Anforderungsanalyse bis hin zur Umsetzung von Softwarearchitektur und
-Quellcode. Entscheidungsunterstützung und die Rekonstruktion von
-Softwarearchitekturen zählen dabei zu den wichtigsten Anwendungsfeldern;
-Methoden wie Few-Shot-Prompting und Retrieval-Augmented Generation (RAG) sind
-heute fest etabliert \cite{esposito_generative_2025}.
+Trotz fortschreitender Automatisierung bleibt die sorgfältige Validierung der
+von KI generierten Ergebnisse durch Entwickler:innen unerlässlich. Die größten
+Herausforderungen betreffen Präzision und Verlässlichkeit der Modelle, den
+Umgang mit sogenannten „Halluzinationen“, ethische Aspekte sowie das Fehlen
+domänenspezifischer Benchmarks und Standards \cite{esposito_generative_2025}.
 
-Trotz fortschreitender Automatisierung bleibt der Mensch ein zentraler Faktor
-für den Erfolg generativer KI-Systeme. Eine sorgfältige Validierung der von KI
-generierten Ergebnisse durch Entwicklerinnen und Entwickler ist weiterhin
-notwendig, um die Qualität und Sicherheit der Lösungen sicherzustellen. Die
-wichtigsten Herausforderungen betreffen insbesondere die Präzision und
-Verlässlichkeit der Modelle, den Umgang mit sogenannten „Halluzinationen“,
-ethische Aspekte sowie das Fehlen domänenspezifischer Benchmarks und Standards
-zur Evaluation \cite{esposito_generative_2025}.
+Die Entwicklung der Softwaretechnik unter dem Einfluss von KI lässt sich grob
+in drei Phasen gliedern. Während Software Engineering~1.0 klassische,
+code-zentrierte Entwicklungspraktiken beschreibt, kennzeichnet SE~2.0 die
+Integration KI-gestützter Assistenzsysteme (z.\,B. Copilots) in etablierte
+Prozesse. Die Vision von SE~3.0 sieht einen Paradigmenwechsel zu einer
+intent-basierten, dialogorientierten Entwicklung vor, in der KI-Systeme als
+intelligente Partner agieren~\cite{hassan_towards_2024}.
+
+\begin{table}[H]
+    \centering
+    \vspace{1em}
+    \footnotesize
+    \begin{tabular}{|p{3cm}|p{3.3cm}|p{3.3cm}|p{3.3cm}|}
+        \hline
+                                                 & \textbf{SE 1.0 (Vergangenheit)} & \textbf{SE 2.0 (Gegenwart)} & \textbf{SE 3.0 (Zukunft)} \\
+        \hline
+        Leitmotiv                                &
+        Code-first                               &
+        Code-first + KI-Unterstützung            &
+        Intent-first, KI als Partner                                                                                                         \\
+        \hline
+        Technologie                              &
+        Klassische Tools, Programmanalyse        &
+        KI-gestützte Copilots, Foundation Models &
+        Konversationsorientiert, Reasoning-Modelle                                                                                           \\
+        \hline
+        Rolle von Mensch/KI                      &
+        Mensch zentral, alles manuell            &
+        Mensch + KI, KI assistiert               &
+        Symbiose: Mensch \& KI kollaborieren                                                                                                 \\
+        \hline
+        Besonderheiten                           &
+        Fokus auf Code, klare Abläufe            &
+        Effizienzsteigerung, hohe kognitive Last &
+        Dialog, Automatisierung, wissensgetrieben                                                                                            \\
+        \hline
+    \end{tabular}
+    \caption{Entwicklung der Softwaretechnik unter KI-Einfluss (SE~1.0 bis SE~3.0). Quelle: Eigene Darstellung in Anlehnung an Hassan et al.~\cite{hassan_towards_2024}.}
+    \label{tab:se-evolution}
+\end{table}
 
 % \vspace{1em}
 % \noindent

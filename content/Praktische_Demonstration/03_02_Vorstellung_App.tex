@@ -1,66 +1,55 @@
-\subsection{Architektur und Aufbau}
 
-Die App \textit{Locals} ist eine mobile Anwendung, die Nutzer:innen dabei
-unterstützt, lokale Events zu entdecken, zu erstellen und zu verwalten. Sie
-richtet sich insbesondere an ein junges, urbanes Publikum und fördert soziale
-Interaktionen im Kontext gemeinsamer Veranstaltungen.
+\subsection{Architektur und technischer Stack}
 
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.95\textwidth]{images/architekturdiagramm_locals.png}
-%     \caption{Architektur der App „Locals“: Darstellung der Hauptkomponenten (MapScreen, Filter, Modal, EventProvider, Backend/Firebase) und deren Datenflüsse.}
-%     \label{fig:architektur-locals}
-% \end{figure}
+Die App \textit{Locals} ist eine mobile Plattform, die Nutzer:innen ermöglicht,
+lokale Events zu entdecken, zu erstellen und zu verwalten. Sie richtet sich an
+ein junges, urbanes Publikum und unterstützt soziale Interaktionen rund um
+Veranstaltungen.
 
-\subsubsection{Technologischer Stack und Architektur}
+Die modulare Architektur setzt auf moderne, plattformübergreifende
+Technologien:
 
-Der technologische Stack von \textit{Locals} wurde gezielt so ausgewählt, dass
-eine moderne, plattformübergreifende Entwicklung und eine reibungslose User
-Experience möglich sind:
+% TODO: einheitlich schreiben mit punkt oder ohne generell überall?
 \begin{itemize}
-    \item \textbf{Frontend:} Entwicklung mit React Native, TypeScript und Expo für eine performante Bereitstellung auf iOS und Android.
-    \item \textbf{Backend:} Verwendung von Firebase zur Authentifizierung, Datenhaltung und Synchronisation.
-    \item \textbf{Navigation:} Einsatz von \texttt{@react-navigation/native} und \texttt{expo-router} für ein modernes, tab-basiertes Navigationskonzept.
-    \item \textbf{State-Management:} Implementierung eigener Context-Provider (\texttt{AuthProvider}, \texttt{EventsProvider}) für Authentifizierungs- und Eventdaten.
-    \item \textbf{UI-Komponenten:} Nutzung von \texttt{@expo/vector-icons} und \texttt{lucide-react-native} für ein ansprechendes und konsistentes User Interface.
-    \item \textbf{Maps \& Location:} Integration von \texttt{react-native-maps} und \texttt{expo-location} für eine interaktive Kartenansicht, die sowohl den Nutzerstandort als auch Events auf einer Karte visualisiert.
+    \item \textbf{Frontend:} React Native, TypeScript, Expo (für schnelle, konsistente Entwicklung auf iOS/Android).
+    \item \textbf{Backend:} Firebase (Authentifizierung, Datenhaltung, Synchronisation).
+    \item \textbf{Navigation:} \texttt{@react-navigation/native}, \texttt{expo-router}.
+    \item \textbf{State-Management:} Eigene Context-Provider (\texttt{AuthProvider}, \texttt{EventsProvider}).
+    \item \textbf{UI:} \texttt{@expo/vector-icons}, \texttt{lucide-react-native}.
+    \item \textbf{Karten/Location:} \texttt{react-native-maps}, \texttt{expo-location}.
 \end{itemize}
 
-Die App ist modular aufgebaut und besteht aus drei zentralen Bereichen:
+Die Anwendung ist in drei Hauptbereiche gegliedert:
 \begin{itemize}
-    \item \textbf{Explore-Screen:} Zeigt einen Event-Feed, der sich nach Interessen und aktuellem Standort richtet.
-    \item \textbf{Map-Screen:} Bietet eine interaktive Kartenansicht mit Event-Markern und Filterfunktion.
-    \item \textbf{Profil-Screen:} Ermöglicht die Übersicht und Verwaltung eigener Events und Profildaten.
+    \item \textbf{Explore-Screen:} Event-Feed nach Standort/Interesse.
+    \item \textbf{Map-Screen:} Interaktive Kartenansicht mit Event-Markern und Filtern.
+    \item \textbf{Profil-Screen:} Übersicht und Verwaltung eigener Events/Profile.
 \end{itemize}
 
-Während Explore- und Profil-Screen bereits Grundfunktionen aufweisen, wird der
-Map-Screen im Rahmen dieser Arbeit als prototypisches Demonstrationsbeispiel
-gezielt entwickelt und evaluiert. Die praktische Realisierung dieses Features
-erfolgt unter Einsatz generativer KI-Tools und steht im Mittelpunkt der
-folgenden Kapitel.
+Der Map-Screen wird in dieser Arbeit als prototypisches, KI-gestütztes Feature
+exemplarisch entwickelt und dient als Grundlage für die weitere Analyse.
 
-\subsubsection{Struktur der Haupteinstiegskomponente (\texttt{RootLayout})}
+\subsubsection{Einstiegskomponente und Navigation}
 
-Die zentrale Einstiegskomponente der App ist das \texttt{RootLayout}. Diese
-übernimmt das Laden benutzerdefinierter Fonts, die Einbindung von
-Authentifizierungs- und Events-Kontexten sowie eine durchgängige Nutzerführung
-nach dem Login. Die Navigation wird dabei strikt vom Authentifizierungsstatus
-gesteuert, sodass nicht eingeloggte Nutzer:innen automatisch zur Login-Ansicht
-weitergeleitet werden. Für die technische Umsetzung werden Hooks wie
-\texttt{useAuth}, \texttt{useSegments} und \texttt{useRouter} eingesetzt.
+Das zentrale \texttt{RootLayout} lädt Fonts, Authentifizierungs- und
+Event-Kontexte und steuert die Nutzerführung abhängig vom Login-Status. Die
+Navigation erfolgt strikt zustandsbasiert (\texttt{useAuth},
+\texttt{useSegments}, \texttt{useRouter}). Dieses Architekturprinzip
+gewährleistet eine saubere Trennung von Zustandsverwaltung und Routing, was
+spätere Erweiterungen und Integrationen (z.B. von KI-gestützten Funktionen)
+erleichtert.
 
 \subsection{Bestehende Funktionalitäten}
 
-Bereits implementierte Kernfunktionen von \textit{Locals} sind:
+Bereits vor der KI-Integration implementiert sind:
 \begin{itemize}
-    \item \textbf{Benutzerauthentifizierung:} Sichere Registrierung und Anmeldung über Firebase Authentication.
-    \item \textbf{Profilverwaltung:} Verwaltung persönlicher Daten sowie Übersicht über besuchte und selbst erstellte Events.
-    \item \textbf{Eventverwaltung:} Anlegen, Bearbeiten und Löschen von Events.
-    \item \textbf{Tab-Navigation:} Ermöglicht den nahtlosen Wechsel zwischen den drei Hauptbereichen „Explore“, „Map“ und „Profil“.
-    \item \textbf{Responsives Design:} Konsistente Darstellung auf verschiedenen Endgeräten durch Nutzung von \texttt{react-native-safe-area-context} und Expo UI-Komponenten.
+    \item \textbf{Benutzerauthentifizierung:} Firebase Authentication.
+    \item \textbf{Profilverwaltung:} Eigene und besuchte Events.
+    \item \textbf{Eventverwaltung:} Anlegen, Bearbeiten, Löschen.
+    \item \textbf{Tab-Navigation:} Zwischen Explore, Map, Profil.
+    \item \textbf{Responsives Design:} Einheitliche Darstellung auf allen Endgeräten.
 \end{itemize}
 
-Der Map-Screen ist als zentrales, innovatives Feature der App konzipiert. Die
-Implementierung und Weiterentwicklung dieses Moduls wird im weiteren Verlauf
-dieser Arbeit als praktisches Beispiel für den Einsatz generativer KI in der
-Softwareentwicklung detailliert analysiert.
+Die modulare Struktur und klare Abgrenzung der App-Komponenten bieten die
+ideale Basis, um generative KI-Tools gezielt einzusetzen und deren Auswirkungen
+im Entwicklungsprozess zu evaluieren.

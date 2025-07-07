@@ -10,47 +10,49 @@
 
 % % Besonders relevant ist die Frage, wie sich KI-gestützte Entwicklungsumgebungen auf traditionelle Softwareentwicklungspraktiken auswirken. Während einige Forschungen darauf hindeuten, dass KI-Tools repetitive Aufgaben reduzieren und Entwicklern mehr Raum für kreative Problemlösungen geben, bestehen weiterhin Unsicherheiten hinsichtlich der Verlässlichkeit der generierten Codevorschläge und möglicher ethischer Bedenken.
 
-Die Relevanz des Themas ergibt sich aus den gegenwärtigen Entwicklungen in
-Forschung und Praxis: Immer mehr Unternehmen erforschen aktiv den Einsatz von
-KI-Technologien, um sich Effizienzvorteile und Innovationsschübe zu sichern.
-Gleichzeitig zeigt sich in vielen Studien ein Spannungsverhältnis zwischen den
-Versprechen generativer KI – zum Beispiel automatisierte Code-Generierung und
-intelligente Projektsteuerung – und den Risiken, etwa unzureichender
-Transparenz, Sicherheitslücken oder ethischen Verzerrungen.
+Die hohe Relevanz des Themas ergibt sich aus aktuellen Entwicklungen in
+Forschung und Praxis: Immer mehr Unternehmen setzen auf KI-Technologien, um
+Effizienzpotenziale und Innovationsschübe zu realisieren. Während generative
+KI, etwa durch automatisierte Code-Generierung oder intelligente
+Projektsteuerung enorme Fortschritte und Produktivitätsgewinne verspricht,
+zeigen empirische Studien zugleich ein Spannungsverhältnis zwischen den
+erhofften Vorteilen und realen Risiken wie Intransparenz, Sicherheitslücken und
+ethischen Verzerrungen.
 
 Nach aktuellen Schätzungen (Stand: 2025) erreicht der Softwaremarkt in
-Deutschland ein Volumen von rund 31 Milliarden US-Dollar und Entwicklerinnen
-und Entwickler verbringen laut Erhebungen durchschnittlich bis zu 17 Stunden
-pro Woche mit Wartungsaufgaben – dies zeigt, wie dringend
-Automatisierungsansätze und Qualitätsverbesserungen in der Praxis benötigt
-werden. Gerade hier setzt die generative KI an: Sie kann beispielsweise durch
-das automatisierte Erstellen von Boilerplate-Code oder durch Code-Assistenten
-wie GitHub Copilot nicht nur die Effizienz im Entwicklungsprozess deutlich
-steigern, sondern auch das Fachkräftethema ein Stück weit abfedern. Allerdings
-lassen sich aus diesem Trend auch kontroverse Fragen ableiten, etwa inwiefern
-die starke Abhängigkeit von KI-Modellen die Rollen und Kompetenzen von
-Softwareentwicklerinnen und -entwicklern langfristig verändert – oder wie
-Unternehmen sicherstellen können, dass durch KI-gestützte Automatisierung
-weiterhin qualitativ hochwertige, wartbare und sichere Software entsteht
-\cite{siebert_generative_2024}.
+Deutschland ein Volumen von rund 31 Milliarden US-Dollar. Entwickler:innen
+verbringen im Durchschnitt bis zu 17 Stunden pro Woche mit Wartungs- und
+Routineaufgaben, ein Indikator dafür, wie groß der Bedarf an Automatisierung
+und Qualitätsverbesserung in der Praxis ist. Genau hier setzt die generative KI
+an: Tools wie GitHub Copilot können durch automatisierte
+Boilerplate-Code-Generierung oder intelligente Code-Vervollständigung nicht nur
+die Produktivität erhöhen, sondern auch das Fachkräftethema teilweise
+entschärfen. Laut einer von Deloitte zitierten Studie lässt sich durch
+KI-basierte Coding-Tools die für Routineaufgaben benötigte Entwicklerzeit um
+bis zu 50\,\% reduzieren (vgl. \cite{s_future_2024}
+\cite{siebert_generative_2024}).
 
-Hinzu kommt, dass Softwareentwicklung durch agile Methoden wie Scrum oder
-Kanban bereits stark dynamisiert ist: Teams agieren flexibel, stehen aber auch
-unter stetigem Veränderungsdruck. Wenn dann zusätzlich KI als Tool oder
-„Co-Entwickler“ eingebunden wird, steigen die Anforderungen an
-Prozessgestaltung, Rollenverteilung und Qualitätsmanagement weiter. Genau hier
-setzt diese Arbeit an: Sie möchte klären, wie Entwickler und Entscheider KI
-sinnvoll in den Softwarelebenszyklus integrieren können, wo praxisnahe Chancen
-liegen und welche neuen Stolpersteine zu beachten sind.
+Ein Beleg für die zunehmende wirtschaftliche Bedeutung ist der stetige Anstieg
+der Investitionen in KI-Technologien für die Softwareentwicklung in den letzten
+Jahren. Abbildung~\ref{fig:ki-investitionen} veranschaulicht diese Entwicklung
+und unterstreicht, wie stark Unternehmen auf innovative KI-Lösungen setzen, um
+sich Wettbewerbsvorteile zu sichern.
 
-Dabei deuten aktuelle Marktanalysen darauf hin, dass KI-Assistenten die
-Arbeitsweise von Softwareentwicklern erheblich beschleunigen können. Laut einer
-von Deloitte zitierten Studie ist es beispielsweise möglich, dass KI-basierte
-Coding-Tools – zumindest bei Routinetätigkeiten – die dafür benötigte
-Entwicklerzeit um bis zu 50\% reduzieren (vgl. \cite{s_future_2024}) .
-Gleichzeitig fließt in diesem Bereich laut Branchenberichten inzwischen
-weltweit massiv Kapital, was auf die steigende Bedeutung hinweist. Daraus
-ergibt sich die Notwendigkeit, Chancen und Herausforderungen systematisch zu
-analysieren und klare Handlungsempfehlungen aufzustellen, damit die Integration
-von KI in Entwicklungsprozessen nicht nur technisch, sondern auch ethisch und
-organisatorisch gut gelingt.
+\begin{figure}[H]
+    \centering
+    \vspace{1em}
+    \includegraphics[width=0.7\textwidth]{images/abbildungen/statistic_id1481131_jaehrliche-investitionen-von-unternehmen-in-ki-fuer-softwareentwicklung-bis-2025.png}
+    \caption{Jährliche Investitionen von Unternehmen in KI für Softwareentwicklung 2023–2025. Quelle: Capgemini~\cite{statista_ki_investitionen_2025}.}
+    \label{fig:ki-investitionen}
+\end{figure}
+
+Allerdings werfen diese Entwicklungen auch kontroverse Fragen auf: In welchem
+Maße verändert die zunehmende Abhängigkeit von KI-Tools die Rollen und
+Kompetenzen von Softwareentwickler:innen? Wie kann sichergestellt werden, dass
+durch KI-gestützte Automatisierung weiterhin qualitativ hochwertige, wartbare
+und sichere Software entsteht~\cite{siebert_generative_2024}? Hinzu kommt, dass
+die Softwareentwicklung durch agile Methoden wie Scrum oder Kanban bereits
+stark dynamisiert ist. Die zusätzliche Integration von KI als Tool oder
+„Co-Entwickler“ erhöht die Anforderungen an Prozessgestaltung, Rollenverteilung
+und Qualitätsmanagement weiter.
+
