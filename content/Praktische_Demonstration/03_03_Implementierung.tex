@@ -421,58 +421,68 @@ lassen.
 
 % ----------- Vergleich und Bewertung
 \subsection{Vergleich und Bewertung der eingesetzten KI-Tools}
+\label{sec:vergleich-bewertung}
 
-Nach der Durchführung der Demonstrationen mit Copilot, Cursor und Bolt werden
-Unterschiede und Gemeinsamkeiten hinsichtlich Funktionalität, Effizienz,
-Entwicklererlebnis und Ergebnisqualität sichtbar.
+Nach der Durchführung der Demonstrationen mit Copilot, Cursor und Bolt wurden
+deutliche Unterschiede und Gemeinsamkeiten im Hinblick auf Funktionalität,
+Effizienz, Entwicklererlebnis und Ergebnisqualität sichtbar. Copilot überzeugte
+besonders bei Standardaufgaben und bewährten Patterns in der Codegenerierung:
+Hier sorgte das Tool für eine erhebliche Effizienzsteigerung bei
+Routinearbeiten, erforderte jedoch bei komplexeren Anforderungen weiterhin
+manuelle Nacharbeit. Cursor ermöglichte durch den aktiven Bezug auf
+Kontextinformationen, etwa Screenshots, Code oder Fehlermeldungen, sowie durch
+dialogisches Prompt Chaining eine zielgerichtete und schnelle Entwicklung. Die
+Fehlerdiagnose und Lösungsvorschläge erwiesen sich häufig als präziser als bei
+Copilot, wenngleich auch hier bei Spezialfällen eine aktive Begleitung durch
+die Entwickler:innen notwendig blieb. Bolt punktete vor allem durch die
+umfassende Plattformintegration (z.\,B. GitHub, Web, App Store) und die
+Möglichkeit, Projekte direkt aus der Cloud-IDE zu initialisieren und zu
+deployen. Besonders im Web-Kontext zeigte Bolt große Stärken, während bei der
+mobilen Entwicklung und beim Refactoring bestehender Projekte Grenzen sichtbar
+wurden.
 
-\subsubsection{Direkter Vergleich}
-
-\begin{itemize}
-      \item \textbf{Copilot} überzeugt besonders bei Standardaufgaben und bewährten Patterns in der Codegenerierung. Die Effizienzsteigerung bei Routinearbeiten ist erheblich, bei komplexeren Anforderungen bleibt jedoch manuelle Nacharbeit nötig.
-      \item \textbf{Cursor} ermöglicht durch aktiven Kontextbezug (Screenshots, Code, Fehlermeldungen) und dialogisches Prompt Chaining eine zielgerichtete und schnelle Entwicklung. Die Fehlerdiagnose und Lösungsvorschläge sind präziser als bei Copilot, bei Spezialfällen ist aber weiterhin aktive Begleitung nötig.
-      \item \textbf{Bolt} punktet mit umfassender Plattformintegration (GitHub, Web, App Store) und der Möglichkeit, Projekte direkt aus der Cloud-IDE zu initialisieren und zu deployen. Besonders im Web-Kontext zeigt Bolt große Stärken, stößt jedoch bei der mobilen Entwicklung und beim Refactoring bestehender Projekte an Grenzen.
-\end{itemize}
-
-Die Ergebnisse dieser Demonstration stehen im Einklang mit aktuellen Studien,
-die Effizienzgewinne und Qualitätsverbesserungen durch generative KI-Tools
-nachweisen. Coutinho et~al.~\cite{coutinho_role_2024} berichten von deutlicher
-Zeitersparnis bei Standardaufgaben, während Braun~\cite{braun_ki_2024} und
+Diese Ergebnisse stehen im Einklang mit aktuellen Studien, die Effizienzgewinne
+und Qualitätsverbesserungen durch generative KI-Tools nachweisen. So berichten
+Coutinho et~al.~\cite{coutinho_role_2024} von deutlicher Zeitersparnis bei
+Standardaufgaben, während Braun~\cite{braun_ki_2024} und
 Sulabh~\cite{s_future_2024} auf die weiterhin bestehende Notwendigkeit
 manueller Kontrolle und Überprüfung hinweisen. Schmitt
-et~al.~\cite{schmitt_generative_2024} betonen zudem, dass KI-Tools auch soziale
-und identitätsbezogene Veränderungen im Entwickleralltag nach sich ziehen.
+et~al.~\cite{schmitt_generative_2024} betonen darüber hinaus, dass der Einsatz
+von KI-Tools auch soziale und identitätsbezogene Veränderungen im Alltag von
+Softwareentwickler:innen mit sich bringen kann.
 
-\subsubsection{Lessons Learned und Best Practices}
+Im Rahmen der Lessons Learned zeigte die praktische Evaluation, dass generative
+KI-Tools bei richtiger Anwendung eine wertvolle Unterstützung im
+Entwicklungsprozess bieten. Sie führen zu Effizienzgewinnen, einer höheren
+Codequalität und einem insgesamt gesteigerten Entwicklererlebnis. Wesentliche
+Empfehlungen lassen sich ableiten: Präzise und kontextreiche Prompts sind
+essenziell, da sie maßgeblich zur Passgenauigkeit der Ergebnisse beitragen.
+Trotz hoher Automatisierung bleibt die manuelle Kontrolle aller KI-generierten
+Änderungen unerlässlich. Tools wie Cursor, die Kontextinformationen aktiv
+nutzen und Feedback-Loops ermöglichen, bieten deutliche Vorteile bei
+komplexeren Aufgaben. Die Auswahl des passenden Tools sollte sich nach dem
+Projekttyp richten: Für neue Projekte oder Prototypen eignet sich Bolt, während
+Copilot bei Routinearbeiten und Cursor bei dialogischen, komplexeren Abläufen
+in bestehenden Projekten überzeugen. Zudem zeigt sich, dass
+plattformübergreifende Entwicklung häufig zusätzliche Anpassungen erfordert,
+die von den Tools unterschiedlich gut unterstützt werden.
 
-Die praktische Evaluation zeigt: Generative KI-Tools sind eine wertvolle
-Unterstützung im Entwicklungsprozess und führen, bei richtiger Anwendung, zu
-Effizienzgewinnen, höherer Codequalität und einer Steigerung des
-Entwicklererlebnisses. Wesentliche Empfehlungen lassen sich ableiten:
-
-\begin{itemize}
-      \item \textbf{Präzise Prompts sind essenziell:} Je konkreter und kontextreicher die Anweisungen, desto passgenauer das Ergebnis.
-      \item \textbf{Manuelle Kontrolle bleibt notwendig:} Trotz hoher Automatisierung ist die Überprüfung aller KI-generierten Änderungen unerlässlich.
-      \item \textbf{Kontextnutzung und Feedback-Loops:} Tools wie Cursor, die Kontextinformationen aktiv verarbeiten, bieten klare Vorteile bei komplexeren Aufgaben.
-      \item \textbf{Tool-Auswahl nach Projekttyp:} Für neue Projekte oder Prototypen eignen sich Tools wie Bolt, für laufende Projekte Copilot (Routine) oder Cursor (komplexere, dialogische Abläufe).
-      \item \textbf{Plattformkompatibilität beachten:} Verschiedene Plattformen erfordern oft eigene Anpassungen, dies wird von den Tools unterschiedlich gut unterstützt.
-\end{itemize}
-
-\subsubsection{Qualitative Bewertung: Zeiteffizienz, Codequalität und Wartbarkeit}
-
-Die Analyse zeigt differenzierte Ergebnisse:
-\begin{itemize}
-      \item \textbf{Copilot:} Spürbare Zeitersparnis bei Standardaufgaben, solide Codequalität bei Routinetätigkeiten, Nacharbeit nötig bei individueller Logik.
-      \item \textbf{Cursor:} Schnelles Debugging, zielgerichtete Entwicklung dank Kontextintegration, hohe Zeiteffizienz und verbesserte Wartbarkeit.
-      \item \textbf{Bolt:} Große Stärken bei Projektinitialisierung und Multi-Plattform-Support, Zeiteinsparung besonders im Setup, aber Kompatibilitätsprobleme im laufenden Betrieb.
-\end{itemize}
+Die qualitative Bewertung der eingesetzten Tools unterstreicht diese
+Differenzierung: Copilot sorgt für spürbare Zeitersparnis und eine solide
+Codequalität bei Standardaufgaben, erfordert aber bei individueller Logik oft
+Nacharbeit. Cursor ermöglicht ein schnelles Debugging und eine zielgerichtete
+Entwicklung durch die Integration von Kontextinformationen, was zu hoher
+Zeiteffizienz und verbesserter Wartbarkeit führt. Bolt wiederum zeigt seine
+größten Stärken bei der Projektinitialisierung und dem Multi-Plattform-Support,
+ermöglicht eine deutliche Zeiteinsparung insbesondere beim Setup, stößt jedoch
+im laufenden Betrieb immer wieder auf Kompatibilitätsprobleme.
 
 \subsection{Zwischenfazit}
 
 Die praktische Demonstration liefert zentrale Erkenntnisse: Generative KI-Tools
 ermöglichen signifikante Effizienzsteigerungen bei Routineaufgaben und bieten
-Potenziale für höhere Codequalität und Wartbarkeit. Gleichzeitig treten
-Herausforderungen bei Fehlerbehebung, Tool-Integration und
+ein hohes Potenzial für bessere Codequalität und Wartbarkeit. Gleichzeitig
+treten Herausforderungen bei Fehlerbehebung, Tool-Integration und
 plattformübergreifender Entwicklung auf. Diese Erfahrungen bilden die Grundlage
 für die systematische Bewertung der Chancen und Risiken generativer KI in der
 Softwareentwicklung in den folgenden Kapiteln.
@@ -480,6 +490,7 @@ Softwareentwicklung in den folgenden Kapiteln.
 Aktuelle Forschungsergebnisse bestätigen diese Beobachtungen: Aspekte wie
 Barrierefreiheit und Usability sollten laut Flores-Saviaga
 et~al.~\cite{flores-saviaga_impact_2025} künftig stärker berücksichtigt werden.
-Geyer et~al.~\cite{geyer_case_2025} zeigen, dass die Integration generativer
-KI-Tools auch positive Effekte auf Teamarbeit und Qualitätssicherung in agilen
-Entwicklungsprojekten haben kann.
+Geyer et~al.~\cite{geyer_case_2025} zeigen zudem, dass die Integration
+generativer KI-Tools positive Effekte auf Teamarbeit und Qualitätssicherung in
+agilen Entwicklungsprojekten haben kann.
+
