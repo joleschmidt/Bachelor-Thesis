@@ -4,9 +4,9 @@
 \label{sec:prompt-setup}
 
 Um eine objektive und vergleichbare Bewertung zu ermöglichen, wurde für die
-Implementierung des Map-Screens in allen drei Tools (\textit{GitHub Copilot},
-\textit{Cursor}, \textit{Bolt.new}) derselbe, detaillierte Prompt verwendet,
-der die funktionalen und technischen Anforderungen klar definierte:
+Implementierung des Map-Screens in allen drei Tools (GitHub Copilot,Cursor,
+Bolt) derselbe, detaillierte Prompt verwendet, der die funktionalen und
+technischen Anforderungen klar definierte:
 
 \begin{lstlisting}[]
     Create a Map Screen with Event Markers and Filter in React Native
@@ -69,8 +69,9 @@ der die funktionalen und technischen Anforderungen klar definierte:
 \subsection{Demonstration mit GitHub Copilot}
 
 \subsubsection{Setup und Vorgehen}
-Die Entwicklung des Map-Screens wurde exemplarisch mit \textbf{GitHub Copilot}
-in Visual Studio Code durchgeführt. Für größtmögliche Vergleichbarkeit kamen
+Die Entwicklung des Map-Screens wurde exemplarisch mit \textit{GitHub Copilot}
+in Visual Studio Code durchgeführt (Branch: \texttt{copilot}, Sprachmodell:
+Claude 3.7 Sonnet, Agent mode). Für größtmögliche Vergleichbarkeit kamen
 ausschließlich die Copilot-Funktionen zum Einsatz, keine weiteren KI-Plugins.
 
 \begin{figure}[htbp]
@@ -84,8 +85,8 @@ ausschließlich die Copilot-Funktionen zum Einsatz, keine weiteren KI-Plugins.
 % TODO: muss ich alles aufzählen nicht nur z.b.?
 Zu Beginn wurde die Entwicklungsumgebung vorbereitet (z.~B.\ Installation von
 \texttt{react-native-maps} und \texttt{expo-location}). Die Aufgabenstellung
-wurde als Kommentar oder Docstring auf Englisch eingefügt (\emph{siehe
-      Abschnitt~\ref{sec:prompt-setup}}).
+wurde als Kommentar oder Docstring auf Englisch eingefügt (siehe
+Abschnitt~\ref{sec:prompt-setup}).
 
 \subsubsection{Schrittweise Umsetzung und Reflexion}
 Die Entwicklung erfolgte nach folgendem Muster:
@@ -168,32 +169,29 @@ notwendig war, um die gewünschten Resultate zu erzielen und eine stabile
 App-Funktionalität sicherzustellen.
 
 Im Rückblick erwiesen sich die Vorschläge von Copilot bei Standardaufgaben als
-überwiegend brauchbar, wobei die subjektive Zufriedenheit bei etwa 4 von 5
-Punkten lag. Bei anspruchsvolleren Anforderungen, etwa beim State-Management
-oder bei spezifischen Typ-Logiken, blieben die generierten Vorschläge jedoch
-häufig unvollständig. Die Interaktion mit Copilot wurde grundsätzlich als
-intuitiv empfunden, setzt allerdings präzise formulierte Prompts und ein
-grundlegendes Verständnis der jeweiligen Implementierungsdetails voraus.
-Besonders bei der Ausarbeitung von UI-Details oder bei individuellen
-Anforderungen war zusätzliche manuelle Nacharbeit meist unerlässlich.
+überwiegend brauchbar. Bei anspruchsvolleren Anforderungen, etwa beim
+State-Management oder bei spezifischen Typ-Logiken, blieben die generierten
+Vorschläge jedoch häufig unvollständig. Die Interaktion mit Copilot wurde
+grundsätzlich als intuitiv empfunden, setzt allerdings präzise formulierte
+Prompts und ein grundlegendes Verständnis der jeweiligen
+Implementierungsdetails voraus.
 
 Abschließend lässt sich festhalten, dass Copilot zweifellos ein
 leistungsfähiges Assistenz-Tool darstellt, das Routinearbeiten im
 Entwicklungsprozess erheblich beschleunigen kann. Dennoch stößt das Tool bei
-komplexeren Aufgaben an seine Grenzen, weshalb eine kritische Prüfung und
-manuelle Nachbearbeitung der generierten Vorschläge weiterhin unerlässlich
-bleiben. Die praktische Demonstration zeigt somit, dass Copilot insbesondere
-für erfahrene Entwickler:innen einen relevanten Effizienzgewinn bieten kann,
-den Anspruch auf vollständige Automatisierung jedoch noch nicht erfüllt.
+komplexeren Aufgaben an seine Grenzen. Die praktische Demonstration zeigt
+somit, dass Copilot insbesondere für erfahrene Entwickler:innen einen
+relevanten Effizienzgewinn bieten kann, den Anspruch auf vollständige
+Automatisierung jedoch noch nicht erfüllt.
 
 \subsection{Demonstration mit Cursor}
 
 % TODO: Cursor hier fett geschrieben, sonst kursiv. einheitlich schreiben.
 \subsubsection{Setup und Vorgehen}
-Für die Entwicklung des Map-Screens wurde \textbf{Cursor} als spezialisierte
+Für die Entwicklung des Map-Screens wurde \textit{Cursor} als spezialisierte
 KI-basierte Entwicklungsumgebung genutzt (Branch: \texttt{cursor},
 Sprachmodell: Claude 3.7 Sonnet, Agent mode). Auch hier wurde die identische
-Aufgabenstellung genutzt (\emph{siehe Abschnitt~\ref{sec:prompt-setup}}).
+Aufgabenstellung genutzt (siehe Abschnitt~\ref{sec:prompt-setup}).
 
 \begin{figure}[htbp]
       \centering
@@ -268,7 +266,7 @@ erkannte und Code automatisch an neue Datenstrukturen anpasste. Im Vergleich zu
 Copilot konnte die grundlegende Kartenfunktion zudem schneller funktionsfähig
 umgesetzt werden, auch wenn es hierfür mehrere Prompts benötigte, bis die erste
 Map-Anzeige tatsächlich erschien. Sehr positiv fiel auch die transparente
-Dokumentation der Debugging-Schritte auf: Cursor machte nicht nur die einzelnen
+Dokumentation der Debugging-Schritte auf. Cursor machte nicht nur die einzelnen
 Entwicklungsschritte nachvollziehbar, sondern schlug oftmals auch Lösungen für
 Fehlerquellen vor, die zuvor übersehen worden waren.
 
@@ -302,12 +300,11 @@ Transparenz.
 \subsection{Demonstration mit Bolt}
 
 \subsubsection{Setup und Vorgehen}
-Für die Entwicklung des Map-Screens wurde das KI-Assistenztool
-\textbf{Bolt.new} eingesetzt. Bolt ermöglichte dabei den direkten Zugriff auf
-das bestehende \texttt{Locals}-GitHub-Repository und bot eine integrierte
-Umgebung für Prompt Chaining und Live-Code-Editing. Die identische
-Aufgabenstellung wurde zu Beginn eingebracht (\emph{siehe
-      Abschnitt~\ref{sec:prompt-setup}}).
+Für die Entwicklung des Map-Screens wurde das KI-Assistenztool \textit{Bolt}
+eingesetzt. Bolt ermöglichte dabei den direkten Zugriff auf das bestehende
+\texttt{Locals}-GitHub-Repository und bot eine integrierte Umgebung für Prompt
+Chaining und Live-Code-Editing. Die identische Aufgabenstellung wurde zu Beginn
+eingebracht (siehe Abschnitt~\ref{sec:prompt-setup}).
 
 \begin{figure}[htbp]
       \centering
@@ -353,7 +350,7 @@ zu installieren und Fehler im laufenden Betrieb zu beheben.
 \begin{enumerate}
       \item \textbf{Repository-Anbindung und Initialisierung:} Über die GitHub-Integration wurde direkt auf das Locals-Repo zugegriffen, ein neuer Branch erstellt und Bolt konnte sämtliche Projektdaten einsehen.
       \item \textbf{Prompt Chaining und Kontextgabe:} Für jede Aufgabe wurden Prompts mit Screenshots und Codeausschnitten ergänzt, etwa zur Installation fehlender Abhängigkeiten wie \texttt{react-native-web}.
-      \item \textbf{Automatisiertes Debugging:} Terminalbefehle wie \texttt{npm run dev} wurden selbständig ausgeführt, Fehler wie inkompatible Packages oder fehlende Dependencies eigenständig erkannt und (teilweise) gelöst.
+      \item \textbf{Automatisiertes Debugging:} Terminalbefehle wie \texttt{npm run dev} wurden selbständig ausgeführt, Fehler wie inkompatible Packages oder fehlende Dependencies eigenständig erkannt und teilweise gelöst.
       \item \textbf{Feature-Integration:} Bolt erstellte zentrale Komponenten (\texttt{EventsProvider}, \texttt{EventMarker}, \texttt{MapFilters}) und aktualisierte \texttt{map.tsx} und \texttt{map.web.tsx} für mobile und Web.
       \item \textbf{Multi-Plattform-Support:} Bei Problemen mit \texttt{react-native-maps} auf Web wurde automatisch auf \texttt{react-google-maps} gewechselt und eine alternative Map-Implementierung für Web ergänzt.
       \item \textbf{Fehler-Handling und Limits:} Bei aufwendigen Operationen wurde das Tageslimit des kostenlosen Bolt-Plans schnell erreicht, was ein Upgrade auf Pro erforderte.
@@ -391,7 +388,7 @@ Herausforderungen auf. Bolt war in der Lage, das Setup und zahlreiche
 Standardprobleme eigenständig zu lösen und ermöglichte zudem ein intuitives
 Web-Deployment. Allerdings zeigten sich bei komplexeren Fehlern, wie etwa
 inkompatiblen nativen Packages bei mobilen Builds oder spezifischen Problemen
-mit Firebase auf iOS, die Grenzen des Tools: Zwar wurden diese Probleme von
+mit Firebase auf iOS, die Grenzen des Tools. Zwar wurden diese Probleme von
 Bolt erkannt, konnten aber nicht immer nachhaltig und automatisiert gelöst
 werden. Die parallele Unterstützung für mobile und Web-Plattformen führte zudem
 zu umfangreichen Anpassungen und wiederkehrenden Fehlern, insbesondere bei der
@@ -404,14 +401,14 @@ sogenannte „grüne Wiese“-Projekte, kleinere neue Repositories oder zur
 Unterstützung bei der Initialisierung und Standardisierung von Projekten.
 Besonders vorteilhaft war die direkte Integration mit GitHub, Stripe und
 Supabase sowie die unkomplizierte Möglichkeit, Web-Deployments durchzuführen.
-In größeren, bereits bestehenden Projekten stieß Bolt jedoch an seine Grenzen:
+In größeren, bereits bestehenden Projekten stieß Bolt jedoch an seine Grenzen.
 Während ein funktionierender Map-Screen für die Web-Version erstellt werden
 konnte, blieben bei mobilen Builds weiterhin Fehler bestehen. Die
 Fehlererkennung und automatische Problemlösung waren insgesamt überzeugend,
-doch bei komplexeren, nicht-trivialen Projekten erwiesen sich manuelle
-Nacharbeit und ein kritisches Review weiterhin als unerlässlich. Positiv
-hervorzuheben ist, dass die mit Bolt umgesetzte Web-App insgesamt modern und
-sehr intuitiv gestaltet war.
+doch bei komplexeren, nicht-trivialen Projekten waren manuelle Nacharbeit und
+ein kritisches Review weiterhin erforderlich. Positiv hervorzuheben ist, dass
+die mit Bolt umgesetzte Web-App insgesamt modern und sehr intuitiv gestaltet
+war.
 
 Abschließend lässt sich festhalten, dass Bolt den Entwicklungsprozess,
 insbesondere bei neuen Projekten, signifikant beschleunigen und standardisieren
@@ -426,7 +423,7 @@ lassen.
 Nach der Durchführung der Demonstrationen mit Copilot, Cursor und Bolt wurden
 deutliche Unterschiede und Gemeinsamkeiten im Hinblick auf Funktionalität,
 Effizienz, Entwicklererlebnis und Ergebnisqualität sichtbar. Copilot überzeugte
-besonders bei Standardaufgaben und bewährten Patterns in der Codegenerierung:
+besonders bei Standardaufgaben und bewährten Patterns in der Codegenerierung.
 Hier sorgte das Tool für eine erhebliche Effizienzsteigerung bei
 Routinearbeiten, erforderte jedoch bei komplexeren Anforderungen weiterhin
 manuelle Nacharbeit. Cursor ermöglichte durch den aktiven Bezug auf
@@ -446,29 +443,26 @@ und Qualitätsverbesserungen durch generative KI-Tools nachweisen. So berichten
 Coutinho et~al.~\cite{coutinho_role_2024} von deutlicher Zeitersparnis bei
 Standardaufgaben, während Braun~\cite{braun_ki_2024} und
 Sulabh~\cite{s_future_2024} auf die weiterhin bestehende Notwendigkeit
-manueller Kontrolle und Überprüfung hinweisen. Schmitt
-et~al.~\cite{schmitt_generative_2024} betonen darüber hinaus, dass der Einsatz
-von KI-Tools auch soziale und identitätsbezogene Veränderungen im Alltag von
-Softwareentwickler:innen mit sich bringen kann.
+manueller Kontrolle und Überprüfung hinweisen.
 
-Im Rahmen der Lessons Learned zeigte die praktische Evaluation, dass generative
-KI-Tools bei richtiger Anwendung eine wertvolle Unterstützung im
+Im Rahmen der \textit{Lessons Learned} zeigte die praktische Evaluation, dass
+generative KI-Tools bei richtiger Anwendung eine wertvolle Unterstützung im
 Entwicklungsprozess bieten. Sie führen zu Effizienzgewinnen, einer höheren
 Codequalität und einem insgesamt gesteigerten Entwicklererlebnis. Wesentliche
-Empfehlungen lassen sich ableiten: Präzise und kontextreiche Prompts sind
+Empfehlungen lassen sich ableiten. Präzise und kontextreiche Prompts sind
 essenziell, da sie maßgeblich zur Passgenauigkeit der Ergebnisse beitragen.
 Trotz hoher Automatisierung bleibt die manuelle Kontrolle aller KI-generierten
 Änderungen unerlässlich. Tools wie Cursor, die Kontextinformationen aktiv
 nutzen und Feedback-Loops ermöglichen, bieten deutliche Vorteile bei
 komplexeren Aufgaben. Die Auswahl des passenden Tools sollte sich nach dem
-Projekttyp richten: Für neue Projekte oder Prototypen eignet sich Bolt, während
+Projekttyp richten. Für neue Projekte oder Prototypen eignet sich Bolt, während
 Copilot bei Routinearbeiten und Cursor bei dialogischen, komplexeren Abläufen
 in bestehenden Projekten überzeugen. Zudem zeigt sich, dass
 plattformübergreifende Entwicklung häufig zusätzliche Anpassungen erfordert,
 die von den Tools unterschiedlich gut unterstützt werden.
 
 Die qualitative Bewertung der eingesetzten Tools unterstreicht diese
-Differenzierung: Copilot sorgt für spürbare Zeitersparnis und eine solide
+Differenzierung. Copilot sorgt für spürbare Zeitersparnis und eine solide
 Codequalität bei Standardaufgaben, erfordert aber bei individueller Logik oft
 Nacharbeit. Cursor ermöglicht ein schnelles Debugging und eine zielgerichtete
 Entwicklung durch die Integration von Kontextinformationen, was zu hoher
@@ -479,7 +473,7 @@ im laufenden Betrieb immer wieder auf Kompatibilitätsprobleme.
 
 \subsection{Zwischenfazit}
 
-Die praktische Demonstration liefert zentrale Erkenntnisse: Generative KI-Tools
+Die praktische Demonstration liefert zentrale Erkenntnisse. Generative KI-Tools
 ermöglichen signifikante Effizienzsteigerungen bei Routineaufgaben und bieten
 ein hohes Potenzial für bessere Codequalität und Wartbarkeit. Gleichzeitig
 treten Herausforderungen bei Fehlerbehebung, Tool-Integration und
@@ -487,7 +481,7 @@ plattformübergreifender Entwicklung auf. Diese Erfahrungen bilden die Grundlage
 für die systematische Bewertung der Chancen und Risiken generativer KI in der
 Softwareentwicklung in den folgenden Kapiteln.
 
-Aktuelle Forschungsergebnisse bestätigen diese Beobachtungen: Aspekte wie
+Aktuelle Forschungsergebnisse bestätigen diese Beobachtungen. Aspekte wie
 Barrierefreiheit und Usability sollten laut Flores-Saviaga
 et~al.~\cite{flores-saviaga_impact_2025} künftig stärker berücksichtigt werden.
 Geyer et~al.~\cite{geyer_case_2025} zeigen zudem, dass die Integration
