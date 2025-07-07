@@ -1,55 +1,54 @@
+\label{sec:vorstellung-app}
 
-\subsection{Architektur und technischer Stack}
+Die App \textit{Locals} ist als mobile Plattform konzipiert, die es
+Nutzer:innen ermöglicht, lokale Events zu entdecken, zu erstellen und zu
+verwalten. Zielgruppe sind vor allem junge, urbane Menschen, die soziale
+Interaktionen rund um Veranstaltungen suchen. Die technische Umsetzung setzt
+auf eine moderne, modulare und plattformübergreifende Architektur, die sowohl
+schnelle Entwicklungszyklen als auch eine hohe Flexibilität bei der Erweiterung
+von Funktionen erlaubt.
 
-Die App \textit{Locals} ist eine mobile Plattform, die Nutzer:innen ermöglicht,
-lokale Events zu entdecken, zu erstellen und zu verwalten. Sie richtet sich an
-ein junges, urbanes Publikum und unterstützt soziale Interaktionen rund um
-Veranstaltungen.
+Im Frontend kommen React Native und TypeScript zum Einsatz, ergänzt durch das
+Expo-Framework, das eine konsistente Entwicklung für iOS- und Android-Geräte
+ermöglicht. Für die Backend-Funktionalitäten wie Authentifizierung,
+Datenhaltung und Synchronisation wird Firebase genutzt. Die Navigation
+innerhalb der App basiert auf den Bibliotheken
+\texttt{@react-navigation/native} und \texttt{expo-router}. Das
+State-Management wird über eigene Context-Provider wie \texttt{AuthProvider}
+und \texttt{EventsProvider} realisiert. Für die Benutzeroberfläche werden
+Icon-Bibliotheken wie \texttt{@expo/vector-icons} und
+\texttt{lucide-react-native} verwendet. Karten- und Standortfunktionen werden
+durch \texttt{react-native-maps} und \texttt{expo-location} integriert.
 
-Die modulare Architektur setzt auf moderne, plattformübergreifende
-Technologien:
+Die Anwendung gliedert sich in drei Hauptbereiche: Der Explore-Screen dient als
+Event-Feed, der die Veranstaltungen nach Standort und Interessen filtert. Der
+Map-Screen stellt eine interaktive Kartenansicht bereit, in der Events als
+Marker angezeigt und mit Hilfe von Filtern durchsucht werden können. Im
+Profil-Screen erhalten die Nutzer:innen eine Übersicht und Verwaltung ihrer
+eigenen sowie besuchten Events und Profileinstellungen. Im Rahmen dieser Arbeit
+wird insbesondere der Map-Screen als prototypisches, KI-gestütztes Feature
+exemplarisch entwickelt und dient so als Grundlage für die weitere Analyse der
+Potenziale generativer KI in der Softwareentwicklung.
 
-% TODO: einheitlich schreiben mit punkt oder ohne generell überall?
-\begin{itemize}
-    \item \textbf{Frontend:} React Native, TypeScript, Expo (für schnelle, konsistente Entwicklung auf iOS/Android).
-    \item \textbf{Backend:} Firebase (Authentifizierung, Datenhaltung, Synchronisation).
-    \item \textbf{Navigation:} \texttt{@react-navigation/native}, \texttt{expo-router}.
-    \item \textbf{State-Management:} Eigene Context-Provider (\texttt{AuthProvider}, \texttt{EventsProvider}).
-    \item \textbf{UI:} \texttt{@expo/vector-icons}, \texttt{lucide-react-native}.
-    \item \textbf{Karten/Location:} \texttt{react-native-maps}, \texttt{expo-location}.
-\end{itemize}
+Eine zentrale Rolle in der Architektur der App übernimmt das
+\texttt{RootLayout}, das sowohl die benötigten Schriftarten als auch
+Authentifizierungs- und Event-Kontexte lädt. Die Steuerung der Nutzerführung
+ist strikt zustandsbasiert und erfolgt über die Hooks \texttt{useAuth},
+\texttt{useSegments} und \texttt{useRouter}. Dieses Architekturprinzip
+gewährleistet eine klare Trennung zwischen Zustandsverwaltung und Routing und
+erleichtert so spätere Erweiterungen oder Integrationen, beispielsweise von
+KI-gestützten Funktionen.
 
-Die Anwendung ist in drei Hauptbereiche gegliedert:
-\begin{itemize}
-    \item \textbf{Explore-Screen:} Event-Feed nach Standort/Interesse.
-    \item \textbf{Map-Screen:} Interaktive Kartenansicht mit Event-Markern und Filtern.
-    \item \textbf{Profil-Screen:} Übersicht und Verwaltung eigener Events/Profile.
-\end{itemize}
+Bereits vor der Integration generativer KI-Tools wurden zentrale Funktionen
+implementiert. Dazu zählen die Benutzerauthentifizierung mit Firebase
+Authentication, eine umfassende Profilverwaltung für eigene und besuchte Events
+sowie eine vollständige Eventverwaltung mit Funktionen zum Anlegen, Bearbeiten
+und Löschen von Veranstaltungen. Die Navigation innerhalb der App erfolgt über
+ein Tab-System, das einen schnellen Wechsel zwischen den Hauptbereichen
+Explore, Map und Profil ermöglicht. Ein responsives Design sorgt zudem für eine
+einheitliche Darstellung auf sämtlichen Endgeräten.
 
-Der Map-Screen wird in dieser Arbeit als prototypisches, KI-gestütztes Feature
-exemplarisch entwickelt und dient als Grundlage für die weitere Analyse.
-
-\subsubsection{Einstiegskomponente und Navigation}
-
-Das zentrale \texttt{RootLayout} lädt Fonts, Authentifizierungs- und
-Event-Kontexte und steuert die Nutzerführung abhängig vom Login-Status. Die
-Navigation erfolgt strikt zustandsbasiert (\texttt{useAuth},
-\texttt{useSegments}, \texttt{useRouter}). Dieses Architekturprinzip
-gewährleistet eine saubere Trennung von Zustandsverwaltung und Routing, was
-spätere Erweiterungen und Integrationen (z.B. von KI-gestützten Funktionen)
-erleichtert.
-
-\subsection{Bestehende Funktionalitäten}
-
-Bereits vor der KI-Integration implementiert sind:
-\begin{itemize}
-    \item \textbf{Benutzerauthentifizierung:} Firebase Authentication.
-    \item \textbf{Profilverwaltung:} Eigene und besuchte Events.
-    \item \textbf{Eventverwaltung:} Anlegen, Bearbeiten, Löschen.
-    \item \textbf{Tab-Navigation:} Zwischen Explore, Map, Profil.
-    \item \textbf{Responsives Design:} Einheitliche Darstellung auf allen Endgeräten.
-\end{itemize}
-
-Die modulare Struktur und klare Abgrenzung der App-Komponenten bieten die
-ideale Basis, um generative KI-Tools gezielt einzusetzen und deren Auswirkungen
-im Entwicklungsprozess zu evaluieren.
+Die modulare Struktur und die klare Abgrenzung der einzelnen App-Komponenten
+schaffen eine ideale Grundlage, um den gezielten Einsatz generativer KI-Tools
+im Entwicklungsprozess zu evaluieren und deren Auswirkungen auf Wartbarkeit,
+Erweiterbarkeit und Benutzerfreundlichkeit zu untersuchen.

@@ -1,40 +1,48 @@
-Ziel dieses Kapitels ist es, die Potenziale und Herausforderungen generativer
-KI-Tools in der Softwareentwicklung praxisnah zu evaluieren. Anhand der
-exemplarischen Implementierung eines interaktiven Map-Screens in der mobilen
-App „Locals“ wird untersucht, wie moderne KI-Tools den Entwicklungsprozess
-unterstützen, wo ihre Stärken liegen und welche Grenzen deutlich werden.
-Aufbauend auf den theoretischen Grundlagen bietet dieses Praxisbeispiel die
-Möglichkeit, die zuvor beschriebenen Konzepte und Annahmen empirisch zu
-überprüfen und kritisch zu reflektieren.
+\label{sec:zielsetzung-vorgehen}
 
-\subsubsection{Motivation für das praktische Beispiel}
+Das Ziel dieses Kapitels ist es, die Potenziale und Herausforderungen
+generativer KI-Tools in der Softwareentwicklung anhand eines praxisnahen
+Beispiels systematisch zu evaluieren. Am Beispiel der exemplarischen
+Implementierung einer interaktiven Kartenansicht („Map-Screen“) in der mobilen
+App „Locals“ wird untersucht, wie moderne KI-gestützte Tools den
+Entwicklungsprozess unterstützen, in welchen Bereichen sie ihre Stärken
+ausspielen können und wo ihre Grenzen sichtbar werden. Aufbauend auf den zuvor
+beschriebenen theoretischen Grundlagen bietet dieses Praxisbeispiel die
+Gelegenheit, zentrale Konzepte und Annahmen empirisch zu überprüfen und
+kritisch zu reflektieren.
 
-Die Entscheidung für die Entwicklung einer interaktiven Kartenansicht beruht
-auf folgenden Überlegungen:
-\begin{itemize}
-      \item Map-Views sind zentrale und technisch anspruchsvolle Features in Event- und
-            Social-Apps; sie erfordern die Integration unterschiedlicher Technologien
-            (Geolocation, Datenmanagement, UI/UX, Filterfunktionen).
-      \item Die Aufgabe vereint klassische Frontend-Herausforderungen (State-Management,
-            UI-Logik) mit der Integration externer Libraries (wie
-            \texttt{react-native-maps}, Google Maps API).
-      \item Aufgrund ihrer Vielschichtigkeit eignet sich die Map-View besonders gut, um die
-            Leistungsfähigkeit generativer KI-Tools im realen Entwicklungsprozess kritisch
-            zu beleuchten.
-      \item Der unmittelbare Nutzen für Nutzer:innen unterstreicht die Praxisrelevanz des
-            gewählten Beispiels.
-\end{itemize}
-
-\subsubsection{Eingesetzte KI-Tools}
+Die Entscheidung, den Fokus auf die Entwicklung einer interaktiven
+Kartenansicht zu legen, ist aus mehreren Gründen besonders sinnvoll. Erstens
+handelt es sich bei Map-Views um zentrale und technisch anspruchsvolle Features
+in Event- und Social-Apps, da sie die Integration verschiedener Technologien
+wie Geolocation, Datenmanagement, UI/UX-Design und Filterfunktionen erfordern.
+Zweitens vereint diese Aufgabe klassische Frontend-Herausforderungen,
+beispielsweise im Bereich State-Management und UI-Logik, mit der Integration
+externer Libraries wie \texttt{react-native-maps} oder der Google Maps API.
+Gerade durch diese Vielschichtigkeit eignet sich die Map-View besonders gut, um
+die Leistungsfähigkeit generativer KI-Tools im realen Entwicklungsprozess
+kritisch zu beleuchten. Nicht zuletzt unterstreicht auch der unmittelbare
+Nutzen für die Anwender:innen die hohe Praxisrelevanz des gewählten Beispiels.
 
 Für die Umsetzung wurden drei führende KI-basierte Entwicklungstools
-ausgewählt, die aktuelle Trends und Methoden abbilden:
-\begin{itemize}
-      \item \textbf{GitHub Copilot:} Kontextsensitiver Code-Assistent mit Echtzeit-Vervollständigung, automatischen Vorschlägen für Funktionen, Tests und Dokumentation; unterstützt Pull-Requests, Chatfunktionen, Wissensdatenbanken und arbeitet direkt in gängigen IDEs~\cite{github_copilot_2025}.
-      \item \textbf{Cursor:} KI-basierter Editor mit Multi-Line-Edits, Prompt Chaining, Fehlerdiagnose und dialogorientiertem Interface für komplexe Aufgabenabwicklung; plattformübergreifend einsetzbar~\cite{cursor_welcome_2025}.
-      \item \textbf{Bolt.new:} Cloudbasierte Entwicklungsumgebung ohne lokale Installation, ermöglicht die Entwicklung und das Deployment direkt aus Prompts heraus; Multi-Plattform-Support, Live-Bearbeitung, Teamfunktionen~\cite{bolt_support_2025}.
-\end{itemize}
+ausgewählt, die aktuelle Trends und Methoden im Bereich der KI-gestützten
+Softwareentwicklung abbilden. Zum einen kommt \textbf{GitHub Copilot} zum
+Einsatz, ein kontextsensitiver Code-Assistent mit Echtzeit-Vervollständigung,
+der automatische Vorschläge für Funktionen, Tests und Dokumentation generiert
+und sich direkt in gängige IDEs integriert~\cite{github_copilot_2025}.
+Ergänzend wird \textbf{Cursor} verwendet, ein KI-basierter Editor, der durch
+Multi-Line-Edits, Prompt Chaining, Fehlerdiagnose und eine dialogorientierte
+Benutzeroberfläche die Umsetzung komplexer Aufgaben unterstützt und
+plattformübergreifend einsetzbar ist~\cite{cursor_welcome_2025}. Als drittes
+Tool kommt \textbf{Bolt.new} hinzu, eine cloudbasierte Entwicklungsumgebung,
+die ohne lokale Installation auskommt und die Entwicklung sowie das Deployment
+direkt aus Prompts heraus ermöglicht. Bolt.new unterstützt mehrere Plattformen,
+bietet Live-Bearbeitung und Teamfunktionen~\cite{bolt_support_2025}.
 
-Die vergleichende Betrachtung dieser Tools ermöglicht eine differenzierte
-Analyse von Mensch-KI-Interaktion im realen Entwicklungsalltag – von
-klassischen Code-Vervollständigern bis zu agentenbasierten Komplettsystemen.
+Die vergleichende Analyse dieser drei Tools ermöglicht es, unterschiedliche
+Formen der Interaktion zwischen Mensch und KI im realen Entwicklungsalltag zu
+bewerten, von klassischen Code-Vervollständigern wie Copilot über
+dialogorientierte Systeme wie Cursor bis hin zu agentenbasierten
+Komplettumgebungen wie Bolt.new. Dadurch lassen sich Stärken, Schwächen und
+bestmögliche Einsatzszenarien generativer KI-Tools in der Praxis gezielt
+herausarbeiten.

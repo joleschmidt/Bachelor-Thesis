@@ -1,74 +1,75 @@
 % TODO : Quellenangaben für absatz?
-Die Integration generativer Künstlicher Intelligenz (KI) in die
-Softwareentwicklung beruht maßgeblich auf dem Einsatz fortschrittlicher Modelle
-und Algorithmen. Insbesondere Large Language Models (LLMs) und
-Transformer-Architekturen bilden die technologische Grundlage moderner
-Coding-Tools wie GitHub Copilot, Cursor oder v0. Im Folgenden werden zentrale
-Modelle, deren Funktionsweise und Bedeutung für typische Entwicklungsaufgaben
-dargestellt.
+% Die Integration generativer Künstlicher Intelligenz (KI) in die
+% Softwareentwicklung beruht maßgeblich auf dem Einsatz fortschrittlicher Modelle
+% und Algorithmen. Insbesondere Large Language Models (LLMs) und
+% Transformer-Architekturen bilden die technologische Grundlage moderner
+% Coding-Tools wie GitHub Copilot, Cursor oder v0. Im Folgenden werden zentrale
+% Modelle, deren Funktionsweise und Bedeutung für typische Entwicklungsaufgaben
+% dargestellt.
+
+\label{sec:wichtige-algorithmen-modelle}
 
 Aktuelle Forschung betont, dass ein zukunftsorientiertes Software-Ökosystem
 nicht nur technologische Innovation, sondern auch eine optimierte
-Zusammenarbeit von Mensch und KI erfordert. Systematischer Umgang mit
+Zusammenarbeit von Mensch und KI erfordert. Ein systematischer Umgang mit
 technischer Verschuldung sowie die gezielte Nutzung externer Wissensquellen
 gelten als Schlüsselfaktoren moderner Entwicklungsframeworks
 \cite{matsumoto_conceptual_2021}. Darüber hinaus zeigen empirische Studien,
 dass KI-Assistenzsysteme die Codequalität und Wartbarkeit nachweislich
 verbessern können \cite{martinovic_impact_2024}. Der Ansatz des sogenannten
-„AI-Native Software Engineering“ (SE 3.0) fokussiert eine enge Verzahnung von
-KI, Entwicklerkompetenz und Geschäftsprozessen und steht für einen Wandel hin
-zur kooperativen Softwareentwicklung \cite{hassan_towards_2024}.
+\glqq AI-Native Software Engineering\grqq{} (SE 3.0) fokussiert eine enge
+Verzahnung von KI, Entwicklerkompetenz und Geschäftsprozessen und steht für
+einen Wandel hin zu einer kooperativen, dialogorientierten Softwareentwicklung
+\cite{hassan_towards_2024}.
 
-\paragraph{Grundprinzipien moderner KI-Modelle}
-Large Language Models wie GPT-4 oder Code Llama sind tiefenlernende neuronale
-Netze, trainiert auf großen Mengen an Quellcode und natürlicher Sprache. Sie
-basieren auf Transformer-Architekturen, die mittels Self-Attention-Mechanismen
-Kontext über lange Sequenzen hinweg erfassen. Dadurch erkennen und generieren
-sie sowohl syntaktisch als auch semantisch komplexe Strukturen – beispielsweise
-Code-Logik oder Designmuster \cite{nguyen-duc_generative_2023,
-    esposito_generative_2025}. Während Diffusionsmodelle vor allem in der Bild- und
-Mediengenerierung eingesetzt werden, sind für text- und codebasierte
-Softwareentwicklung weiterhin LLMs und Transformer zentral
+Im Kern basieren moderne KI-Tools wie GitHub Copilot, Cursor oder v0 auf
+sogenannten Large Language Models (LLMs) und verwandten Architekturen wie
+Transformers. Diese tiefenlernenden neuronalen Netze werden auf großen Mengen
+an Quellcode und natürlicher Sprache trainiert und nutzen Mechanismen wie
+Self-Attention, um den Kontext über längere Sequenzen hinweg zu erfassen. So
+gelingt es den Modellen, sowohl syntaktisch als auch semantisch komplexe
+Strukturen zu erkennen und zu generieren, etwa im Bereich der Code-Logik oder
+bei der Anwendung typischer Designmuster \cite{nguyen-duc_generative_2023,
+    esposito_generative_2025}. Während Diffusionsmodelle in der Bild- und
+Mediengenerierung dominieren, bleiben für text- und codebasierte
+Softwareentwicklung weiterhin LLMs und Transformer-Architekturen zentral
 \cite{weisz_design_2024}.
 
-\paragraph{Beispiele für KI-Modelle in Coding-Tools}
-Moderne Assistenzsysteme wie \textit{GitHub Copilot}, \textit{Cursor} oder
-\textit{v0} nutzen typischerweise spezialisierte Sprachmodelle (z.B. OpenAI
-Codex, Code Llama, StarCoder), die auf Programmcode vortrainiert wurden. Sie
-generieren anhand des Kontexts – etwa bestehender Code, Kommentare oder
-Projekthistorie – automatisiert neue Code-Abschnitte, machen
-Fehlerkorrekturvorschläge oder erstellen Testfälle \cite{coutinho_role_2024,
-    esposito_generative_2025}.
+In der praktischen Anwendung nutzen moderne Assistenzsysteme typischerweise
+spezialisierte Sprachmodelle wie OpenAI Codex, Code Llama oder StarCoder, die
+gezielt auf Programmcode vortrainiert wurden. Diese Modelle sind in der Lage,
+ausgehend vom Kontext, etwa bestehender Code, Kommentare oder Projekthistorie,
+automatisiert neue Code-Abschnitte zu generieren, Fehlerkorrekturen
+vorzuschlagen oder passende Testfälle zu erstellen \cite{coutinho_role_2024,
+    esposito_generative_2025}. Ihr Funktionsspektrum reicht von der automatischen
+Erstellung kompletter Funktionen und Module auf Basis kurzer Beschreibungen in
+natürlicher Sprache über die Generierung von Unit-Tests und die Unterstützung
+beim Review bis hin zur Entwicklung und Auswahl geeigneter
+Softwarearchitekturen oder Design Patterns, insbesondere im projektspezifischen
+Kontext \cite{coutinho_role_2024, esposito_generative_2025, donvir_role_2024}.
 
-Typische Anwendungsfelder sind:
-\begin{itemize}
-    \item \textbf{Code-Generierung:} Automatische Erstellung von Funktionen, Methoden oder ganzen Modulen auf Basis von Kurzbeschreibungen oder natürlicher Sprache.
-    \item \textbf{Testing und Qualitätssicherung:} Generierung von Unit-Tests, Unterstützung beim Review durch Erkennung von Anomalien oder Schwachstellen.
-    \item \textbf{Architekturvorschläge:} Unterstützung bei der Auswahl von Softwarearchitekturen oder Design Patterns, häufig im Kontext projektspezifischer Anforderungen.
-\end{itemize}
-Quelle: \cite{coutinho_role_2024, esposito_generative_2025, donvir_role_2024}
-
-\paragraph{Rolle für spezifische Aufgaben}
-LLMs erzeugen auf Basis von Prompts oder bestehenden Codefragmenten
-eigenständig Quellcode – von Boilerplate bis zu komplexeren Algorithmen. Sie
-erstellen automatisiert Tests, variieren Testdaten und erkennen typische
-Fehlerbilder. Im Bereich Softwarearchitektur übersetzen sie Requirements in
-Design-Vorschläge oder Diagramme \cite{esposito_generative_2025,
-    nguyen-duc_generative_2023}.
-
-\paragraph{Herausforderungen und Grenzen }
-Trotz des enormen Potenzials bestehen wesentliche Herausforderungen:
-\begin{itemize}
-    \item \textbf{Halluzinationen und Fehleranfälligkeit:} Modelle können syntaktisch korrekten, aber inhaltlich unpassenden oder unsicheren Code erzeugen.
-    \item \textbf{Erklärbarkeit und Transparenz:} Die Entscheidungswege bleiben häufig schwer nachvollziehbar.
-    \item \textbf{Domänenspezifisches Wissen:} Ohne gezieltes Fine-Tuning auf spezifische Projekte bleibt das Wissen allgemein und nicht immer passend für individuelle Anforderungen.
-\end{itemize}
-Quelle: \cite{esposito_generative_2025, nguyen-duc_generative_2023, donvir_role_2024}
-
-\paragraph{Praktischer Bezug}
-Im Praxisteil dieser Arbeit werden die genannten Modelle durch Tools wie GitHub
-Copilot, Cursor und Bolt genutzt, um Entwickler:innen in sämtlichen Phasen der
-Softwareentwicklung – von Architekturentwurf bis Testing – zu unterstützen.
-Diese Werkzeuge etablieren sich zunehmend als kollaborative Partner und
-verändern klassische Entwicklungsprozesse nachhaltig
+LLMs übernehmen damit zunehmend Aufgaben, die von der reinen Code-Generierung
+bis hin zu komplexeren Anforderungen reichen: Sie erstellen automatisiert
+Tests, variieren Testdaten, erkennen typische Fehlerbilder und unterstützen
+Entwickler:innen durch Vorschläge zur Architektur oder durch das Übersetzen von
+Requirements in konkrete Design-Entwürfe oder Diagramme
 \cite{esposito_generative_2025, nguyen-duc_generative_2023}.
+
+Trotz des enormen Potenzials solcher Modelle sind wesentliche Herausforderungen
+zu beachten. So können LLMs zwar häufig syntaktisch korrekten Code generieren,
+dieser ist jedoch nicht immer inhaltlich passend oder sicher, insbesondere bei
+vagen Prompts oder fehlendem Kontext (\textit{Halluzinationen}). Die
+Erklärbarkeit und Transparenz der generierten Vorschläge bleibt oftmals
+eingeschränkt, da die Entscheidungswege der Modelle schwer nachvollziehbar
+sind. Ohne gezieltes Fine-Tuning auf spezifische Projekte oder Domänen bleibt
+das Wissen zudem meist allgemein und kann individuellen Anforderungen nicht
+immer gerecht werden \cite{esposito_generative_2025,
+    nguyen-duc_generative_2023, donvir_role_2024}.
+
+Im Praxisteil dieser Arbeit werden die beschriebenen Modelle durch Tools wie
+GitHub Copilot, Cursor und Bolt eingesetzt, um Entwickler:innen in sämtlichen
+Phasen der Softwareentwicklung, von Architekturentwurf bis Testing, aktiv zu
+unterstützen. Diese Werkzeuge etablieren sich damit zunehmend als kollaborative
+Partner und verändern klassische Entwicklungsprozesse nachhaltig
+\cite{esposito_generative_2025, nguyen-duc_generative_2023}.
+

@@ -2,95 +2,89 @@
 
 Generative KI-Tools wie GitHub Copilot, Cursor oder v0 prägen den modernen
 Softwareentwicklungsprozess entscheidend. Ihre Hauptfunktion besteht darin,
-natürliche Sprache (Prompts) in ausführbaren Code, Testfälle oder
-Dokumentationen umzusetzen. Damit verändern sie nicht nur technische Workflows,
-sondern auch die Zusammenarbeit in Entwicklungsteams und die Anforderungen an
-Kompetenzen der Beteiligten \cite{weisz_design_2024}.
+natürliche Sprache, sogenannte Prompts, in ausführbaren Code, Testfälle oder
+Dokumentationen umzusetzen. Damit verändern sie sowohl technische Workflows als
+auch die Zusammenarbeit in Entwicklungsteams und stellen neue Anforderungen an
+die Kompetenzen der Beteiligten \cite{weisz_design_2024}.
 
-\subsubsection{Grundfunktion generativer KI-Tools}
-
-Die zugrundeliegenden Large Language Models (LLMs) ermöglichen das sogenannte
-Prompt-basiertes Entwicklungsparadigma: Entwickler:innen beschreiben eine
-Aufgabe in natürlicher Sprache – das Tool generiert dazu passende Vorschläge.
-Diese erscheinen als Code Completion direkt beim Tippen oder als komplette
-Funktionsblöcke \cite{kerr_github_nodate, weisz_design_2024}. Neuere Ansätze
-wie SENAI integrieren generative KI von Anfang an in den
-Software-Engineering-Prozess und erlauben eine hochautomatisierte,
+Die zugrundeliegenden Large Language Models (LLMs) ermöglichen ein
+Prompt-basiertes Entwicklungsparadigma: Entwickler:innen beschreiben Aufgaben
+in natürlicher Sprache und erhalten daraufhin passende Vorschläge. Diese
+erscheinen entweder als \textit{Code Completion} direkt beim Tippen oder als
+vollständige Funktionsblöcke \cite{kerr_github_nodate, weisz_design_2024}.
+Neuere Ansätze wie SENAI integrieren generative KI von Beginn an in den
+Software-Engineering-Prozess und erlauben so eine hochautomatisierte,
 KI-zentrierte Entwicklung \cite{saad_senai_2025}.
 
 Systematische Literaturübersichten zeigen, dass die Integration generativer KI
 in Entwicklungsumgebungen das Nutzererlebnis, die Akzeptanz und den praktischen
-Nutzen maßgeblich beeinflusst. Insbesondere Aspekte wie Transparenz, Usability
-und Feedbackmechanismen entscheiden über den Erfolg im Alltag
-\cite{sergeyuk_human-ai_2025}.
+Nutzen maßgeblich beeinflusst. Besonders Faktoren wie Transparenz, Usability
+und intelligente Feedbackmechanismen sind entscheidend für den Erfolg im Alltag
+\cite{sergeyuk_human-ai_2025}. Die praktische Nutzung generativer KI erfolgt
+heute meist direkt über Plugins für etablierte IDEs wie Visual Studio Code oder
+JetBrains, oftmals auch über API-Schnittstellen. Dadurch lassen sich Aufgaben
+wie Refactoring, Testing oder Dokumentation unmittelbar und nahtlos in die
+gewohnte Arbeitsumgebung integrieren \cite{kerr_github_nodate,
+    shi_ai-assisted_2023, weisz_design_2024}. Besonders hervorzuheben ist zudem,
+dass KI-gestützte Assistenzsysteme neue Teilhabemöglichkeiten für
+sehbeeinträchtigte Entwickler:innen eröffnen können, vorausgesetzt, die Tools
+sind barrierefrei gestaltet \cite{flores-saviaga_impact_2025}.
 
-\subsubsection{Schnittstellen und Integration in Entwicklungsumgebungen}
+Ein typischer Workflow zeigt sich etwa beim Pair Programming mit Copilot:
+Aufgaben werden in Form von Prompts gestellt, das Tool generiert passende
+Codevorschläge, die geprüft, angepasst oder verworfen werden können. Studien
+belegen, dass diese Arbeitsweise Routineaufgaben wie Testautomatisierung,
+Refactoring und Dokumentation signifikant beschleunigt
+\cite{kerr_github_nodate, weisz_design_2024, shi_ai-assisted_2023}. In agilen
+Teams kann generative KI zudem einen Beitrag zur Qualitätsbewertung und zur
+Dokumentation von Anforderungen leisten \cite{geyer_case_2025}.
 
-Die praktische Nutzung generativer KI erfolgt meist über Plugins (z. B. für
-Visual Studio Code oder JetBrains IDEs) oder via API. Typischerweise
-interagieren Entwickler:innen mit dem KI-Tool im Kontext der gewohnten
-Umgebung, wodurch Aufgaben wie Refactoring, Testing oder Dokumentation direkt
-integriert werden können \cite{kerr_github_nodate, shi_ai-assisted_2023,
-    weisz_design_2024}.
+Der Einsatz generativer KI bietet zahlreiche Vorteile, die in aktuellen Studien
+hervorgehoben werden: So wird insbesondere die Automatisierung von
+Routineaufgaben und die damit verbundene Zeitersparnis hervorgehoben, genauso
+wie die Verbesserung der Codequalität durch die Erkennung häufiger Fehler und
+gezielte Empfehlungen für Best Practices. Außerdem werden niedrigere
+Einstiegshürden für weniger erfahrene Entwickler:innen genannt, denen durch
+kontextbasierte Vorschläge der Zugang zur Entwicklung erleichtert wird
+\cite{donvir_role_2024, sergeyuk_human-ai_2025}. Darüber hinaus fördern
+KI-gestützte Code Reviews die Kollaboration zwischen Mensch und Maschine und
+erhöhen die Transparenz im Entwicklungsprozess \cite{alami_human_2025}. Durch
+kontinuierliche Modellverbesserung und flexible Integration in unterschiedliche
+Projekte kann das Optimierungspotenzial weiter gesteigert werden
+\cite{kerr_github_nodate, weisz_design_2024}.
 
-Besonderes Augenmerk liegt inzwischen auch auf Barrierefreiheit: KI-gestützte
-Assistenzsysteme eröffnen etwa Entwickelnden mit Sehbeeinträchtigung neue
-Teilhabemöglichkeiten, vorausgesetzt die Tools sind entsprechend gestaltet
-\cite{flores-saviaga_impact_2025}.
+Trotz dieser Vorteile bestehen zentrale Herausforderungen. Ein häufig
+diskutiertes Problem sind sogenannte \textit{Halluzinationen}: Modelle
+generieren zwar syntaktisch korrekten, inhaltlich aber fehlerhaften oder
+unsicheren Code, besonders bei unscharfen oder vagen Prompts
+\cite{shi_ai-assisted_2023, weisz_design_2024}. Hinzu kommen Bias und
+Kontextdefizite, also die Übernahme von Vorurteilen aus den Trainingsdaten oder
+das Nichtbeachten projektspezifischer Regeln. Ein weiteres Risiko besteht in
+der Generierung unsicheren Codes, etwa durch Vorschläge mit hardcodierten
+Zugangsdaten, die explizit überprüft werden müssen. Zudem beobachten Studien
+ein übermäßiges Vertrauen vieler Entwickler:innen in die Vorschläge der KI,
+eine unkritische Übernahme ohne manuelle Überprüfung kann zu schwerwiegenden
+Fehlern führen \cite{shi_ai-assisted_2023, weisz_design_2024}.
 
-\subsubsection{Beispielhafte Workflows: Pair Programming mit Copilot}
+Um einen produktiven und sicheren Einsatz zu gewährleisten, empfiehlt die
+Literatur spezifische Designprinzipien für generative KI-Tools
+\cite{weisz_design_2024}: Erstens sollte die Gestaltung der Systeme so
+erfolgen, dass Nutzer:innen die Funktionsweise und Grenzen nachvollziehen
+können (\textit{Design for Mental Models}). Zweitens müssen Feedbackmechanismen
+sowohl Vertrauen fördern als auch zur kritischen Prüfung anregen
+(\textit{Design for Appropriate Trust \& Reliance}). Drittens ist die
+Berücksichtigung von Fehlern essenziell: Tools sollten aktiv auf mögliche
+Fehler hinweisen und die Nutzer:innen zur Korrektur befähigen (\textit{Design
+    for Imperfection}). Die Gestaltung generativer GUIs und Entwicklungsprozesse
+muss diese Prinzipien berücksichtigen, um eine nachhaltige und
+verantwortungsvolle Integration zu ermöglichen \cite{lee_towards_2025,
+    chen_genui_2025, gill_agile_2025}. Flexibilität, Feedback und kontinuierliche
+Anpassung sind hier Schlüsselfaktoren.
 
-Beim Pair Programming mit Copilot werden Aufgaben in Form von Prompts gestellt,
-Copilot generiert daraufhin Codevorschläge, die geprüft, angepasst oder
-verworfen werden können. So unterstützt Copilot u. a. die Testautomatisierung,
-das Refactoring und die Dokumentation in allen Phasen des
-Entwicklungsprozesses. Studien belegen signifikante Beschleunigungseffekte bei
-Routineaufgaben \cite{kerr_github_nodate, weisz_design_2024,
-    shi_ai-assisted_2023}. In agilen Teams kann generative KI zudem zur
-Qualitätsbewertung und Dokumentation von Anforderungen beitragen
-\cite{geyer_case_2025}.
-
-\subsubsection{Vorteile und Optimierungspotenziale}
-
-Der Einsatz generativer KI bietet zahlreiche Vorteile:
-\begin{itemize}
-    \item \textbf{Zeitersparnis:} Automatisierung von Routineaufgaben, Verkürzung von Entwicklungszyklen.
-    \item \textbf{Verbesserte Codequalität:} Erkennung häufiger Fehler, Empfehlungen für Best Practices.
-    \item \textbf{Niedrigere Einstiegshürden:} Unterstützung auch für weniger erfahrene Entwickler:innen durch kontextbasierte Vorschläge.
-\end{itemize}
-Quelle: \cite{donvir_role_2024, sergeyuk_human-ai_2025}
-
-KI-gestützte Code Reviews fördern die Kollaboration zwischen Mensch und
-Maschine und erhöhen die Transparenz im Entwicklungsprozess
-\cite{alami_human_2025}. Kontinuierliche Modellverbesserung und flexible
-Integration in unterschiedliche Projekte steigern das Optimierungspotenzial
-weiter \cite{kerr_github_nodate, weisz_design_2024}.
-
-\subsubsection{Grenzen und typische Fehlerquellen}
-
-Zu den zentralen Herausforderungen zählen:
-\begin{itemize}
-    \item \textbf{Halluzinationen:} Syntaktisch korrekter, aber inhaltlich fehlerhafter oder unsicherer Code, vor allem bei vagen Prompts .
-    \item \textbf{Bias und Kontextdefizite:} Übernahme von Vorurteilen oder Nichtbeachtung spezifischer Projektregeln.
-    \item \textbf{Sicherheitsrisiken:} Vorschläge für unsicheren Code (z. B. Hardcoded Credentials), die explizit überprüft werden müssen .
-    \item \textbf{Übermäßiges Vertrauen:} Unkritische Übernahme von KI-Vorschlägen ohne Review durch erfahrene Entwickler:innen.
-\end{itemize}
-Quelle: \cite{shi_ai-assisted_2023, weisz_design_2024}
-
-\subsubsection{Designprinzipien für den produktiven und sicheren Einsatz}
-
-Für die sichere Nutzung generativer KI-Tools werden in der Literatur folgende
-Designprinzipien empfohlen \cite{weisz_design_2024}:
-\begin{itemize}
-    \item \textbf{Design for Mental Models:} Nutzer:innen sollen die Funktionsweise und Grenzen nachvollziehen können.
-    \item \textbf{Design for Appropriate Trust \& Reliance:} Feedbackmechanismen müssen sowohl Vertrauen fördern als auch zur kritischen Prüfung anregen.
-    \item \textbf{Design for Imperfection:} Aktive Hinweise auf mögliche Fehler und die Befähigung zur Korrektur sind essenziell.
-\end{itemize}
-
-Die Gestaltung generativer GUIs und Entwicklungsprozesse muss diese Prinzipien
-berücksichtigen, um eine nachhaltige und verantwortungsvolle Integration zu
-ermöglichen \cite{lee_towards_2025, chen_genui_2025, gill_agile_2025}.
-Flexibilität, Feedback und kontinuierliche Anpassung sind Schlüssel zum Erfolg.
+Insgesamt zeigt sich, dass der Mehrwert generativer KI-Tools vor allem dann zum
+Tragen kommt, wenn sie sinnvoll in bestehende Entwicklungsumgebungen
+integriert, kritisch überprüft und auf die jeweiligen Team- und
+Projektanforderungen angepasst werden.
 
 % Optional: Kurzbezug auf Kapitel 3 (Praxisbeispiel), falls erwünscht
 % Wie in Kapitel 3 praktisch demonstriert, lassen sich diese Prinzipien in der Entwicklung von React Native-Anwendungen mit KI-Tools exemplarisch umsetzen.
